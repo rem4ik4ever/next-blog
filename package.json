@@ -13,8 +13,10 @@
     "@chakra-ui/core": "^0.7.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@types/node-fetch": "^2.5.5",
     "emotion-theming": "^10.0.27",
     "next": "^9.3.4",
+    "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.2.0"

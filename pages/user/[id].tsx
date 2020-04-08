@@ -1,39 +1,43 @@
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import { Alert } from "@chakra-ui/core";
-
-const fetcher = async (url: string) => {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw Error("Response is not good");
-  }
-  const data: {
-    id: number;
-    name: string;
-  } = await res.json();
-
-  return data;
+import { GetServerSideProps, NextPage } from "next";
+import fetch from "node-fetch";
+import ErrorPage from "next/error";
+type Data = {
+  id: string;
+  name: string;
 };
 
-const User = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const { data, error } = useSWR(`/api/user/${id}`, fetcher);
-
-  if (error) {
-    return <Alert status="error">{error.message}</Alert>;
-  }
-
-  if (!data) {
-    <Alert status="info">Loading data...</Alert>;
+const UserPage: NextPage<{ data: Data }> = (props) => {
+  if (!props.data) {
+    return <ErrorPage statusCode={404} />;
   }
   return (
     <>
-      <h2>User page {id}</h2>
-      <pre>{JSON.stringify(data)}</pre>
+      <h2>User page {props.data.id}</h2>
+      <pre>{JSON.stringify(props.data)}</pre>
     </>
   );
 };
 
-export default User;
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  res,
+}) => {
+  try {
+    const { id } = params;
+    const result = await fetch(`http://localhost:3000/api/user/${id}`);
+    const data: Data = await result.json();
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    res.statusCode = 404;
+    return {
+      props: {},
+    };
+  }
+};
+
+export default UserPage;

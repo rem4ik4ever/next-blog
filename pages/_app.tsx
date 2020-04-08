@@ -1,13 +1,17 @@
 import { AppProps } from "next/app";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import BasicLayout from "../src/components/layout";
+import theme from "../theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
+  console.log("Theme", theme);
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <CSSReset />
-      <Component {...pageProps} />
+      <BasicLayout>
+        <Component {...pageProps} />
+      </BasicLayout>
     </ThemeProvider>
   );
 };
-
 export default App;

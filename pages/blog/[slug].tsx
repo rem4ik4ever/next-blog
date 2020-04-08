@@ -7,7 +7,6 @@ const BlogPage: NextPage<{
   title: string;
   text: string;
 }> = (props) => {
-  console.log("Props", props);
   return (
     <Box>
       <Flex flexDirection="column" alignItems="center">
