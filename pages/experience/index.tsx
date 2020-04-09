@@ -100,12 +100,15 @@ const ExperiencePage: NextPage = () => {
           <Card>
             <Flex align="center">
               <Image src={exp.logo} alt="wonolo inc." pr="2" w="12" />
-              <Heading as="h2" size="md" fontWeight="light">
+              <Heading as="h2" size="md" fontWeight="normal">
                 {exp.name}
               </Heading>
             </Flex>
             <Box pl="12">
-              <Text fontWeight="medium">{exp.position}</Text>
+              <Text fontWeight="light">{exp.position}</Text>
+              <Text color="gray.400">
+                {exp.from} - {exp.to}
+              </Text>
               <List mt="2">
                 {exp.achievements.map((ach) => (
                   <ListItem>
