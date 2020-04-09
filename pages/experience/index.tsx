@@ -25,7 +25,7 @@ const ExperiencePage: NextPage = () => {
       logo: "/imgs/wonolo.webp",
       relevant: true,
       achievements: [
-        "Implemented data syncronization with Salesforce Integration",
+        "implemented data synchronization with Salesforce Integration",
         "Migrated Rails pages to React.js App",
         "Improved global Search performance from 24s per query to 400ms",
       ],
