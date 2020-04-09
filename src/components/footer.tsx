@@ -2,7 +2,6 @@ import React from "react";
 import {
   Grid,
   Flex,
-  Box,
   Text,
   Heading,
   List,

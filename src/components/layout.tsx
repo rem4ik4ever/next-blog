@@ -6,7 +6,6 @@ import PageFooter from "./footer";
 
 const Main = styled(Flex)(() => ({
   width: "100%",
-  height: "100vh",
   flexDirection: "column",
   alignItems: "center",
 }));
