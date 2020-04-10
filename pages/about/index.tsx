@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { Flex, Heading, Text as Txt, Box, Image } from "@chakra-ui/core";
 import MyLink from "src/utils/MyLink";
+import spacetime from "spacetime";
 
 const Paragraph = (props) => (
   <Box mt="4" {...props}>
@@ -15,6 +16,8 @@ const Text = (props) => (
 );
 
 const AboutPage: NextPage = () => {
+  const dob = spacetime("March 16th, 1993");
+  const now = spacetime(new Date());
   return (
     <Flex direction="column" p="5">
       <Heading as="h1" size="xl" fontWeight="light">
@@ -22,8 +25,9 @@ const AboutPage: NextPage = () => {
       </Heading>
       <Paragraph>
         <Text>
-          My name is Rem Kim. I'm 27 years old and I'm a Software Engineer. I
-          was born in Uzbekistan, but moved when I was 3 years old to{" "}
+          My name is Rem. I'm {dob.diff(now, "year")} years old and I'm a
+          Software Engineer. I was born in Uzbekistan, but moved when I was 3
+          years old to{" "}
           <MyLink href="https://goo.gl/maps/V5Ez4s6TaWCW3PFQ9">
             Kyrgyzstan
           </MyLink>{" "}

@@ -4420,6 +4420,11 @@ source-map@^0.5.0, source-map@^0.5.6, source-map@^0.5.7:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
+spacetime@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/spacetime/-/spacetime-6.4.2.tgz#1d7a0e65b36170aa64b0ab4f896ae6deb5abe197"
+  integrity sha512-CWLPqJxhGBcQNE1cXmcppHVKxW/oqZjakKDtyrYL7yRROWmdjyyZ7ypLkJOX20yq6bHt7O88xZPa2zAkXuc/EA==
+
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
