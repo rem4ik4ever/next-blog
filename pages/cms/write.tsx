@@ -1,3 +1,4 @@
+import ErrorPage from "next/error";
 import {
   Flex,
   FormControl,
@@ -23,6 +24,9 @@ import { useFormik } from "formik";
 import { postData } from "src/utils/fetch";
 
 const WritePage = () => {
+  if (process.env.NODE_ENV !== "development") {
+    return <ErrorPage statusCode={404} />;
+  }
   const [showPreview, togglePreview] = useState(false);
   const addTag = (tag) => {
     formik.setFieldValue("tags", [...formik.values.tags, tag]);
