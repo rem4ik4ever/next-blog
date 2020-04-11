@@ -23,11 +23,11 @@ const TagInput = ({ onAdd, label, description }: TagInputProps) => {
         <Input
           type="text"
           id="tag-input"
-          aria-describeby="tag-text-input"
           value={tag}
           onChange={(ev) => setState(ev.target.value.trim())}
           onKeyDown={(ev) => {
             if (ev.keyCode === 13 || ev.keyCode === 32) {
+              ev.preventDefault();
               if (tag && tag.length > 0) {
                 onAdd(tag);
                 setState("");

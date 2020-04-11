@@ -8,81 +8,123 @@ import {
   Heading,
   Textarea,
   Switch,
+  Button,
+  Stack,
+  Tag,
+  TagIcon,
+  TagLabel,
 } from "@chakra-ui/core";
 import Card from "src/components/Card";
-import { useState, createRef } from "react";
+import { useState } from "react";
 import TagInput from "pages/cms/TagInput";
 import ReactMardown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { useFormik } from "formik";
+import { postData } from "src/utils/fetch";
 
 const WritePage = () => {
-  const [tags, setTags] = useState([]);
-  const [markdown, setMarkdown] = useState("");
   const [showPreview, togglePreview] = useState(false);
   const addTag = (tag) => {
-    setTags([...tags, tag]);
+    formik.setFieldValue("tags", [...formik.values.tags, tag]);
   };
+  const formik = useFormik({
+    initialValues: {
+      title: "",
+      tldr: "",
+      tags: [],
+      content: "",
+    },
+    onSubmit: async (values) => {
+      console.log("Values", values);
+      const result = await postData("/api/blogs", values);
+      console.log("RES", result);
+    },
+  });
   return (
-    <Box m="5">
-      <Heading as="h1" size="xl" fontWeight="normal" textAlign="center">
-        Write a blog
-      </Heading>
-      <Card>
-        <Flex direction="column">
-          <FormControl w="full">
-            <FormLabel>Title</FormLabel>
-            <Input type="text" id="blog-title" aria-describeby="title-text" />
-            <FormHelperText id="blog-title-helper-text">
-              Write something catchy!
-            </FormHelperText>
-          </FormControl>
-          <FormControl mt="2">
-            <FormLabel>TL;DR</FormLabel>
-            <Input
-              type="text"
-              id="blog-tldr"
-              aria-describeby="blog-tldr-sentence"
-            />
-            <FormHelperText>Describe your idea a sentence</FormHelperText>
-          </FormControl>
-          <Box mt="2">
-            <TagInput
-              onAdd={(tag) => addTag(tag)}
-              label="Blog tags"
-              description="Tags helps searching"
-            />
-          </Box>
-          <FormControl mt="2">
-            <FormLabel htmlFor="markdown-preview">
-              Preview {showPreview ? "on" : "off"}
-            </FormLabel>
-            <Switch
-              id="markdown-preview"
-              value={showPreview}
-              onChange={() => togglePreview(!showPreview)}
-            />
-          </FormControl>
-          {showPreview ? (
-            <Box borderTop="1px solid black" minH="420px" px="4" py="2">
-              <ReactMardown
-                renderers={ChakraUIRenderer()}
-                source={markdown}
-                escapeHtml={false}
+    <form onSubmit={formik.handleSubmit}>
+      <Box m="5">
+        <Heading as="h1" size="xl" fontWeight="normal" textAlign="center">
+          Write a blog
+        </Heading>
+        <Card>
+          <Flex direction="column">
+            <Flex justify="flex-end">
+              <Button type="submit" variant="solid" color="green.400">
+                Save
+              </Button>
+            </Flex>
+            <FormControl w="full">
+              <FormLabel>Title</FormLabel>
+              <Input
+                type="text"
+                id="blog-title"
+                name="title"
+                value={formik.values.title}
+                onChange={formik.handleChange}
               />
+              <FormHelperText id="blog-title-helper-text">
+                Write something catchy!
+              </FormHelperText>
+            </FormControl>
+            <FormControl mt="2">
+              <FormLabel>TL;DR</FormLabel>
+              <Input
+                type="text"
+                id="blog-tldr"
+                name="tldr"
+                value={formik.values.tldr}
+                onChange={formik.handleChange}
+              />
+              <FormHelperText>Describe your idea a sentence</FormHelperText>
+            </FormControl>
+            <Box mt="2">
+              <TagInput
+                onAdd={(tag) => addTag(tag)}
+                label="Blog tags"
+                description="Tags helps searching"
+              />
+              <Stack spacing={4} isInline mt="4">
+                {formik.values.tags.map((tag) => (
+                  <Tag size="md" key={`tag-${tag}`} variantColor="cyan">
+                    <TagIcon icon="add" size="12px" />
+                    <TagLabel>{tag}</TagLabel>
+                  </Tag>
+                ))}
+              </Stack>
             </Box>
-          ) : (
-            <FormControl>
-              <Textarea
-                minH="420px"
-                maxH="1200px"
-                value={markdown}
-                onChange={(e) => setMarkdown(e.target.value)}
+            <FormControl mt="2">
+              <FormLabel htmlFor="markdown-preview">
+                Preview {showPreview ? "on" : "off"}
+              </FormLabel>
+              <Switch
+                id="markdown-preview"
+                value={showPreview}
+                onChange={() => togglePreview(!showPreview)}
               />
             </FormControl>
-          )}
-        </Flex>
-      </Card>
-    </Box>
+            {showPreview ? (
+              <Box borderTop="1px solid black" minH="420px" px="4" py="2">
+                <ReactMardown
+                  renderers={ChakraUIRenderer()}
+                  source={formik.values.content}
+                  escapeHtml={false}
+                />
+              </Box>
+            ) : (
+              <FormControl>
+                <Textarea
+                  minH="420px"
+                  maxH="1200px"
+                  name="content"
+                  value={formik.values.content}
+                  onChange={formik.handleChange}
+                />
+              </FormControl>
+            )}
+          </Flex>
+        </Card>
+      </Box>
+    </form>
   );
 };
 

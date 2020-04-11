@@ -25,8 +25,8 @@ const ExperiencePage: NextPage = () => {
       </Heading>
       {experience
         .filter((exp) => exp.relevant)
-        .map((exp) => (
-          <Card>
+        .map((exp, index) => (
+          <Card key={`exp-rel-${index}`}>
             <Flex align="center">
               <Image src={exp.logo} alt="wonolo inc." pr="2" w="12" />
               <Heading as="h2" size="md" fontWeight="normal">
@@ -39,8 +39,8 @@ const ExperiencePage: NextPage = () => {
                 {exp.from} - {exp.to}
               </Text>
               <List mt="2">
-                {exp.achievements.map((ach) => (
-                  <ListItem>
+                {exp.achievements.map((ach, idx) => (
+                  <ListItem key={`ach-${idx}`}>
                     <ListIcon icon="check-circle" color="green.500" />
                     {ach}
                   </ListItem>
@@ -62,8 +62,8 @@ const ExperiencePage: NextPage = () => {
       <Collapse isOpen={showPrevious}>
         {experience
           .filter((exp) => !exp.relevant)
-          .map((exp) => (
-            <Card>
+          .map((exp, index) => (
+            <Card key={`exp-${index}`}>
               <Flex align="center">
                 <Image src={exp.logo} alt="wonolo inc." pr="2" w="12" />
                 <Heading as="h2" size="md" fontWeight="light">
@@ -73,8 +73,8 @@ const ExperiencePage: NextPage = () => {
               <Box pl="12">
                 <Text fontWeight="medium">{exp.position}</Text>
                 <List mt="2">
-                  {exp.achievements.map((ach) => (
-                    <ListItem>
+                  {exp.achievements.map((ach, idx) => (
+                    <ListItem key={`exp-${idx}`}>
                       <ListIcon icon="check-circle" color="green.500" />
                       {ach}
                     </ListItem>

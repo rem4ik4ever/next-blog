@@ -3,7 +3,7 @@ import { Text, Flex, useTheme, Link, Heading, Avatar } from "@chakra-ui/core";
 import NextLink from "next/link";
 import { useRouter } from "next/dist/client/router";
 
-const MenuItem = ({ children, to, isCompact }) => {
+const MenuItem = ({ children, to, isCompact = false }) => {
   const theme = useTheme();
   return (
     <NextLink href={to} passHref>
@@ -23,7 +23,7 @@ const MenuItem = ({ children, to, isCompact }) => {
 
 const PageHeader = () => {
   const router = useRouter();
-  const isCompact = router && router.route !== "/";
+  const isCompact = false; // router && router.route !== "/";
   const theme = useTheme();
   return (
     <Flex
@@ -47,7 +47,7 @@ const PageHeader = () => {
           <Flex align="center">
             <Avatar
               name="Rem Kim"
-              src="imgs/rem-800.png"
+              src="/imgs/rem-800.png"
               size={isCompact ? "md" : "xl"}
               border={isCompact ? "none" : "3px solid white"}
             />
