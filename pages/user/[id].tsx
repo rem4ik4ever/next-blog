@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   try {
     const { id } = params;
-    const result = await fetch(`http://localhost:3000/api/user/${id}`);
+    const result = await fetch(`${process.env.HOST_URL}/api/user/${id}`);
     const data: Data = await result.json();
 
     return {

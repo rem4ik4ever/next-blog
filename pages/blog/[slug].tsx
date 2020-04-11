@@ -29,7 +29,7 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const payload = await fetch(`http://localhost:3000/api/blogs`);
+    const payload = await fetch(`${process.env.HOST_URL}/api/blogs`);
     const blogs = await payload.json();
     const slugs = blogs.map((x) => x.slug);
     const paths = slugs.map((slug) => ({
@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   try {
-    const payload = await fetch(`http://localhost:3000/api/blogs/${slug}`);
+    const payload = await fetch(`${process.env.HOST_URL}/api/blogs/${slug}`);
     const blog = await payload.json();
 
     return {

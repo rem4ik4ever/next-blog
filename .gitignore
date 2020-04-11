@@ -4,3 +4,4 @@ node_modules
 yar-error.log
 out
 .yarnclean
+.env*

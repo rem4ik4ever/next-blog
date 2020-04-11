@@ -8,6 +8,7 @@ const Main = styled(Flex)(() => ({
   width: "100%",
   flexDirection: "column",
   alignItems: "center",
+  minHeight: "100vh",
 }));
 
 const Container = styled(Box)(({ theme }) => {
@@ -20,7 +21,14 @@ const BasicLayout: NextPage = ({ children }) => {
   return (
     <Main backgroundColor="gray.50">
       <PageHeader />
-      <Container width={{ base: "100%", md: "70%" }}>{children}</Container>
+      <Container
+        width={{ base: "100%", md: "3xl" }}
+        my="4"
+        backgroundColor="white"
+        boxShadow="sm"
+      >
+        {children}
+      </Container>
       <PageFooter />
     </Main>
   );

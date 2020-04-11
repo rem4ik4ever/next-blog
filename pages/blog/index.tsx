@@ -34,7 +34,7 @@ const BlogIndexPage: NextPage<{
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const blogs = await fetch("http://localhost:3000/api/blogs");
+    const blogs = await fetch(`${process.env.HOST_URL}/api/blogs`);
     return {
       props: { blogs: await blogs.json() },
     };
