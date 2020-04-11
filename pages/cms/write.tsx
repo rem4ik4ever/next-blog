@@ -35,9 +35,7 @@ const WritePage = () => {
       content: "",
     },
     onSubmit: async (values) => {
-      console.log("Values", values);
       const result = await postData("/api/blogs", values);
-      console.log("RES", result);
     },
   });
   return (

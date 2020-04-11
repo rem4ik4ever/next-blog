@@ -4,7 +4,6 @@ import BasicLayout from "../src/components/layout";
 import theme from "../theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  console.log("Theme", theme);
   return (
     <ThemeProvider theme={theme}>
       <CSSReset />

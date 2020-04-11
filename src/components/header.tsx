@@ -60,10 +60,10 @@ const PageHeader = () => {
           <MenuItem isCompact={isCompact} to="/">
             Home
           </MenuItem>
-          <MenuItem isCompact={isCompact} to="about">
+          <MenuItem isCompact={isCompact} to="/about">
             About Me
           </MenuItem>
-          <MenuItem isCompact={isCompact} to="blog">
+          <MenuItem isCompact={isCompact} to="/blog">
             Blog
           </MenuItem>
           <MenuItem isCompact={isCompact} to="/experience">

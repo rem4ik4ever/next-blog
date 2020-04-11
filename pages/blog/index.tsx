@@ -1,9 +1,11 @@
 import { NextPage, GetStaticProps } from "next";
 import { Box, Flex, Heading, List, ListItem, Link } from "@chakra-ui/core";
 import NextLink from "next/link";
+import fetch from "node-fetch";
+import { BlogInterface } from "src/interfaces/Blog";
 
 const BlogIndexPage: NextPage<{
-  blogs: { slug: string; title: string; text: string }[];
+  blogs: BlogInterface[];
 }> = (props) => {
   const { blogs } = props;
   return (
@@ -31,10 +33,17 @@ const BlogIndexPage: NextPage<{
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blogs = (await import("./blogs.json")).default;
-  return {
-    props: { blogs },
-  };
+  try {
+    const blogs = await fetch("http://localhost:3000/api/blogs");
+    return {
+      props: { blogs: await blogs.json() },
+    };
+  } catch (error) {
+    console.error(error.message);
+    return {
+      props: { blogs: [] },
+    };
+  }
 };
 
 export default BlogIndexPage;
