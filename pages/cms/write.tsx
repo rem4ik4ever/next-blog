@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/core";
 import Card from "src/components/Card";
 import { useState } from "react";
-import TagInput from "pages/cms/TagInput";
+import TagInput from "src/components/TagInput";
 import ReactMardown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { useFormik } from "formik";
