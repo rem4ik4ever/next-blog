@@ -8,6 +8,7 @@ const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
 }> = (props) => {
   const { blogs } = props;
+  console.log("Blg", blogs);
   return (
     <Box>
       <Flex flexDirection="column" alignItems="center">

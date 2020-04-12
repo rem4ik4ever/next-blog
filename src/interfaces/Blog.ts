@@ -11,4 +11,5 @@ export interface BlogInterface {
   status: BlogStatus;
   slug: string;
   content: string;
+  thumbnailUrl?: string;
 }
