@@ -1,11 +1,12 @@
-import { NextApiHandler } from "next";
+import { NextApiHandler, NextApiResponse, NextApiRequest } from "next";
 import { File } from "src/interfaces/File";
 import { v4 } from "uuid";
 import fileSystem from "fs";
 import { FILES_DATA_PATH } from "pages/api/files/constants";
+import { allFiles } from "pages/api/files/utils";
 const fs = fileSystem.promises;
 
-const files: NextApiHandler = async (req, res) => {
+const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { name, filetype, size, url } = req.body;
     const id = v4();
@@ -27,6 +28,25 @@ const files: NextApiHandler = async (req, res) => {
   } catch (error) {
     res.statusCode = 500;
     res.end();
+  }
+};
+
+const listFiles = async (_: NextApiRequest, res: NextApiResponse) => {
+  try {
+    const files = allFiles();
+    res.statusCode = 200;
+    res.end(JSON.stringify(files));
+  } catch (error) {
+    res.statusCode = 404;
+    res.end();
+  }
+};
+
+const files: NextApiHandler = async (req, res) => {
+  if (req.method === "POST") {
+    await uploadFile(req, res);
+  } else {
+    await listFiles(req, res);
   }
 };
 
