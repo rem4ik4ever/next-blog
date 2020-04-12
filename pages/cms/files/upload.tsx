@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, createRef } from "react";
+import { useState, createRef, useEffect } from "react";
 import { formatFilename } from "src/utils/files";
 import { uploadToS3 } from "src/utils/aws-helper/s3Upload";
 import {
@@ -47,6 +47,9 @@ const FilePage = () => {
         duration: 2000,
         isClosable: true,
       });
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     } catch (error) {
       console.error("Error uploading image", error.message);
       toast({
@@ -57,8 +60,8 @@ const FilePage = () => {
         isClosable: true,
       });
     }
-    setUploading(false);
   };
+
   const onChangeHandler = (event) => {
     setFiles(event.target.files);
   };
@@ -72,6 +75,7 @@ const FilePage = () => {
           id="file"
           onChange={onChangeHandler}
           isRequired={true}
+          ref={fileInputRef}
         />
         <FormHelperText>Maximum size 10mb</FormHelperText>
       </FormControl>
