@@ -1,5 +1,14 @@
 import React from "react";
-import { Text, Flex, useTheme, Link, Heading, Avatar } from "@chakra-ui/core";
+import {
+  Text,
+  Flex,
+  useTheme,
+  Link,
+  Heading,
+  Avatar,
+  Menu,
+  Button,
+} from "@chakra-ui/core";
 import NextLink from "next/link";
 import { useRouter } from "next/dist/client/router";
 
@@ -19,6 +28,22 @@ const MenuItem = ({ children, to, isCompact = false }) => {
       </Link>
     </NextLink>
   );
+};
+
+const CmsMenu = () => {
+  if (process.env.NODE_ENV === "development") {
+    return (
+      <>
+        <MenuItem to="/cms">CMS</MenuItem>
+        <MenuItem to="/cms/files">Files</MenuItem>
+        <MenuItem to="/cms/files/upload">File Upload</MenuItem>
+        <Button variant="solid" backgroundColor="red.500">
+          POST
+        </Button>
+      </>
+    );
+  }
+  return null;
 };
 
 const PageHeader = () => {
@@ -56,7 +81,7 @@ const PageHeader = () => {
             </Heading>
           </Flex>
         </NextLink>
-        <Flex display={{ sm: "flex", xs: "none" }}>
+        <Flex display={{ sm: "flex", xs: "none" }} align="center">
           <MenuItem isCompact={isCompact} to="/">
             Home
           </MenuItem>
@@ -69,6 +94,7 @@ const PageHeader = () => {
           <MenuItem isCompact={isCompact} to="/experience">
             Experience
           </MenuItem>
+          <CmsMenu />
         </Flex>
       </Flex>
     </Flex>

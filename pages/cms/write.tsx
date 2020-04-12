@@ -69,18 +69,6 @@ const WritePage = () => {
                 Write something catchy!
               </FormHelperText>
             </FormControl>
-            <FormControl>
-              <FormLabel>Thumbnail</FormLabel>
-              <input
-                type="file"
-                id="blog-thumbnail"
-                name="blog-thumbnail"
-                value={formik.values.thumbnail}
-                onChange={formik.handleChange}
-                accept="image/*"
-              />
-              <FormHelperText>upload blog image</FormHelperText>
-            </FormControl>
             <FormControl mt="2">
               <FormLabel>TL;DR</FormLabel>
               <Input
