@@ -22,8 +22,9 @@ const BasicLayout: NextPage = ({ children }) => {
     <Main backgroundColor="gray.50">
       <PageHeader />
       <Container
-        width={{ base: "100%", md: "3xl" }}
-        my="4"
+        width={{ base: "100%", md: "70%" }}
+        p="4"
+        // my="4"
         // backgroundColor="white"
         // boxShadow="sm"
       >

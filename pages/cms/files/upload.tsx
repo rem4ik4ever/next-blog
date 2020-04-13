@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, createRef, useEffect } from "react";
+import { useState, createRef } from "react";
 import { formatFilename } from "src/utils/files";
 import { uploadToS3 } from "src/utils/aws-helper/s3Upload";
 import {
@@ -13,13 +13,12 @@ import {
 
 const saveToFilesystem = async (file, url) => {
   try {
-    const result = await axios.post("/api/files", {
+    await axios.post("/api/files", {
       name: file.name,
       filetype: file.filetype,
       size: file.size,
       url,
     });
-    console.log("FS upload result:", result);
   } catch (error) {
     console.error("FS save error", error.message);
   }
@@ -63,7 +62,17 @@ const FilePage = () => {
   };
 
   const onChangeHandler = (event) => {
-    setFiles(event.target.files);
+    if (event.target.files[0].size < 10000000) {
+      setFiles(event.target.files);
+    } else {
+      toast({
+        title: "File too big",
+        description: "Maximum size 10mb",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+      });
+    }
   };
   return (
     <form onSubmit={handleSubmit}>

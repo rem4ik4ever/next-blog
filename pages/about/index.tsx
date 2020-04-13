@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Flex, Heading, Text as Txt, Box, Image } from "@chakra-ui/core";
+import { Flex, Heading, Text as Txt, Box, Image, Link } from "@chakra-ui/core";
 import MyLink from "src/utils/MyLink";
 import spacetime from "spacetime";
 
@@ -28,11 +28,9 @@ const AboutPage: NextPage = () => {
           My name is Rem. I'm {dob.diff(now, "year")} years old and I'm a
           Software Engineer. I was born in Uzbekistan, but moved when I was 3
           years old to{" "}
-          <MyLink href="https://goo.gl/maps/V5Ez4s6TaWCW3PFQ9">
-            Kyrgyzstan
-          </MyLink>{" "}
+          <Link href="https://goo.gl/maps/V5Ez4s6TaWCW3PFQ9">Kyrgyzstan</Link>{" "}
           and lived in a small, but very green city{" "}
-          <MyLink href="https://en.wikipedia.org/wiki/Bishkek">Bishkek</MyLink>.
+          <Link href="https://en.wikipedia.org/wiki/Bishkek">Bishkek</Link>.
         </Text>
       </Paragraph>
       <Flex direction="column" align="center" my="5">
@@ -44,9 +42,9 @@ const AboutPage: NextPage = () => {
       <Paragraph>
         <Text>
           I got my bachelor degree from{" "}
-          <MyLink href="https://auca.kg/">
+          <Link href="https://auca.kg/">
             American University of Central Asia (AUCA)
-          </MyLink>
+          </Link>
           , where I studied Software Engineering. I immediately fell in love
           with Programming. Solving problems and coding something useful. That
           is why I consider myself as a problem solver.

@@ -3,10 +3,9 @@ import {
   Text,
   Flex,
   useTheme,
-  Link,
   Heading,
+  Link,
   Avatar,
-  Menu,
   Button,
 } from "@chakra-ui/core";
 import NextLink from "next/link";
@@ -37,9 +36,11 @@ const CmsMenu = () => {
         <MenuItem to="/cms">CMS</MenuItem>
         <MenuItem to="/cms/files">Files</MenuItem>
         <MenuItem to="/cms/files/upload">File Upload</MenuItem>
-        <Button variant="solid" backgroundColor="red.500">
-          POST
-        </Button>
+        <NextLink href="/cms/write" passHref>
+          <Button variant="solid" backgroundColor="red.500">
+            POST
+          </Button>
+        </NextLink>
       </>
     );
   }
@@ -47,8 +48,7 @@ const CmsMenu = () => {
 };
 
 const PageHeader = () => {
-  const router = useRouter();
-  const isCompact = false; // router && router.route !== "/";
+  const isCompact = true; // router && router.route !== "/";
   const theme = useTheme();
   return (
     <Flex

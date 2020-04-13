@@ -5,3 +5,4 @@ yar-error.log
 out
 .yarnclean
 .env*
+public/.DS_Store
