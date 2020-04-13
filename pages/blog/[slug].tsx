@@ -1,6 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { Box, Flex, Heading, Text } from "@chakra-ui/core";
-import Link from "next/link";
+import { Box, Flex, Heading } from "@chakra-ui/core";
 import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
 import ReactMarkdown from "react-markdown";
