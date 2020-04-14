@@ -1,0 +1,17 @@
+{
+  "title": "Hello there",
+  "tldr": "some story starts small",
+  "tags": [
+    "qwe",
+    "thi",
+    "is",
+    "test"
+  ],
+  "content": "## Hello there!\n\nI would like to tell you a story about me!",
+  "author": "Rem Kim",
+  "createdAt": "2020-04-14T02:12:58.378Z",
+  "updatedAt": "2020-04-14T02:12:58.378Z",
+  "slug": "hello-there",
+  "status": "draft",
+  "id": 1586830378378
+}

@@ -34,8 +34,6 @@ const CmsMenu = () => {
     return (
       <>
         <MenuItem to="/cms">CMS</MenuItem>
-        <MenuItem to="/cms/files">Files</MenuItem>
-        <MenuItem to="/cms/files/upload">File Upload</MenuItem>
         <NextLink href="/cms/write" passHref>
           <Button variant="solid" backgroundColor="red.500">
             POST

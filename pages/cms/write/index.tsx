@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { postData } from "src/utils/fetch";
 import BlogForm from "src/cms/blogs/BlogForm";
 import { useToast } from "@chakra-ui/core";
+import { BlogStatus } from "src/enums/BlogStatus";
 
 const WritePage = () => {
   if (process.env.NODE_ENV !== "development") {
@@ -16,6 +17,7 @@ const WritePage = () => {
       tags: [],
       content: "",
       thumbnail: null,
+      status: BlogStatus.Draft,
     },
     onSubmit: async (values) => {
       try {

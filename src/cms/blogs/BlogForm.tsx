@@ -14,17 +14,20 @@ import {
   TagLabel,
   Switch,
   Textarea,
+  Select,
 } from "@chakra-ui/core";
 import TagInput from "src/components/TagInput";
 import ReactMarkdown from "react-markdown";
 import Card from "src/components/Card";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { BlogStatus } from "src/enums/BlogStatus";
 
 const BlogForm = ({ formik }) => {
   const [showPreview, togglePreview] = useState(false);
   const addTag = (tag) => {
     formik.setFieldValue("tags", [...formik.values.tags, tag]);
   };
+  const statuses = Object.keys(BlogStatus);
   return (
     <form onSubmit={formik.handleSubmit}>
       <Box m="5">
@@ -34,6 +37,13 @@ const BlogForm = ({ formik }) => {
         <Card>
           <Flex direction="column">
             <Flex justify="flex-end">
+              <FormControl mr="2">
+                <Select placeholder="Blog status" value={formik.values.status}>
+                  {statuses.map((status) => (
+                    <option value={status.toLowerCase()}>{status}</option>
+                  ))}
+                </Select>
+              </FormControl>
               <Button type="submit" variant="solid" color="green.400">
                 Save
               </Button>
