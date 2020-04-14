@@ -1,29 +1,11 @@
 import { NextApiHandler } from "next";
-import fileSystem from "fs";
-import { BlogInterface } from "src/interfaces/Blog";
 import { BlogStatus } from "src/enums/BlogStatus";
-import { BLOGS_DATA_PATH } from "pages/api/blogs/constants";
-import { allBlogs } from "pages/api/blogs/utils";
-
-const fs = fileSystem.promises;
-
-const saveBlogFile = async (filename: string, payload: BlogInterface) => {
-  try {
-    await fs.writeFile(
-      `${BLOGS_DATA_PATH}/${filename}`,
-      JSON.stringify(payload, null, 2)
-    );
-  } catch (err) {
-    console.error("Saving blog failed:", err.message);
-    return false;
-  }
-  return true;
-};
-const getSlug = (title: string) =>
-  title.toLocaleLowerCase().split(" ").join("-");
-
-const generateFilename = (title: string, timestamp: number) =>
-  `${timestamp}-${getSlug(title)}.json`;
+import {
+  allBlogs,
+  getSlug,
+  generateFilename,
+  saveBlogFile,
+} from "src/cms/blogs/utils";
 
 const saveToDraft = async (req, res) => {
   const timestamp = new Date().getTime();
@@ -33,7 +15,7 @@ const saveToDraft = async (req, res) => {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     slug: getSlug(req.body.title),
-    status: BlogStatus.Draft,
+    status: BlogStatus.draft,
     id: timestamp,
   };
   const filename = generateFilename(payload.title, timestamp);

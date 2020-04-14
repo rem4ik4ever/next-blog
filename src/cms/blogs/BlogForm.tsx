@@ -38,9 +38,15 @@ const BlogForm = ({ formik }) => {
           <Flex direction="column">
             <Flex justify="flex-end">
               <FormControl mr="2">
-                <Select placeholder="Blog status" value={formik.values.status}>
+                <Select
+                  value={formik.values.status}
+                  name="status"
+                  onChange={formik.handleChange}
+                >
                   {statuses.map((status) => (
-                    <option value={status.toLowerCase()}>{status}</option>
+                    <option key={status} value={status.toLowerCase()}>
+                      {status.toUpperCase()}
+                    </option>
                   ))}
                 </Select>
               </FormControl>

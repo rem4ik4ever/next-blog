@@ -30,7 +30,7 @@ const CmsIndex = ({ blogs }) => {
           <Flex justify="space-between" align="center">
             <Box>
               <StatusTag mr="2" status={blog.status}>
-                {blog.status.toUpperCase()}
+                {blog.status?.toUpperCase()}
               </StatusTag>
               <MyLink href={`/blog/${blog.slug}`} hrefPass>
                 {blog.title}

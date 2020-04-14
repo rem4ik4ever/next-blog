@@ -1,6 +1,6 @@
 export enum BlogStatus {
-  Draft = "draft",
-  Released = "released",
-  Archived = "archived",
-  Deleted = "deleted",
+  draft = "draft",
+  released = "released",
+  archived = "archived",
+  deleted = "deleted",
 }

@@ -1,20 +1,19 @@
-import ErrorPage from "next/error";
 import { useFormik } from "formik";
-import { postData } from "src/utils/fetch";
-import BlogForm from "src/cms/blogs/BlogForm";
 import { GetStaticPaths, GetStaticProps } from "next";
+import ErrorPage from "next/error";
 import fetch from "node-fetch";
+import BlogForm from "src/cms/blogs/BlogForm";
+import { useBlogUpdate } from "src/cms/blogs/hooks";
+import { useEffect } from "react";
 
 const EditPage = ({ blog }) => {
   if (process.env.NODE_ENV !== "development") {
     return <ErrorPage statusCode={404} />;
   }
-  console.log("Blog", blog);
+  const { handleUpdate } = useBlogUpdate();
   const formik = useFormik({
     initialValues: blog,
-    onSubmit: async (values) => {
-      const result = await postData("/api/blogs", values);
-    },
+    onSubmit: () => handleUpdate(blog.id, formik.values),
   });
   return <BlogForm formik={formik} />;
 };

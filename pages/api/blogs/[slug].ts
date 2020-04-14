@@ -1,5 +1,5 @@
 import { NextApiHandler } from "next";
-import { allBlogs } from "pages/api/blogs/utils";
+import { allBlogs } from "src/cms/blogs/utils";
 
 const show: NextApiHandler = (req, res) => {
   const { slug } = req.query;
