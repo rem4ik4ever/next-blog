@@ -1,5 +1,13 @@
 import { NextPage } from "next";
-import { Flex, Heading, Text as Txt, Box, Image, Link } from "@chakra-ui/core";
+import {
+  Flex,
+  Heading,
+  Text as Txt,
+  Box,
+  Image,
+  Link,
+  useColorMode,
+} from "@chakra-ui/core";
 import MyLink from "src/utils/MyLink";
 import spacetime from "spacetime";
 
@@ -16,10 +24,15 @@ const Text = (props) => (
 );
 
 const AboutPage: NextPage = () => {
+  const { colorMode } = useColorMode();
   const dob = spacetime("March 16th, 1993");
   const now = spacetime(new Date());
+  const color = {
+    light: "",
+    dark: "white",
+  };
   return (
-    <Flex direction="column" p="5">
+    <Flex direction="column" p="5" color={color[colorMode]}>
       <Heading as="h1" size="xl" fontWeight="light">
         Hi there!
       </Heading>

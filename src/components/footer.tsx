@@ -14,7 +14,7 @@ const PageFooter = () => {
   const { colorMode } = useColorMode();
   const bgColor = {
     light: "cyan.700",
-    dark: "gray.600",
+    dark: "gray.700",
   };
   return (
     <Flex

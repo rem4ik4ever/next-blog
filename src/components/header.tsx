@@ -52,7 +52,7 @@ const PageHeader = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = {
     light: "cyan.700",
-    dark: "gray.600",
+    dark: "gray.700",
   };
   return (
     <Flex
@@ -100,10 +100,13 @@ const PageHeader = () => {
           </MenuItem>
           <CmsMenu />
           <IconButton
+            ml="2"
             aria-label="Color Mode"
             size="md"
             icon={colorMode === "light" ? "moon" : "sun"}
             onClick={(e) => toggleColorMode()}
+            color="gray.50"
+            backgroundColor="none"
           />
         </Flex>
       </Flex>

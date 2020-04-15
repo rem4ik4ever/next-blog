@@ -1,11 +1,16 @@
 import React from "react";
-import { Link } from "@chakra-ui/core";
+import { Link, useColorMode } from "@chakra-ui/core";
 import NextLink from "next/link";
 
 const MyLink = (props) => {
+  const { colorMode } = useColorMode();
+  const color = {
+    light: "teal.500",
+    dark: "gray.700",
+  };
   return (
     <NextLink {...props}>
-      <Link color="teal.500">{props.children}</Link>
+      <Link color={color[colorMode]}>{props.children}</Link>
     </NextLink>
   );
 };

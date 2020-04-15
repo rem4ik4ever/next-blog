@@ -21,7 +21,7 @@ const BasicLayout: NextPage = ({ children }) => {
   const { colorMode } = useColorMode();
   const bgColor = {
     light: "gray.50",
-    dark: "gray.500",
+    dark: "gray.600",
   };
   return (
     <Main backgroundColor={bgColor[colorMode]}>
