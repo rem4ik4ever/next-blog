@@ -1,5 +1,5 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { Box, Flex, Heading } from "@chakra-ui/core";
+import { Box, Flex, Heading, Image, Text, Stack, Tag } from "@chakra-ui/core";
 import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
 import ReactMarkdown from "react-markdown";
@@ -10,11 +10,20 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
   return (
     <Box>
       <Flex flexDirection="column">
-        {/* <Link href="/blog" passHref>
-          <a>back to TOC</a>
-        </Link> */}
-        <Heading as="h1" size="2xl" textAlign="center">
+        <Heading as="h1" size="2xl" textAlign="center" mb="0">
           {blog.title}
+        </Heading>
+        <Stack spacing={1} isInline>
+          {blog.tags.map((tag) => (
+            <Tag key={tag} variantColor="cyan" size="sm">
+              {tag}
+            </Tag>
+          ))}
+        </Stack>
+        <Text mb="2" color="gray.500"></Text>
+        <Image src={blog.thumbnailUrl} alt={blog.title} />
+        <Heading as="h2" size="sm" fontWeight="regular" mt="5">
+          {blog.tldr}
         </Heading>
         <ReactMarkdown
           renderers={ChakraUIRenderer()}

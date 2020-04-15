@@ -78,6 +78,17 @@ const BlogForm = ({ formik }) => {
               />
               <FormHelperText>Describe your idea a sentence</FormHelperText>
             </FormControl>
+            <FormControl mt="2">
+              <FormLabel>Thumbnail URL</FormLabel>
+              <Input
+                type="text"
+                id="blog-thumbnail"
+                name="thumbnailUrl"
+                value={formik.values.thumbnailUrl}
+                onChange={formik.handleChange}
+              />
+              <FormHelperText>Main blog image</FormHelperText>
+            </FormControl>
             <Box mt="2">
               <TagInput
                 onAdd={(tag) => addTag(tag)}
