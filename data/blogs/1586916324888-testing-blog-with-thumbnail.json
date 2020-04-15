@@ -8,11 +8,11 @@
   ],
   "content": "### There should be an image for a thumbnail\n\nShould be looking good!",
   "thumbnail": null,
-  "status": "draft",
+  "status": "archived",
   "thumbnailUrl": "https://rem-blog-bucket.s3.amazonaws.com/assets/6f1ebc41-1ee2-4a3a-8e08-9344ebfb3e3e-n4642064-4-jpg",
   "author": "Rem Kim",
   "createdAt": "2020-04-15T02:05:24.888Z",
-  "updatedAt": "2020-04-15T02:05:24.888Z",
+  "updatedAt": "2020-04-15T03:38:02.050Z",
   "slug": "testing-blog-with-thumbnail",
   "id": 1586916324888
 }
