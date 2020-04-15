@@ -3,6 +3,7 @@ import { Box, Flex, Heading, List, ListItem, Link } from "@chakra-ui/core";
 import NextLink from "next/link";
 import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
+import { BlogStatus } from "src/enums/BlogStatus";
 
 const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
@@ -34,9 +35,18 @@ const BlogIndexPage: NextPage<{
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const blogs = await fetch(`${process.env.HOST_URL}/api/blogs`);
+    const payload = await (
+      await fetch(`${process.env.HOST_URL}/api/blogs`)
+    ).json();
+    const blogs = payload
+      .filter((blog) => blog.status === BlogStatus.draft)
+      .sort((a, b) => {
+        if (a.createdAt > b.createdAt) return -1;
+        if (a.createdAt < b.createdAt) return 1;
+        return 0;
+      });
     return {
-      props: { blogs: await blogs.json() },
+      props: { blogs },
     };
   } catch (error) {
     console.error(error.message);

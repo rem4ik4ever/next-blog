@@ -32,9 +32,7 @@ const CmsIndex = ({ blogs }) => {
               <StatusTag mr="2" status={blog.status}>
                 {blog.status?.toUpperCase()}
               </StatusTag>
-              <MyLink href={`/blog/${blog.slug}`} hrefPass>
-                {blog.title}
-              </MyLink>
+              <MyLink href={`/blog/${blog.slug}`}>{blog.title}</MyLink>
             </Box>
             <Link href={`/cms/write/${blog.id}`}>
               <IconButton icon="edit" aria-label="edit post" />
@@ -48,9 +46,14 @@ const CmsIndex = ({ blogs }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const blogs = await (
+    const payload = await (
       await fetch(`${process.env.HOST_URL}/api/blogs`)
     ).json();
+    const blogs = payload.sort((a, b) => {
+      if (a.createdAt > b.createdAt) return -1;
+      if (a.createdAt < b.createdAt) return 1;
+      return 0;
+    });
     return {
       props: {
         blogs,
