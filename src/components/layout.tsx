@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { Box, Flex } from "@chakra-ui/core";
+import { Box, Flex, useColorMode } from "@chakra-ui/core";
 import styled from "@emotion/styled";
 import PageHeader from "./header";
 import PageFooter from "./footer";
@@ -18,8 +18,13 @@ const Container = styled(Box)(({ theme }) => {
 });
 
 const BasicLayout: NextPage = ({ children }) => {
+  const { colorMode } = useColorMode();
+  const bgColor = {
+    light: "gray.50",
+    dark: "gray.500",
+  };
   return (
-    <Main backgroundColor="gray.50">
+    <Main backgroundColor={bgColor[colorMode]}>
       <PageHeader />
       <Container width={{ base: "100%", md: "2xl" }} p="4">
         {children}

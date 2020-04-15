@@ -7,9 +7,15 @@ import {
   List,
   ListItem,
   Link,
+  useColorMode,
 } from "@chakra-ui/core";
 
 const PageFooter = () => {
+  const { colorMode } = useColorMode();
+  const bgColor = {
+    light: "cyan.700",
+    dark: "gray.600",
+  };
   return (
     <Flex
       direction="column"
@@ -17,7 +23,7 @@ const PageFooter = () => {
       p="5"
       w="full"
       color="white"
-      backgroundColor="teal.600"
+      backgroundColor={bgColor[colorMode]}
     >
       <Grid templateColumns="repeat(2, 1fr)">
         <Flex direction="column" w="100%">

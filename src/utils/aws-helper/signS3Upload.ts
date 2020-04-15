@@ -1,8 +1,6 @@
 import { SignS3 } from "src/interfaces/SignS3";
 import AWS from "aws-sdk";
 
-const S3_BUCKET = "rem-blog-bucket";
-
 const signS3Upload = async ({ filename, filetype }: SignS3) => {
   try {
     const s3 = new AWS.S3({
@@ -13,7 +11,7 @@ const signS3Upload = async ({ filename, filetype }: SignS3) => {
     });
 
     const s3Parms = {
-      Bucket: S3_BUCKET,
+      Bucket: process.env.S3_BUCKET,
       Key: filename,
       Expires: 60,
       ContentType: filetype,

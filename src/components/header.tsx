@@ -7,6 +7,8 @@ import {
   Link,
   Avatar,
   Button,
+  useColorMode,
+  IconButton,
 } from "@chakra-ui/core";
 import NextLink from "next/link";
 import { useRouter } from "next/dist/client/router";
@@ -17,7 +19,7 @@ const MenuItem = ({ children, to, isCompact = false }) => {
     <NextLink href={to} passHref>
       <Link>
         <Text
-          color={theme.colors.white}
+          // color={theme.colors.white}
           ml={3}
           mr={3}
           fontSize={isCompact ? "md" : "lg"}
@@ -47,14 +49,18 @@ const CmsMenu = () => {
 
 const PageHeader = () => {
   const isCompact = true; // router && router.route !== "/";
-  const theme = useTheme();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bgColor = {
+    light: "cyan.700",
+    dark: "gray.600",
+  };
   return (
     <Flex
       as="nav"
       width="full"
-      color={theme.colors.white}
+      color="white"
       justify="center"
-      backgroundColor="teal.500"
+      backgroundColor={bgColor[colorMode]}
       padding={isCompact ? 2 : 5}
       shadow="lg"
     >
@@ -93,6 +99,12 @@ const PageHeader = () => {
             Experience
           </MenuItem>
           <CmsMenu />
+          <IconButton
+            aria-label="Color Mode"
+            size="md"
+            icon={colorMode === "light" ? "moon" : "sun"}
+            onClick={(e) => toggleColorMode()}
+          />
         </Flex>
       </Flex>
     </Flex>
