@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
       await fetch(`${process.env.HOST_URL}/api/blogs`)
     ).json();
     const blogs = payload
-      .filter((blog) => blog.status === BlogStatus.draft)
+      .filter((blog) => blog.status === BlogStatus.released)
       .sort((a, b) => {
         if (a.createdAt > b.createdAt) return -1;
         if (a.createdAt < b.createdAt) return 1;
