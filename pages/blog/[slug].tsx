@@ -10,7 +10,13 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
   return (
     <Box>
       <Flex flexDirection="column">
-        <Heading as="h1" size="2xl" textAlign="center" mb="0">
+        <Heading
+          as="h1"
+          size="2xl"
+          textAlign="center"
+          mb="0"
+          fontWeight="light"
+        >
           {blog.title}
         </Heading>
         <Stack spacing={1} isInline>
@@ -21,10 +27,8 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
           ))}
         </Stack>
         <Text mb="2" color="gray.500"></Text>
-        <Image src={blog.thumbnailUrl} alt={blog.title} />
-        <Heading as="h2" size="sm" fontWeight="regular" mt="5">
-          {blog.tldr}
-        </Heading>
+        <Image src={blog.thumbnailUrl} alt={blog.title} mb="3" />
+        <Text>{blog.tldr}</Text>
         <ReactMarkdown
           renderers={ChakraUIRenderer()}
           source={blog.content}

@@ -30,7 +30,12 @@ const BasicLayout: NextPage = ({ children }) => {
   return (
     <Main backgroundColor={bgColor[colorMode]} color={textColor[colorMode]}>
       <PageHeader />
-      <Container width={{ base: "100%", md: "2xl" }} p="4">
+      <Container
+        width={{ base: "100%", md: "2xl" }}
+        p="4"
+        fontSize={"xl"}
+        lineHeight="tall"
+      >
         {children}
       </Container>
       <PageFooter />

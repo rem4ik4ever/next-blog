@@ -13,13 +13,13 @@ const Card = (props) => {
   // };
   return (
     <Box
-      {...props}
       borderRadius="8px"
       boxShadow={"md"}
       my="5"
       p="5"
       // color={textColor[colorMode]}
       backgroundColor={bgColor[colorMode]}
+      {...props}
     >
       {props.children}
     </Box>
