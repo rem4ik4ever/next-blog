@@ -1,6 +1,5 @@
 import { NextPage } from "next";
-import NextLink from "next/link";
-import { Heading, Link, Flex } from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/core";
 import Intro from "src/pages/home/Intro";
 import LinksSection from "src/pages/home/LinksSection";
 
