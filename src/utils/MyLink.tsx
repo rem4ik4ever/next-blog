@@ -6,11 +6,13 @@ const MyLink = (props) => {
   const { colorMode } = useColorMode();
   const color = {
     light: "teal.500",
-    dark: "gray.700",
+    dark: "blue.500",
   };
   return (
     <NextLink {...props}>
-      <Link color={color[colorMode]}>{props.children}</Link>
+      <Link color={color[colorMode]} textDecor="underline">
+        {props.children}
+      </Link>
     </NextLink>
   );
 };

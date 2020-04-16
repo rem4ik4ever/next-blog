@@ -13,7 +13,11 @@ export const allBlogs = () => {
 };
 
 export const getSlug = (title: string) =>
-  title.toLocaleLowerCase().split(" ").join("-");
+  title
+    .toLocaleLowerCase()
+    .split(" ")
+    .map((word) => word.replace(/[^0-9a-z]/gi, ""))
+    .join("-");
 
 export const generateFilename = (title: string, timestamp: number) =>
   `${timestamp}-${getSlug(title)}.json`;

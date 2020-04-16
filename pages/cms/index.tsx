@@ -12,6 +12,7 @@ import {
   Icon,
   InputGroup,
   Select,
+  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import MyLink from "src/utils/MyLink";
@@ -29,18 +30,22 @@ const CmsIndex = ({ blogs }) => {
     status: "all",
   });
   const { filteredBlogs } = useBlogsFilter(blogs, filters);
-  console.log("FIltered", filteredBlogs);
+  const { colorMode } = useColorMode();
+  const bgColor = {
+    light: "white",
+    dark: "gray.800",
+  };
   return (
     <Flex direction="column">
-      <Flex justify="space-around">
+      <Flex justify="space-between">
         <Link href="/cms/files">
-          <Button leftIcon="attachment" variantColor="blue" w="sm">
+          <Button leftIcon="attachment" w="sm" mr="1">
             Files
           </Button>
         </Link>
         <Link href="cms/files/upload">
-          <Button leftIcon="download" variantColor="red" w="sm">
-            Upload
+          <Button leftIcon="download" w="sm" ml="1">
+            Upload File
           </Button>
         </Link>
       </Flex>
@@ -84,14 +89,18 @@ const CmsIndex = ({ blogs }) => {
         </FormControl>
       </Flex>
       {filteredBlogs.map((blog, idx) => (
-        <Box key={`blog-${idx}`} backgroundColor="white" p="2" my="2">
+        <Box
+          key={`blog-${idx}`}
+          backgroundColor={bgColor[colorMode]}
+          p="2"
+          my="2"
+        >
           <Flex justify="space-between" align="center">
             <Box>
               <StatusTag mr="2" status={blog.status}>
                 {blog.status?.toUpperCase()}
               </StatusTag>
               <MyLink href={`/blog/${blog.slug}`}>{blog.title}</MyLink>
-              <pre>{blog.tags}</pre>
             </Box>
             <Link href={`/cms/write/${blog.id}`}>
               <IconButton icon="edit" aria-label="edit post" />

@@ -19,7 +19,7 @@ const signS3Upload = async ({ filename, filetype }: SignS3) => {
     };
 
     const signedRequest = await s3.getSignedUrl("putObject", s3Parms);
-    const url = `https://${S3_BUCKET}.s3.amazonaws.com/${filename}`;
+    const url = `https://${process.env.S3_BUCKET}.s3.amazonaws.com/${filename}`;
 
     return {
       signedRequest,
