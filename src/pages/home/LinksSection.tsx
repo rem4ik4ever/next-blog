@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Heading, Box, SimpleGrid } from "@chakra-ui/core";
+import { Heading, Box, SimpleGrid } from "@chakra-ui/core";
 import Link from "next/link";
 import styled from "@emotion/styled";
 

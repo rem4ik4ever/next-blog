@@ -23,8 +23,12 @@ const BasicLayout: NextPage = ({ children }) => {
     light: "gray.50",
     dark: "gray.600",
   };
+  const textColor = {
+    light: "",
+    dark: "white",
+  };
   return (
-    <Main backgroundColor={bgColor[colorMode]}>
+    <Main backgroundColor={bgColor[colorMode]} color={textColor[colorMode]}>
       <PageHeader />
       <Container width={{ base: "100%", md: "2xl" }} p="4">
         {children}
