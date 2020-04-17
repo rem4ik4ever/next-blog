@@ -6,3 +6,5 @@ out
 .yarnclean
 .env*
 public/.DS_Store
+out/
+.DS_Store
