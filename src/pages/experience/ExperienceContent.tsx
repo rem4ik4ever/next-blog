@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Flex,
   Heading,
@@ -12,9 +13,8 @@ import {
 } from "@chakra-ui/core";
 import Card from "src/components/Card";
 import experience from "src/pages/experience/experience";
-import { useState } from "react";
 
-const ExperiencePage = () => {
+const ExperienceContent = () => {
   const [showPrevious, toggle] = useState(false);
 
   return (
@@ -87,4 +87,4 @@ const ExperiencePage = () => {
   );
 };
 
-export default ExperiencePage;
+export default ExperienceContent;
