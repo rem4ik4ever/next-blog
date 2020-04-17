@@ -36,7 +36,7 @@ const BlogIndexPage: NextPage<{
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const payload = await (
-      await fetch(`${process.env.HOST_URL}/api/blogs`)
+      await fetch(`${process.env.NOW_URL}/api/blogs`)
     ).json();
     const blogs = payload
       .filter((blog) => blog.status === BlogStatus.released)

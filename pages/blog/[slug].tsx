@@ -1,46 +1,15 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { Box, Flex, Heading, Image, Text, Stack, Tag } from "@chakra-ui/core";
 import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
-import ReactMarkdown from "react-markdown";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import BlogContent from "src/pages/blog/BlogContent";
 
 const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
-  return (
-    <Box>
-      <Flex flexDirection="column">
-        <Heading
-          as="h1"
-          size="2xl"
-          textAlign="center"
-          mb="0"
-          fontWeight="light"
-        >
-          {blog.title}
-        </Heading>
-        <Stack spacing={1} isInline>
-          {blog.tags.map((tag) => (
-            <Tag key={tag} variantColor="cyan" size="sm">
-              {tag}
-            </Tag>
-          ))}
-        </Stack>
-        <Text mb="2" color="gray.500"></Text>
-        <Image src={blog.thumbnailUrl} alt={blog.title} mb="3" />
-        <Text>{blog.tldr}</Text>
-        <ReactMarkdown
-          renderers={ChakraUIRenderer()}
-          source={blog.content}
-          escapeHtml={false}
-        />
-      </Flex>
-    </Box>
-  );
+  return <BlogContent blog={blog} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const payload = await fetch(`${process.env.HOST_URL}/api/blogs`);
+    const payload = await fetch(`${process.env.NOW_URL}/api/blogs`);
     const blogs = await payload.json();
     const slugs = blogs.map((x) => x.slug);
     const paths = slugs.map((slug) => ({
@@ -64,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   try {
-    const payload = await fetch(`${process.env.HOST_URL}/api/blogs/${slug}`);
+    const payload = await fetch(`${process.env.NOW_URL}/api/blogs/${slug}`);
     const blog = await payload.json();
 
     return {

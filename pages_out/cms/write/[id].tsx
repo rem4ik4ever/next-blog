@@ -19,7 +19,7 @@ const EditPage = ({ blog }) => {
 };
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const payload = await fetch(`${process.env.HOST_URL}/api/blogs`);
+    const payload = await fetch(`${process.env.NOW_URL}/api/blogs`);
     const blogs = await payload.json();
     const ids = blogs.map((x) => x.id);
     const paths = ids.map((id) => ({
@@ -43,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params: { id } }) => {
   try {
-    const payload = await fetch(`${process.env.HOST_URL}/api/cms/blogs/${id}`);
+    const payload = await fetch(`${process.env.NOW_URL}/api/cms/blogs/${id}`);
     const blog = await payload.json();
 
     return {

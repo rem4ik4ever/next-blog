@@ -18,7 +18,7 @@ const IndexPage = ({ blogs }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const payload = await fetch(`${process.env.HOST_URL}/api/blogs`);
+    const payload = await fetch(`${process.env.NOW_URL}/api/blogs`);
     const blogs = await payload.json();
     const sortedBlogs = blogs.sort((a, b) => {
       if (a.createdAt > b.createdAt) return -1;

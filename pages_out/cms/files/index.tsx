@@ -77,7 +77,7 @@ const FilesPage = ({ files }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const files = await fetch(`${process.env.HOST_URL}/api/files`);
+    const files = await fetch(`${process.env.NOW_URL}/api/files`);
     return {
       props: { files: await files.json() },
     };
