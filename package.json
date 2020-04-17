@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "test": "jest"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.7.0",
@@ -32,9 +33,12 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   }
 }

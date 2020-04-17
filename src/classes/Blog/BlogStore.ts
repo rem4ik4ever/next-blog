@@ -1,7 +1,7 @@
-import { Blog } from "src/classes/Blog";
+import Blog from "./index";
 import { allBlogs } from "src/cms/blogs/utils";
 
-class BlogRepository {
+class BlogStore {
   constructor() {}
   static BLOG_DATA_PATH: string = "./data/blogs";
 
@@ -13,4 +13,4 @@ class BlogRepository {
   }
 }
 
-export default BlogRepository;
+export default BlogStore;
