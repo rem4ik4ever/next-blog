@@ -29,7 +29,6 @@ export function useBlogUpdate() {
   };
   useEffect(() => {
     if (isUpdated) {
-      console.log("Update effect", isSuccess, isError);
       if (isSuccess) {
         // showSuccessToast();
         setIsSuccess(false);
@@ -86,7 +85,6 @@ export function useBlogsFilter(data, filters) {
         ({ tags }) =>
           _.intersection(tags, searchFilter.toLowerCase().split(" ")).length > 0
       );
-      console.log({ tagsMatch });
       const titleMatch = _.filter(
         data,
         ({ title }) =>
@@ -101,8 +99,6 @@ export function useBlogsFilter(data, filters) {
     } else {
       blogsBySearch = data;
     }
-    console.log("By Status", blogsByStatus);
-    console.log("By Search", blogsBySearch);
     setState(_.intersection(blogsBySearch, blogsByStatus));
   };
   return { filteredBlogs };

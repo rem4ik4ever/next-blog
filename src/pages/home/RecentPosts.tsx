@@ -4,7 +4,6 @@ import Card from "src/components/Card";
 import Link from "next/link";
 
 const RecentPosts = ({ blogs }) => {
-  console.log("BL", blogs);
   return (
     <Flex direction="column" w="full">
       <Heading as="h2" size="xl" mt="3" fontWeight="regular" textAlign="center">

@@ -2,8 +2,8 @@ import { NextApiHandler, NextApiResponse, NextApiRequest } from "next";
 import { File } from "src/interfaces/File";
 import { v4 } from "uuid";
 import fileSystem from "fs";
-import { FILES_DATA_PATH } from "pages/api/files/constants";
-import { allFiles } from "pages/api/files/utils";
+import { FILES_DATA_PATH } from "src/pages/api/files/constants";
+import { allFiles } from "src/pages/api/files/utils";
 const fs = fileSystem.promises;
 
 const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {

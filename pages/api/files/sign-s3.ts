@@ -13,7 +13,7 @@ const signS3: NextApiHandler = async (req, res) => {
     res.statusCode = 200;
     res.end(JSON.stringify(result));
   } catch (error) {
-    console.log("S3 upload error", error);
+    console.error("S3 upload error", error);
     res.statusCode = 500;
     res.end();
   }

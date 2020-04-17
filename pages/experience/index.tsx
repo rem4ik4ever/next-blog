@@ -1,5 +1,3 @@
-import React from "react";
-import { NextPage } from "next";
 import {
   Flex,
   Heading,
@@ -13,10 +11,11 @@ import {
   Collapse,
 } from "@chakra-ui/core";
 import Card from "src/components/Card";
-import experience from "./experience";
+import experience from "src/pages/experience/experience";
+import { useState } from "react";
 
-const ExperiencePage: NextPage = () => {
-  const [showPrevious, toggle] = React.useState(false);
+const ExperiencePage = () => {
+  const [showPrevious, toggle] = useState(false);
 
   return (
     <Flex direction="column" p="5">
