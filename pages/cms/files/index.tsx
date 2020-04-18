@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/core";
 import {  GetServerSideProps } from "next";
 import fetch from "node-fetch";
+import FileUpload from "src/components/FileUpload";
 
 const FilesPage = ({ files }) => {
   return (
@@ -17,6 +18,7 @@ const FilesPage = ({ files }) => {
       <Heading as="h1" size="md">
         Files
       </Heading>
+      <FileUpload />
       <Flex direction="column">
         {files.map((file, idx) => (
           <Box

@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from "axios";
 import { useState, createRef } from "react";
 import { formatFilename } from "src/utils/files";
@@ -24,7 +25,7 @@ const saveToFilesystem = async (file, url) => {
   }
 };
 
-const FilePage = () => {
+const FileUpload = () => {
   const [files, setFiles] = useState([]);
   const [isUploading, setUploading] = useState(false);
   const fileInputRef = createRef<HTMLInputElement>();
@@ -101,4 +102,4 @@ const FilePage = () => {
   );
 };
 
-export default FilePage;
+export default FileUpload;
