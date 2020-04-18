@@ -1,9 +1,9 @@
 import { NextPage, GetStaticProps } from "next";
 import { Box, Flex, Heading, List, ListItem, Link } from "@chakra-ui/core";
 import NextLink from "next/link";
-import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
 import { BlogStatus } from "src/enums/BlogStatus";
+import {allBlogs} from "src/cms/blogs/utils";
 
 const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
@@ -35,9 +35,7 @@ const BlogIndexPage: NextPage<{
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const payload = await (
-      await fetch(`${process.env.NOW_URL}/api/blogs`)
-    ).json();
+    const payload = allBlogs();
     const blogs = payload
       .filter((blog) => blog.status === BlogStatus.released)
       .sort((a, b) => {

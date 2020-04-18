@@ -2,6 +2,7 @@ import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
 import BlogContent from "src/pages/blog/BlogContent";
+import {allBlogs} from "src/cms/blogs/utils";
 
 const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
   return <BlogContent blog={blog} />;
@@ -9,8 +10,7 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const payload = await fetch(`${process.env.NOW_URL}/api/blogs`);
-    const blogs = await payload.json();
+    const blogs =  allBlogs();
     const slugs = blogs.map((x) => x.slug);
     const paths = slugs.map((slug) => ({
       params: {
@@ -33,8 +33,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   try {
-    const payload = await fetch(`${process.env.NOW_URL}/api/blogs/${slug}`);
-    const blog = await payload.json();
+    const payload = allBlogs();
+    const blog = payload.find((bl) => bl.slug === slug);
 
     return {
       props: {
