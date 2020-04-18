@@ -1,5 +1,5 @@
 import ErrorPage from "next/error";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import fetch from "node-fetch";
 import {
   Flex,
@@ -112,7 +112,7 @@ const CmsIndex = ({ blogs }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const payload = await (
       await fetch(`${process.env.NOW_URL}/api/blogs`)

@@ -8,7 +8,7 @@ import {
   IconButton,
   Tooltip,
 } from "@chakra-ui/core";
-import { GetStaticProps } from "next";
+import {  GetServerSideProps } from "next";
 import fetch from "node-fetch";
 
 const FilesPage = ({ files }) => {
@@ -75,7 +75,7 @@ const FilesPage = ({ files }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const files = await fetch(`${process.env.NOW_URL}/api/files`);
     return {
