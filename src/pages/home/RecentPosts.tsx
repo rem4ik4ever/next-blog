@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Heading, Image, Grid, Text, Box } from "@chakra-ui/core";
 import Card from "src/components/Card";
-import Link from "next/link";
+import MyLink from "src/utils/MyLink";
 
 const RecentPosts = ({ blogs }) => {
   return (
@@ -10,9 +10,9 @@ const RecentPosts = ({ blogs }) => {
         Recent posts
       </Heading>
       <Grid templateColumns={["repeat(2, 1fr)", "repeat(1, 1fr)"]} gap="2">
-        {blogs.map((blog) => (
-          <Link href={`/blog/${blog.slug}`} key={`blog-${blog.slug}`}>
-            <Card p="0" cursor="pointer">
+        {blogs.map(blog => (
+          <Box key={`blog-${blog.slug}`}>
+            <Card p="0">
               <Flex direction="column">
                 <Image src={blog.thumbnailUrl} w="full" />
                 <Box p="3">
@@ -20,10 +20,11 @@ const RecentPosts = ({ blogs }) => {
                     {blog.title}
                   </Heading>
                   <Text>{blog.tldr}</Text>
+                    <MyLink href={`/blog/${blog.slug}`}>Read more</MyLink>
                 </Box>
               </Flex>
             </Card>
-          </Link>
+          </Box>
         ))}
       </Grid>
     </Flex>

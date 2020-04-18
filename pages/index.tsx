@@ -5,8 +5,9 @@ import LinksSection from "src/pages/home/LinksSection";
 import RecentPosts from "src/pages/home/RecentPosts";
 import { BlogStatus } from "src/enums/BlogStatus";
 import {allBlogs} from "src/cms/blogs/utils";
+import {BlogInterface} from "src/interfaces/Blog";
 
-const IndexPage = ({ blogs }) => {
+const IndexPage:NextPage<{blogs: BlogInterface[]}> = ({ blogs }) => {
   return (
     <Flex flexDirection="column" alignItems="center" m={4}>
       <Intro />
