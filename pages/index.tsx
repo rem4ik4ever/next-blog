@@ -3,8 +3,8 @@ import { Flex } from "@chakra-ui/core";
 import Intro from "src/pages/home/Intro";
 import LinksSection from "src/pages/home/LinksSection";
 import RecentPosts from "src/pages/home/RecentPosts";
-import fetch from "node-fetch";
 import { BlogStatus } from "src/enums/BlogStatus";
+import {allBlogs} from "src/cms/blogs/utils";
 
 const IndexPage = ({ blogs }) => {
   return (
@@ -18,8 +18,7 @@ const IndexPage = ({ blogs }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const payload = await fetch(`${process.env.NOW_URL}/api/blogs`);
-    const blogs = await payload.json();
+    const blogs = allBlogs();
     const sortedBlogs = blogs.sort((a, b) => {
       if (a.createdAt > b.createdAt) return -1;
       if (a.createdAt < b.createdAt) return 1;
