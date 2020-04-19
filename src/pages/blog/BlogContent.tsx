@@ -18,14 +18,16 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
           {blog.title}
         </Heading>
         <Stack spacing={1} isInline>
-          {blog.tags.map((tag) => (
+          {blog.tags.map(tag => (
             <Tag key={tag} variantColor="cyan" size="sm">
               {tag}
             </Tag>
           ))}
         </Stack>
         <Text mb="2" color="gray.500"></Text>
-        <Image src={blog.thumbnailUrl} alt={blog.title} mb="3" />
+        <Box marginX="auto">
+          <Image src={blog.thumbnailUrl} alt={blog.title} mb="3" width="md" />
+        </Box>
         <Text>{blog.tldr}</Text>
         <ReactMarkdown
           renderers={ChakraUIRenderer()}

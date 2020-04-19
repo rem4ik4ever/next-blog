@@ -1,5 +1,4 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import fetch from "node-fetch";
 import { BlogInterface } from "src/interfaces/Blog";
 import BlogContent from "src/pages/blog/BlogContent";
 import {allBlogs} from "src/cms/blogs/utils";
