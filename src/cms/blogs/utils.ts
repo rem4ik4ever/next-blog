@@ -1,6 +1,7 @@
 import { BLOGS_DATA_PATH } from "./constants";
 import fileSystem from "fs";
 import { BlogInterface } from "src/interfaces/Blog";
+import {FILES_DATA_PATH} from "src/pages/api/files/constants";
 
 const fs = fileSystem.promises;
 export const allBlogs = () => {
@@ -38,8 +39,9 @@ export const saveBlogFile = async (
   return true;
 };
 
-const removeOldFile = (filename: string) => {
-  fileSystem.unlinkSync(`${BLOGS_DATA_PATH}/${filename}`);
+export const removeOldFile = (filename: string, dataType="blogs") => {
+  const path = dataType === 'blogs' ? BLOGS_DATA_PATH : FILES_DATA_PATH;
+  fileSystem.unlinkSync(`${path}/${filename}`);
 };
 
 export const updateBlogFile = async (payload: BlogInterface, id: string) => {

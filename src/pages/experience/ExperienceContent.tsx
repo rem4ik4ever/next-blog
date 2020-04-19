@@ -9,10 +9,11 @@ import {
   ListItem,
   ListIcon,
   Link,
-  Collapse,
+  Collapse
 } from "@chakra-ui/core";
 import Card from "src/components/Card";
 import experience from "src/pages/experience/experience";
+import ExperienceCard from "./ExperienceCard";
 
 const ExperienceContent = () => {
   const [showPrevious, toggle] = useState(false);
@@ -23,34 +24,13 @@ const ExperienceContent = () => {
         Experience
       </Heading>
       {experience
-        .filter((exp) => exp.relevant)
+        .filter(exp => exp.relevant)
         .map((exp, index) => (
-          <Card key={`exp-rel-${index}`}>
-            <Flex align="center">
-              <Image src={exp.logo} alt="wonolo inc." pr="2" w="12" />
-              <Heading as="h2" size="md" fontWeight="normal">
-                {exp.name}
-              </Heading>
-            </Flex>
-            <Box pl="12">
-              <Text fontWeight="light">{exp.position}</Text>
-              <Text color="gray.400">
-                {exp.from} - {exp.to}
-              </Text>
-              <List mt="2">
-                {exp.achievements.map((ach, idx) => (
-                  <ListItem key={`ach-${idx}`}>
-                    <ListIcon icon="check-circle" color="green.500" />
-                    {ach}
-                  </ListItem>
-                ))}
-              </List>
-            </Box>
-          </Card>
+          <ExperienceCard experience={exp} key={`exp-${index}`} />
         ))}
       <Box textAlign="center">
         <Link
-          onClick={(e) => {
+          onClick={e => {
             e.preventDefault();
             toggle(!showPrevious);
           }}
@@ -60,27 +40,9 @@ const ExperienceContent = () => {
       </Box>
       <Collapse isOpen={showPrevious}>
         {experience
-          .filter((exp) => !exp.relevant)
+          .filter(exp => !exp.relevant)
           .map((exp, index) => (
-            <Card key={`exp-${index}`}>
-              <Flex align="center">
-                <Image src={exp.logo} alt="wonolo inc." pr="2" w="12" />
-                <Heading as="h2" size="md" fontWeight="light">
-                  {exp.name}
-                </Heading>
-              </Flex>
-              <Box pl="12">
-                <Text fontWeight="medium">{exp.position}</Text>
-                <List mt="2">
-                  {exp.achievements.map((ach, idx) => (
-                    <ListItem key={`exp-${idx}`}>
-                      <ListIcon icon="check-circle" color="green.500" />
-                      {ach}
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Card>
+            <ExperienceCard experience={exp} key={`exp-{index}`} />
           ))}
       </Collapse>
     </Flex>
