@@ -3,11 +3,15 @@ import { Box, Flex, Heading, Image, Text, Stack, Tag } from "@chakra-ui/core";
 import { BlogInterface } from "src/interfaces/Blog";
 import ReactMarkdown from "react-markdown";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import spacetime from 'spacetime'
 
 const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
   return (
     <Box>
       <Flex flexDirection="column">
+        <Text color="gray.400" fontSize="md" textAlign="center">
+          {blog.author} - {spacetime(blog.createdAt).format('LL')}
+        </Text>
         <Heading
           as="h1"
           size="2xl"

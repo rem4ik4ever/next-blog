@@ -42,7 +42,7 @@ const listBlogs = (req, res) => {
 };
 
 const blog: NextApiHandler = async (req, res) => {
-  if (req.method === "POST") {
+  if (req.method === "POST" && process.env.NODE_ENV === 'development') {
     saveToDraft(req, res);
   } else {
     listBlogs(req, res);
