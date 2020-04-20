@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import { BlogInterface } from "src/interfaces/Blog";
 import { BlogStatus } from "src/enums/BlogStatus";
 import {allBlogs} from "src/cms/blogs/utils";
+import BlogsList from "src/pages/home/BlogsList";
 
 const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
@@ -12,22 +13,7 @@ const BlogIndexPage: NextPage<{
   return (
     <Box>
       <Flex flexDirection="column" alignItems="center">
-        <Heading as="h1" size="2xl">
-          Table of Contents
-        </Heading>
-        <List>
-          {blogs.map((blog) => (
-            <ListItem key={`/blog/${blog.slug}`}>
-              <NextLink
-                as={`/blog/${blog.slug}`}
-                href={`/blog/${blog.slug}`}
-                passHref
-              >
-                <Link>{blog.title}</Link>
-              </NextLink>
-            </ListItem>
-          ))}
-        </List>
+        <BlogsList blogs={blogs} label="Blog" />
       </Flex>
     </Box>
   );

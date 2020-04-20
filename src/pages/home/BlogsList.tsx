@@ -4,11 +4,11 @@ import Card from "src/components/Card";
 import MyLink from "src/utils/MyLink";
 import {BlogInterface} from "src/interfaces/Blog";
 
-const RecentPosts = ({ blogs }) => {
+const RecentPosts = ({ blogs, label }) => {
   return (
     <Flex direction="column" w="full">
       <Heading as="h2" size="xl" mt="3" fontWeight="regular" textAlign="center">
-        Recent posts
+        {label}
       </Heading>
       <Grid templateColumns={{base:"repeat(1, 1fr)"}} gap="2">
         {blogs.map((blog:BlogInterface) => (

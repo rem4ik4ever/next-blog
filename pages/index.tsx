@@ -2,7 +2,7 @@ import { NextPage, GetStaticProps } from "next";
 import { Flex } from "@chakra-ui/core";
 import Intro from "src/pages/home/Intro";
 import LinksSection from "src/pages/home/LinksSection";
-import RecentPosts from "src/pages/home/RecentPosts";
+import BlogsList from "src/pages/home/BlogsList";
 import { BlogStatus } from "src/enums/BlogStatus";
 import {allBlogs} from "src/cms/blogs/utils";
 import {BlogInterface} from "src/interfaces/Blog";
@@ -12,7 +12,7 @@ const IndexPage:NextPage<{blogs: BlogInterface[]}> = ({ blogs }) => {
     <Flex flexDirection="column" alignItems="center" m={4}>
       <Intro />
       <LinksSection mt="3" w="full" />
-      <RecentPosts blogs={blogs} />
+      <BlogsList blogs={blogs} label="Recent Blogs"/>
     </Flex>
   );
 };
