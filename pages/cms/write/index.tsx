@@ -22,7 +22,7 @@ const WritePage = () => {
     },
     onSubmit: async (values) => {
       try {
-        const result = await postData("/api/blogs", values);
+        const result = await postData("/api/cms/blogs", values);
         Router.push(`/cms/write/${result.id}`);
         // toast({
         //   title: "Success",
