@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Text,
   Flex,
@@ -8,10 +8,12 @@ import {
   Avatar,
   Button,
   useColorMode,
-  IconButton,
+  IconButton
 } from "@chakra-ui/core";
 import NextLink from "next/link";
-import { useRouter } from "next/dist/client/router";
+import urlMap from "./urlMap";
+import {FaBars} from "react-icons/fa";
+import NavigationDrawer from "./NavigationDrawer";
 
 const MenuItem = ({ children, to, isCompact = false }) => {
   const theme = useTheme();
@@ -48,11 +50,12 @@ const CmsMenu = () => {
 };
 
 const PageHeader = () => {
+  const [showDrawer, toggleDrawer] = useState(false)
   const isCompact = true; // router && router.route !== "/";
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = {
     light: "cyan.700",
-    dark: "gray.700",
+    dark: "gray.700"
   };
   return (
     <Flex
@@ -86,28 +89,25 @@ const PageHeader = () => {
           </Flex>
         </NextLink>
         <Flex display={{ sm: "flex", xs: "none" }} align="center">
-          <MenuItem isCompact={isCompact} to="/">
-            Home
-          </MenuItem>
-          <MenuItem isCompact={isCompact} to="/about">
-            About Me
-          </MenuItem>
-          <MenuItem isCompact={isCompact} to="/blog">
-            Blog
-          </MenuItem>
-          <MenuItem isCompact={isCompact} to="/experience">
-            Experience
-          </MenuItem>
+          {urlMap.map(nav => (
+            <MenuItem isCompact={isCompact} to={nav.url} key={`url-${nav.name.trim().split(' ').join('-')}`}>
+              {nav.name}
+            </MenuItem>
+          ))}
           <CmsMenu />
           <IconButton
             ml="2"
             aria-label="Color Mode"
             size="md"
             icon={colorMode === "light" ? "moon" : "sun"}
-            onClick={(e) => toggleColorMode()}
+            onClick={e => toggleColorMode()}
             color="gray.50"
             backgroundColor="none"
           />
+        </Flex>
+        <Flex display={{sm: 'none', xs:'flex' }}>
+          <IconButton icon={FaBars} backgroundColor="none" aria-label="toggle menu" onClick={() => toggleDrawer(true)}/>
+          <NavigationDrawer onClose={() => toggleDrawer(false)} isOpen={showDrawer} />
         </Flex>
       </Flex>
     </Flex>

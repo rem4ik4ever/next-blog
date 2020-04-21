@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/core";
 import MyLink from "src/utils/MyLink";
 import spacetime from "spacetime";
+import Head from 'next/head'
+import PageTitle from "src/components/PageTitle";
 
 const Paragraph = (props) => (
   <Box mt="4" {...props}>
@@ -33,6 +35,7 @@ const AboutPage: NextPage = () => {
   };
   return (
     <Flex direction="column" p="5" color={color[colorMode]}>
+      <PageTitle title="About me" />
       <Heading as="h1" size="xl" fontWeight="light">
         Hi there!
       </Heading>

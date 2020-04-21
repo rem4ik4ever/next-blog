@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import { Box, Flex, useColorMode, DarkMode } from "@chakra-ui/core";
 import styled from "@emotion/styled";
-import PageHeader from "./header";
 import PageFooter from "./footer";
 import HeadMeta from "./HeadMeta";
+import PageHeader from "./Header/header";
 
 const Main = styled(Flex)(() => ({
   width: "100%",
