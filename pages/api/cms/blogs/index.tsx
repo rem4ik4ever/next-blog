@@ -1,6 +1,7 @@
 import { NextApiHandler } from "next";
 import { getSlug, generateFilename, saveBlogFile } from "src/cms/blogs/utils";
 import { BlogStatus } from "src/enums/BlogStatus";
+import devonlyMiddleware from "src/middlewares/devonly.middleware";
 
 const saveBlog = async (req, res) => {
   const timestamp = new Date().getTime();
@@ -25,6 +26,7 @@ const saveBlog = async (req, res) => {
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === "POST") {
+    await devonlyMiddleware(req, res);
     saveBlog(req, res);
   }
 };

@@ -6,6 +6,7 @@ import {
   generateFilename,
   saveBlogFile,
 } from "src/cms/blogs/utils";
+import devonlyMiddleware from "src/middlewares/devonly.middleware";
 
 
 
@@ -22,7 +23,9 @@ const listBlogs = (req, res) => {
   }
 };
 
+
 const blog: NextApiHandler = async (req, res) => {
+  await devonlyMiddleware(req, res)
   listBlogs(req, res);
 };
 

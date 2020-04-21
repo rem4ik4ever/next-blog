@@ -4,10 +4,12 @@ import { v4 } from "uuid";
 import fileSystem from "fs";
 import { FILES_DATA_PATH } from "src/pages/api/files/constants";
 import { allFiles } from "src/pages/api/files/utils";
+import devonlyMiddleware from "src/middlewares/devonly.middleware";
 const fs = fileSystem.promises;
 
 const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    await devonlyMiddleware(req, res);
     const { name, filetype, size, url } = req.body;
     const id = v4();
     let file: File = {
@@ -16,9 +18,12 @@ const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
       size,
       url,
       id,
-      createdAt: new Date().toISOString(),
+      createdAt: new Date().toISOString()
     };
-    const filename = `${id}-${name.toLowerCase().split(" ").join("-")}.json`;
+    const filename = `${id}-${name
+      .toLowerCase()
+      .split(" ")
+      .join("-")}.json`;
     await fs.writeFile(
       `${FILES_DATA_PATH}/${filename}`,
       JSON.stringify(file, null, 2)
