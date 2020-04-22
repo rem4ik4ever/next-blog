@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Heading,
@@ -15,6 +15,8 @@ import {
   Switch,
   Textarea,
   Select,
+  Icon,
+  Text
 } from "@chakra-ui/core";
 import TagInput from "src/components/TagInput";
 import ReactMarkdown from "react-markdown";
@@ -22,14 +24,46 @@ import Card from "src/components/Card";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { BlogStatus } from "src/enums/BlogStatus";
 
+const StatusIcon = ({ status }) => {
+  if (status?.success) {
+    return <Icon name="check-circle" color="green.400" />;
+  } else if (status?.error) {
+    return <Icon name="close" color="red.400" />;
+  }
+  return null;
+};
+
+const StatusText = ({ status }) => {
+  let text = null
+  if (status?.success) {
+    text =  <Text color="green.400">Blog saved</Text>;
+  } else if (status?.error) {
+    text=  <Text color="red.400">Failed to save</Text>;
+  }
+  return <Flex align="center" mr={5}>{text}</Flex>;
+};
+
 const BlogForm = ({ formik }) => {
   const [showPreview, togglePreview] = useState(false);
-  const addTag = (tag) => {
+  const [showToast, toggleToast] = useState(false);
+  useEffect(() => {
+    if (formik.status?.success || formik.status?.error) {
+      toggleToast(true);
+      setTimeout(() => {
+        toggleToast(false);
+      }, 2000);
+    }
+  }, [formik.status]);
+  const addTag = tag => {
     formik.setFieldValue("tags", [...formik.values.tags, tag]);
   };
   const statuses = Object.keys(BlogStatus);
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form
+      onSubmit={ev => {
+        formik.handleSubmit(ev);
+      }}
+    >
       <Box m="5">
         <Heading as="h1" size="xl" fontWeight="normal" textAlign="center">
           Write a blog
@@ -37,21 +71,27 @@ const BlogForm = ({ formik }) => {
         <Card>
           <Flex direction="column">
             <Flex justify="flex-end">
+              {showToast && <StatusText status={formik.status} />}
               <FormControl mr="2">
                 <Select
                   value={formik.values.status}
                   name="status"
                   onChange={formik.handleChange}
                 >
-                  {statuses.map((status) => (
+                  {statuses.map(status => (
                     <option key={status} value={status.toLowerCase()}>
                       {status.toUpperCase()}
                     </option>
                   ))}
                 </Select>
               </FormControl>
-              <Button type="submit" variant="solid" color="green.400">
-                Save
+              <Button
+                type="submit"
+                variant="solid"
+                color="green.400"
+                isDisabled={formik.isSubmitting}
+              >
+                {showToast ? <StatusIcon status={formik.status} /> : "Save"}
               </Button>
             </Flex>
             <FormControl w="full">
@@ -91,12 +131,12 @@ const BlogForm = ({ formik }) => {
             </FormControl>
             <Box mt="2">
               <TagInput
-                onAdd={(tag) => addTag(tag)}
+                onAdd={tag => addTag(tag)}
                 label="Blog tags"
                 description="Tags helps searching"
               />
               <Stack spacing={4} isInline mt="4">
-                {formik.values.tags.map((tag) => (
+                {formik.values.tags.map(tag => (
                   <Tag size="md" key={`tag-${tag}`} variantColor="cyan">
                     <TagIcon icon="add" size="12px" />
                     <TagLabel>{tag}</TagLabel>

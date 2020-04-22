@@ -5,60 +5,12 @@ import { BlogInterface } from "src/interfaces/Blog";
 import _ from "lodash";
 
 export function useBlogUpdate() {
-  const [isUpdated, setUpdate] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const toast = useToast();
-  const showSuccessToast = () => {
-    toast({
-      title: "Success",
-      description: "Blog was updated",
-      status: "success",
-      duration: 2000,
-      isClosable: true,
-    });
-  };
-  const showErrorToast = () => {
-    toast({
-      title: "Failed",
-      description: "Error while updating blog",
-      status: "error",
-      duration: 2000,
-      isClosable: true,
-    });
-  };
-  useEffect(() => {
-    if (isUpdated) {
-      if (isSuccess) {
-        // showSuccessToast();
-        setIsSuccess(false);
-      }
-      if (isError) {
-        // showErrorToast();
-        setIsError(false);
-      }
-      setUpdate(false);
-    }
-  }, [isUpdated]);
-  const handleUpdate = (id: string, payload: BlogInterface) => {
-    axios
-      .put(`/api/cms/blogs/${id}`, payload)
-      .then(() => {
-        setIsSuccess(true);
-        setUpdate(true);
-      })
-      .catch(() => {
-        setIsError(true);
-        setUpdate(true);
-      });
+  const handleUpdate = async (id: string, payload: BlogInterface) => {
+    const result = await axios.put(`/api/cms/blogs/${id}`, payload);
+    return result;
   };
   return {
-    handleUpdate,
-    showSuccessToast,
-    showErrorToast,
-    updated: isUpdated,
-    error: isError,
-    success: isSuccess,
+    handleUpdate
   };
 }
 
