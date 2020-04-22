@@ -42,7 +42,7 @@ const ExperienceContent = () => {
         {experience
           .filter(exp => !exp.relevant)
           .map((exp, index) => (
-            <ExperienceCard experience={exp} key={`exp-{index}`} />
+            <ExperienceCard experience={exp} key={`exp-${index}`} />
           ))}
       </Collapse>
     </Flex>
