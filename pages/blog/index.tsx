@@ -4,15 +4,21 @@ import { BlogInterface } from "src/interfaces/Blog";
 import { BlogStatus } from "src/enums/BlogStatus";
 import { allBlogs } from "src/cms/blogs/utils";
 import BlogsList from "src/pages/home/BlogsList";
-import PageTitle from "src/components/PageTitle";
+import PageSEO from "src/components/PageSEO";
+import defaultConfig from "src/utils/SEO/next-seo.config";
 
 const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
 }> = props => {
   const { blogs } = props;
+  const config = {
+    ...defaultConfig,
+    title: "Blog",
+    description: "Browse my blogs"
+  }
   return (
     <Box>
-      <PageTitle title="Blog" />
+      <PageSEO pageInfo={config} />
       <Flex flexDirection="column" alignItems="center">
         <BlogsList blogs={blogs} label="Blog" />
       </Flex>

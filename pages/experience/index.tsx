@@ -1,11 +1,17 @@
 import ExperienceContent from "src/pages/experience/ExperienceContent";
 import { NextPage } from "next";
-import PageTitle from "src/components/PageTitle";
+import PageSEO from "src/components/PageSEO";
+import defaultConfig from "src/utils/SEO/next-seo.config";
 
 const ExperiencePage: NextPage = () => {
+  const config = {
+    ...defaultConfig,
+    title: "Experience",
+    description: "My work experience"
+  }
   return (
     <>
-      <PageTitle title="Experience" />
+      <PageSEO pageInfo={config} />
       <ExperienceContent />;
     </>
   );

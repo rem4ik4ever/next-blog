@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { initGA, logPageView } from "src/utils/analytics/utils";
+import { NextSeo } from "next-seo";
+import { PageInfo } from "src/interfaces/PageInfo";
 
-const PageTitle = ({ title }) => {
+const PageSEO: React.FC<{ pageInfo: PageInfo }> = ({
+  pageInfo
+}) => {
   useEffect(() => {
     if (!window["GA_INITIALIZED"]) {
       initGA();
@@ -10,11 +14,7 @@ const PageTitle = ({ title }) => {
     }
     logPageView();
   }, []);
-  return (
-    <Head>
-      <title>Rem Kim | {title}</title>
-    </Head>
-  );
+  return <NextSeo {...pageInfo} />;
 };
 
-export default PageTitle;
+export default PageSEO;

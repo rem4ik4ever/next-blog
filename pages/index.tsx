@@ -4,15 +4,19 @@ import Intro from "src/pages/home/Intro";
 import LinksSection from "src/pages/home/LinksSection";
 import BlogsList from "src/pages/home/BlogsList";
 import { BlogStatus } from "src/enums/BlogStatus";
-import {allBlogs} from "src/cms/blogs/utils";
-import {BlogInterface} from "src/interfaces/Blog";
+import { allBlogs } from "src/cms/blogs/utils";
+import { BlogInterface } from "src/interfaces/Blog";
+import { PageInfo } from "src/interfaces/PageInfo";
+import defaultConfig from "src/utils/SEO/next-seo.config";
+import PageSEO from "src/components/PageSEO";
 
-const IndexPage:NextPage<{blogs: BlogInterface[]}> = ({ blogs }) => {
+const IndexPage: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
   return (
     <Flex flexDirection="column" alignItems="center" m={4}>
+      <PageSEO pageInfo={defaultConfig} />
       <Intro />
       <LinksSection mt="3" w="full" />
-      <BlogsList blogs={blogs} label="Recent Blogs"/>
+      <BlogsList blogs={blogs} label="Recent Blogs" />
     </Flex>
   );
 };
@@ -28,15 +32,15 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         blogs: sortedBlogs
-          .filter((blog) => blog.status === BlogStatus.released)
-          .slice(0, 3),
-      },
+          .filter(blog => blog.status === BlogStatus.released)
+          .slice(0, 3)
+      }
     };
   } catch (error) {
     return {
       props: {
-        blogs: [],
-      },
+        blogs: []
+      }
     };
   }
 };

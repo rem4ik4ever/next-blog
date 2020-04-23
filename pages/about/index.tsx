@@ -11,7 +11,8 @@ import {
 import MyLink from "src/utils/MyLink";
 import spacetime from "spacetime";
 import Head from 'next/head'
-import PageTitle from "src/components/PageTitle";
+import PageSEO from "src/components/PageSEO";
+import defaultConfig from "src/utils/SEO/next-seo.config";
 
 const Paragraph = (props) => (
   <Box mt="4" {...props}>
@@ -33,9 +34,15 @@ const AboutPage: NextPage = () => {
     light: "",
     dark: "white",
   };
+  const config = {
+    ...defaultConfig,
+    title: "About me",
+    description: "A little bit about me!",
+    url: "https://remkim.com/about"
+  }
   return (
     <Flex direction="column" p="5" color={color[colorMode]}>
-      <PageTitle title="About me" />
+      <PageSEO pageInfo={config} />
       <Heading as="h1" size="xl" fontWeight="light">
         Hi there!
       </Heading>

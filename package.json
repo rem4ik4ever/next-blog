@@ -23,6 +23,7 @@
     "formik": "^2.1.4",
     "lodash": "^4.17.15",
     "next": "^9.3.4",
+    "next-seo": "^4.4.0",
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -34,6 +35,7 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
+    "@types/next-seo": "^1.10.0",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",

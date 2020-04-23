@@ -4,7 +4,6 @@ import Head from "next/head";
 const HeadMeta = () => {
   return (
     <Head>
-      <title>Rem Kim</title>
       <link
         rel="apple-touch-icon"
         sizes="57x57"
