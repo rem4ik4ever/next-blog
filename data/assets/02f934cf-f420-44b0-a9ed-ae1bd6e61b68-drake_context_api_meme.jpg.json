@@ -4,14 +4,5 @@
   "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/88ea46b3-1081-45aa-b5ed-bf657aa9fd3e-drake-context-ap",
   "id": "02f934cf-f420-44b0-a9ed-ae1bd6e61b68",
   "createdAt": "2020-04-19T01:50:03.173Z",
-  "filename": "02f934cf-f420-44b0-a9ed-ae1bd6e61b68-drake_context_api_meme.jpg.json",
-  "sizes": {
-    "220": {
-      "ETag": "\"f428a571c7fe4665d4c5753f06e735e4\"",
-      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/19296d1a-b0b8-4eac-96d1-5c85eb254922-220.webp",
-      "key": "assets/19296d1a-b0b8-4eac-96d1-5c85eb254922-220.webp",
-      "Key": "assets/19296d1a-b0b8-4eac-96d1-5c85eb254922-220.webp",
-      "Bucket": "rem-blog-bucket"
-    }
-  }
+  "filename": "02f934cf-f420-44b0-a9ed-ae1bd6e61b68-drake_context_api_meme.jpg.json"
 }

@@ -13,10 +13,13 @@ import {
   InputGroup,
   InputRightAddon,
   List,
-  ListItem
+  ListItem,
+  FormControl,
+  FormLabel
 } from "@chakra-ui/core";
 import axios from "axios";
 import { getImageURL } from "src/images/utils";
+import FormatUrl from "./FormatUrl";
 
 const FileCard = ({ file }) => {
   console.log("File", file);
@@ -62,7 +65,7 @@ const FileCard = ({ file }) => {
               <List>
                 {Object.keys(file.sizes).map(size => (
                   <ListItem key={file.sizes[size].key}>
-                    {file.sizes[size].Location}
+                    <FormatUrl file={file} size={size} />{" "}
                   </ListItem>
                 ))}
               </List>
@@ -83,12 +86,12 @@ const FileCard = ({ file }) => {
               </InputGroup>
               <Tooltip
                 hasArrow
-                label="Copy URL"
+                label="Format Image"
                 placement="top"
-                aria-label="copy-tooltip"
+                aria-label="format-image"
               >
                 <IconButton
-                  aria-label="delete"
+                  aria-label="edit image"
                   icon={"edit"}
                   color="blue.400"
                   mb="4"
