@@ -20,7 +20,6 @@ const BlogWrite = () => {
       setSubmitting(true);
       try {
         const result = await postData("/api/cms/blogs", values);
-        setSubmitting(false);
         setStatus({ success: true });
         Router.push(`/cms/write/${result.id}`);
       } catch (error) {
