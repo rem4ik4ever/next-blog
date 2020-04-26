@@ -1,0 +1,31 @@
+{
+  "name": "rem-800.png",
+  "size": 911380,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/8c414171-4b03-4ad2-9d47-66d9c8178cd9-rem-800-png",
+  "id": "90a36c46-4dac-4a05-b920-c6f8be40185e",
+  "createdAt": "2020-04-26T20:10:55.656Z",
+  "filename": "90a36c46-4dac-4a05-b920-c6f8be40185e-rem-800.png.json",
+  "sizes": {
+    "50": {
+      "ETag": "\"9097833e6c53602fa672e6b00627fcfd\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/transformed-img-50.webp",
+      "key": "transformed-img-50.webp",
+      "Key": "transformed-img-50.webp",
+      "Bucket": "rem-blog-bucket"
+    },
+    "220": {
+      "ETag": "\"e09c75507883d8479595f25f07ec0103\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/a818791e-82fd-40cb-89b1-a7462c0b7b71-220.webp",
+      "key": "assets/a818791e-82fd-40cb-89b1-a7462c0b7b71-220.webp",
+      "Key": "assets/a818791e-82fd-40cb-89b1-a7462c0b7b71-220.webp",
+      "Bucket": "rem-blog-bucket"
+    },
+    "221": {
+      "ETag": "\"a8aeb32f2ebcca446fe644412c5246a1\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/7c048770-2a48-4990-94b9-dbe49239f555-221.webp",
+      "key": "assets/7c048770-2a48-4990-94b9-dbe49239f555-221.webp",
+      "Key": "assets/7c048770-2a48-4990-94b9-dbe49239f555-221.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}

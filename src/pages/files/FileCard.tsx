@@ -11,12 +11,15 @@ import {
   useClipboard,
   Input,
   InputGroup,
-  InputRightAddon
+  InputRightAddon,
+  List,
+  ListItem
 } from "@chakra-ui/core";
 import axios from "axios";
 import { getImageURL } from "src/images/utils";
 
 const FileCard = ({ file }) => {
+  console.log("File", file);
   const [size, setSize] = useState(200);
   const { onCopy, hasCopied } = useClipboard(getImageURL(file.url, size));
   const onDelete = ev => {
@@ -31,33 +34,53 @@ const FileCard = ({ file }) => {
         console.error("Error", err);
       });
   };
+  const formatImage = async ev => {
+    ev.preventDefault();
+    await axios.get(
+      `/api/images?source=${encodeURIComponent(file.url)}&w=${size}`
+    );
+    location.reload();
+  };
   return (
     <Box w="100" backgroundColor="white" borderRadius="8px" p="2" mb="2">
       <Flex align="center">
         <Link href={getImageURL(file.url, 220)} mr="2">
           <Image src={getImageURL(file.url, 220)} alt={file.name} w="220px" />
         </Link>
-        <Flex direction="column" alignSelf="stretch" justifyContent="space-between" flex="1">
+        <Flex
+          direction="column"
+          alignSelf="stretch"
+          justifyContent="space-between"
+          flex="1"
+        >
           <Box>
             <Heading as="h2" size="sm">
               {file.name}
             </Heading>
             <Text color="gray.500">Size: {file.size}</Text>
+            {file.sizes && (
+              <List>
+                {Object.keys(file.sizes).map(size => (
+                  <ListItem key={file.sizes[size].key}>
+                    {file.sizes[size].Location}
+                  </ListItem>
+                ))}
+              </List>
+            )}
           </Box>
-          <Flex justifyContent="space-around" >
+          <Flex justifyContent="space-around">
             <Flex>
-            <InputGroup>
-              <Input
-                type="number"
-                name="size"
-                min="200"
-                maxW="100px"
-                textAlign="right"
-                value={size}
-                onChange={ev => setSize(+ev.target.value)}
-              />
-              <InputRightAddon children="px"/>
-            </InputGroup>
+              <InputGroup>
+                <Input
+                  type="number"
+                  name="size"
+                  maxW="100px"
+                  textAlign="right"
+                  value={size}
+                  onChange={ev => setSize(+ev.target.value)}
+                />
+                <InputRightAddon children="px" />
+              </InputGroup>
               <Tooltip
                 hasArrow
                 label="Copy URL"
@@ -66,10 +89,10 @@ const FileCard = ({ file }) => {
               >
                 <IconButton
                   aria-label="delete"
-                  icon={hasCopied ? "check" : "copy"}
+                  icon={"edit"}
                   color="blue.400"
                   mb="4"
-                  onClick={onCopy}
+                  onClick={formatImage}
                 />
               </Tooltip>
             </Flex>

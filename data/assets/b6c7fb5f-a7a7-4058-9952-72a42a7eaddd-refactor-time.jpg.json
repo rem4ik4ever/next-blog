@@ -3,5 +3,15 @@
   "size": 52154,
   "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/dc8d1894-6944-4765-987c-b30ae3c227e3-refactor-time-jp",
   "id": "b6c7fb5f-a7a7-4058-9952-72a42a7eaddd",
-  "createdAt": "2020-04-18T20:56:46.659Z"
+  "createdAt": "2020-04-18T20:56:46.659Z",
+  "filename": "b6c7fb5f-a7a7-4058-9952-72a42a7eaddd-refactor-time.jpg.json",
+  "sizes": {
+    "220": {
+      "ETag": "\"8eea8e4219a51cc984880fbab8401da0\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/8e1cf26b-32ac-448e-8d46-985a099cd0ed-220.webp",
+      "key": "assets/8e1cf26b-32ac-448e-8d46-985a099cd0ed-220.webp",
+      "Key": "assets/8e1cf26b-32ac-448e-8d46-985a099cd0ed-220.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
 }

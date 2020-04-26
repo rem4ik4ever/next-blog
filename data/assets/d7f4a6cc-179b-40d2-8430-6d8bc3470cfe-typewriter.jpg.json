@@ -3,5 +3,15 @@
   "size": 434988,
   "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/d2796a70-beb8-4270-9f27-f8c4ff737933-typewriter-jpg",
   "id": "d7f4a6cc-179b-40d2-8430-6d8bc3470cfe",
-  "createdAt": "2020-04-16T20:11:23.869Z"
+  "createdAt": "2020-04-16T20:11:23.869Z",
+  "filename": "d7f4a6cc-179b-40d2-8430-6d8bc3470cfe-typewriter.jpg.json",
+  "sizes": {
+    "220": {
+      "ETag": "\"e59e7501a1e2197ddc7d6ad8079c294b\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/729df239-a3bf-41d4-946d-afa8f52dc1c3-220.webp",
+      "key": "assets/729df239-a3bf-41d4-946d-afa8f52dc1c3-220.webp",
+      "Key": "assets/729df239-a3bf-41d4-946d-afa8f52dc1c3-220.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
 }

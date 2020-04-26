@@ -3,5 +3,15 @@
   "size": 76639,
   "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/ba072618-5f39-4b5e-a179-4e7dd88c7788-contextapimeme-j",
   "id": "fcdc88cf-8ffd-4664-a77e-ec88de5d0cbb",
-  "createdAt": "2020-04-18T20:15:42.548Z"
+  "createdAt": "2020-04-18T20:15:42.548Z",
+  "filename": "fcdc88cf-8ffd-4664-a77e-ec88de5d0cbb-contextapimeme.jpg.json",
+  "sizes": {
+    "220": {
+      "ETag": "\"95ccb74703e7316706e67aae6c200ea4\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/4c23d1a1-bb62-4323-b252-ad365c4ac90b-220.webp",
+      "key": "assets/4c23d1a1-bb62-4323-b252-ad365c4ac90b-220.webp",
+      "Key": "assets/4c23d1a1-bb62-4323-b252-ad365c4ac90b-220.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
 }
