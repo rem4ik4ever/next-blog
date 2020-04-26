@@ -8,7 +8,6 @@ const handler: NextApiHandler = async (
 ) => {
   try {
     const { source, w } = req.query;
-    console.log("Source", source)
     if (!source) {
       res.statusCode = 404;
       res.end("Missing URL");
@@ -22,7 +21,7 @@ const handler: NextApiHandler = async (
     res.end(await transform.toBuffer());
   } catch (err) {
     console.error(err);
-    res.statusCode = 500;
+    res.statusCode = 404;
     res.end();
   }
 };
