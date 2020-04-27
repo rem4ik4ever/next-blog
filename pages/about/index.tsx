@@ -6,21 +6,21 @@ import {
   Box,
   Image,
   Link,
-  useColorMode,
+  useColorMode
 } from "@chakra-ui/core";
 import MyLink from "src/utils/MyLink";
 import spacetime from "spacetime";
-import Head from 'next/head'
+import Head from "next/head";
 import PageSEO from "src/components/PageSEO";
 import defaultConfig from "src/utils/SEO/next-seo.config";
 
-const Paragraph = (props) => (
+const Paragraph = props => (
   <Box mt="4" {...props}>
     {props.children}
   </Box>
 );
 
-const Text = (props) => (
+const Text = props => (
   <Txt fontSize="xl" lineHeight="tall" {...props}>
     {props.children}
   </Txt>
@@ -32,14 +32,14 @@ const AboutPage: NextPage = () => {
   const now = spacetime(new Date());
   const color = {
     light: "",
-    dark: "white",
+    dark: "white"
   };
   const config = {
     ...defaultConfig,
     title: "About me",
     description: "A little bit about me!",
     url: "https://remkim.com/about"
-  }
+  };
   return (
     <Flex direction="column" p="5" color={color[colorMode]}>
       <PageSEO pageInfo={config} />
@@ -57,7 +57,11 @@ const AboutPage: NextPage = () => {
         </Text>
       </Paragraph>
       <Flex direction="column" align="center" my="5">
-        <Image src="/imgs/bishkek.jpg" alt="Bishkek" w="md" />
+        <Image
+          src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/1d5e557a-8f49-4d84-8692-be8c496a0e5c-450.webp"
+          alt="Bishkek"
+          w="md"
+        />
         <Text fontSize="sm" color="gray.700">
           Bishkek
         </Text>
@@ -86,7 +90,11 @@ const AboutPage: NextPage = () => {
           son and my family is everything for me.
         </Text>
         <Flex direction="column" align="center" my="5">
-          <Image src="/imgs/liam.png" alt="My Kid" w="md" />
+          <Image
+            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/63c2ff36-ac04-4467-8e79-e17a02855837-450.webp"
+            alt="My Kid"
+            w="md"
+          />
         </Flex>
       </Paragraph>
       <Paragraph>
@@ -96,7 +104,11 @@ const AboutPage: NextPage = () => {
           school here is a cool pic of me!
         </Text>
         <Flex direction="column" align="center" my="5">
-          <Image src="/imgs/skateboard.jpg" alt="Skateboard Pro" w="md" />
+          <Image
+            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/4f92e110-dbf7-4cd4-82ed-bd266edb1378-450.webp"
+            alt="Skateboard Pro"
+            w="md"
+          />
         </Flex>
       </Paragraph>
       <Paragraph my="8">

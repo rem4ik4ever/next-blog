@@ -63,7 +63,7 @@ const FileUpload = () => {
   };
 
   const onChangeHandler = (event) => {
-    if (event.target.files[0].size < 10000000) {
+    if (event.target.files[0].size < 20000000) {
       setFiles(event.target.files);
     } else {
       toast({

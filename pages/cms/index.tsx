@@ -39,13 +39,8 @@ const CmsIndex = ({ blogs }) => {
     <Flex direction="column">
       <Flex justify="space-between">
         <Link href="/cms/files">
-          <Button leftIcon="attachment" w="sm" mr="1">
+          <Button leftIcon="attachment" w="full" backgroundColor="teal.400" color="white">
             Files
-          </Button>
-        </Link>
-        <Link href="cms/files/upload">
-          <Button leftIcon="download" w="sm" ml="1">
-            Upload File
           </Button>
         </Link>
       </Flex>

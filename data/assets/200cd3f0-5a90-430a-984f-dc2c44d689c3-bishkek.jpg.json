@@ -1,0 +1,17 @@
+{
+  "name": "bishkek.jpg",
+  "size": 173288,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/8482adad-f196-483e-910f-7ef60f4a08c4-bishkek-jpg",
+  "id": "200cd3f0-5a90-430a-984f-dc2c44d689c3",
+  "createdAt": "2020-04-27T00:16:14.664Z",
+  "filename": "200cd3f0-5a90-430a-984f-dc2c44d689c3-bishkek.jpg.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"10cf566c40d1030e487157d88162cd59\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/1d5e557a-8f49-4d84-8692-be8c496a0e5c-450.webp",
+      "key": "assets/1d5e557a-8f49-4d84-8692-be8c496a0e5c-450.webp",
+      "Key": "assets/1d5e557a-8f49-4d84-8692-be8c496a0e5c-450.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}

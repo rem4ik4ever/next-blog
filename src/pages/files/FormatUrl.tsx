@@ -7,16 +7,17 @@ import {
   Input,
   Tooltip,
   IconButton,
-  useClipboard
+  useClipboard,
+  InputLeftAddon
 } from "@chakra-ui/core";
 
 const FormatUrl = ({ file, size }) => {
   const { onCopy, hasCopied } = useClipboard(file.sizes[size].Location);
   return (
     <Flex>
-      <FormControl>
-        <FormLabel>{size}px</FormLabel>
+      <FormControl w="full">
         <InputGroup>
+          <InputLeftAddon children={`${size}px`} />
           <Input
             type="text"
             isDisabled={true}

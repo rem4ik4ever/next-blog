@@ -79,7 +79,7 @@ const PageHeader = () => {
           <Flex align="center">
             <Avatar
               name="Rem Kim"
-              src="/imgs/rem-800.png"
+              src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/c4a3789e-43f5-4c1d-ba69-2261c7c30afa-200.webp"
               size={isCompact ? "md" : "xl"}
               border={isCompact ? "none" : "3px solid white"}
             />

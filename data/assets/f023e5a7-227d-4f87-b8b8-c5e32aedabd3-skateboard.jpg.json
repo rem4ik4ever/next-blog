@@ -1,0 +1,17 @@
+{
+  "name": "skateboard.jpg",
+  "size": 89419,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/ddf676ba-171b-4e2e-a9a4-fb15311d6f78-skateboard-jpg",
+  "id": "f023e5a7-227d-4f87-b8b8-c5e32aedabd3",
+  "createdAt": "2020-04-27T00:16:56.270Z",
+  "filename": "f023e5a7-227d-4f87-b8b8-c5e32aedabd3-skateboard.jpg.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"6882cbe97f726e5bc4a4312c6f671f01\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/4f92e110-dbf7-4cd4-82ed-bd266edb1378-450.webp",
+      "key": "assets/4f92e110-dbf7-4cd4-82ed-bd266edb1378-450.webp",
+      "Key": "assets/4f92e110-dbf7-4cd4-82ed-bd266edb1378-450.webp",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
