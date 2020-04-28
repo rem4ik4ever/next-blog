@@ -1,11 +1,10 @@
 import React from "react";
+import axios from "axios";
 import {
   Flex,
   FormControl,
-  FormLabel,
   InputGroup,
   Input,
-  Tooltip,
   IconButton,
   useClipboard,
   InputLeftAddon
@@ -13,6 +12,16 @@ import {
 
 const FormatUrl = ({ file, size }) => {
   const { onCopy, hasCopied } = useClipboard(file.sizes[size].Location);
+  const handleDelete = async (ev) => {
+    ev.preventDefault();
+    try {
+      const result = await axios.delete(`/api/images/${file.id}/${size}`);
+      console.log('delete size', result);
+      location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <Flex>
       <FormControl w="full">
@@ -30,6 +39,13 @@ const FormatUrl = ({ file, size }) => {
             color="blue.400"
             mb="4"
             onClick={onCopy}
+          />
+          <IconButton
+            aria-label="delete"
+            icon={"delete"}
+            color="red.400"
+            mb="4"
+            onClick={handleDelete}
           />
         </InputGroup>
       </FormControl>

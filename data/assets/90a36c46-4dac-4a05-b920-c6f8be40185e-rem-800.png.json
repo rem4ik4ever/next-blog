@@ -5,13 +5,5 @@
   "id": "90a36c46-4dac-4a05-b920-c6f8be40185e",
   "createdAt": "2020-04-26T20:10:55.656Z",
   "filename": "90a36c46-4dac-4a05-b920-c6f8be40185e-rem-800.png.json",
-  "sizes": {
-    "200": {
-      "ETag": "\"4fa4934bec1f5ecf612fc0dbe4843d73\"",
-      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/c4a3789e-43f5-4c1d-ba69-2261c7c30afa-200.webp",
-      "key": "assets/c4a3789e-43f5-4c1d-ba69-2261c7c30afa-200.webp",
-      "Key": "assets/c4a3789e-43f5-4c1d-ba69-2261c7c30afa-200.webp",
-      "Bucket": "rem-blog-bucket"
-    }
-  }
+  "sizes": {}
 }

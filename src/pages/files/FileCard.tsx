@@ -22,7 +22,6 @@ import { getImageURL } from "src/images/utils";
 import FormatUrl from "./FormatUrl";
 
 const FileCard = ({ file }) => {
-  console.log("File", file);
   const [size, setSize] = useState(200);
   const { onCopy, hasCopied } = useClipboard(getImageURL(file.url, size));
   const onDelete = ev => {
