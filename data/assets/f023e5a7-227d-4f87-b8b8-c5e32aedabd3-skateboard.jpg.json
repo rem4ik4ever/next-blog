@@ -5,5 +5,13 @@
   "id": "f023e5a7-227d-4f87-b8b8-c5e32aedabd3",
   "createdAt": "2020-04-27T00:16:56.270Z",
   "filename": "f023e5a7-227d-4f87-b8b8-c5e32aedabd3-skateboard.jpg.json",
-  "sizes": {}
+  "sizes": {
+    "450": {
+      "ETag": "\"f03f72559050f2c4520467fdebb8d36f\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/9a7bd470-7358-4041-aa3a-b98deab70a6d-450.png",
+      "key": "assets/9a7bd470-7358-4041-aa3a-b98deab70a6d-450.png",
+      "Key": "assets/9a7bd470-7358-4041-aa3a-b98deab70a6d-450.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
 }

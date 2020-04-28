@@ -58,7 +58,7 @@ const AboutPage: NextPage = () => {
       </Paragraph>
       <Flex direction="column" align="center" my="5">
         <Image
-          src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/1d5e557a-8f49-4d84-8692-be8c496a0e5c-450.webp"
+          src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/9ee9d79e-840a-4f31-b12b-452b332ccf43-450.png"
           alt="Bishkek"
           w="md"
         />
@@ -91,7 +91,7 @@ const AboutPage: NextPage = () => {
         </Text>
         <Flex direction="column" align="center" my="5">
           <Image
-            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/63c2ff36-ac04-4467-8e79-e17a02855837-450.webp"
+            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/15fe05d7-0e35-41ce-999c-ae2b8e0334d0-450.png"
             alt="My Kid"
             w="md"
           />
@@ -105,7 +105,7 @@ const AboutPage: NextPage = () => {
         </Text>
         <Flex direction="column" align="center" my="5">
           <Image
-            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/4f92e110-dbf7-4cd4-82ed-bd266edb1378-450.webp"
+            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/9a7bd470-7358-4041-aa3a-b98deab70a6d-450.png"
             alt="Skateboard Pro"
             w="md"
           />

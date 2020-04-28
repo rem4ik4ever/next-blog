@@ -38,7 +38,7 @@ const transformImageFromUrl = async (source, w) => {
   if (w) {
     transform = transform.resize(+w);
   }
-  transform = transform.webp({ loseless: true });
+  transform = transform.png();
   return await transform.toBuffer();
 };
 
@@ -72,7 +72,7 @@ const handler: NextApiHandler = async (
     const uuid = v4();
     const uploadResult = await uploadToS3(
       transformedImage,
-      `assets/${uuid}-${w}.webp`
+      `assets/${uuid}-${w}.png`
     );
     await saveFile(source, w, uploadResult);
 
