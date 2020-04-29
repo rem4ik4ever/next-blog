@@ -1,11 +1,10 @@
-import { NextApiHandler, NextApiResponse, NextApiRequest } from "next";
-import { File } from "src/interfaces/File";
-import { v4 } from "uuid";
-import fileSystem from "fs";
-import { FILES_DATA_PATH } from "src/pages/api/files/constants";
-import { allFiles } from "src/pages/api/files/utils";
-import devonlyMiddleware from "src/middlewares/devonly.middleware";
-const fs = fileSystem.promises;
+import { NextApiHandler, NextApiResponse, NextApiRequest } from 'next';
+import { File } from 'src/interfaces/File';
+import { v4 } from 'uuid';
+import fs from 'fs';
+import { FILES_DATA_PATH } from 'src/pages/api/files/constants';
+import { allFiles } from 'src/pages/api/files/utils';
+import devonlyMiddleware from 'src/middlewares/devonly.middleware';
 
 const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -22,9 +21,9 @@ const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
     };
     const filename = `${id}-${name
       .toLowerCase()
-      .split(" ")
-      .join("-")}.json`;
-    await fs.writeFile(
+      .split(' ')
+      .join('-')}.json`;
+    await fs.promises.writeFile(
       `${FILES_DATA_PATH}/${filename}`,
       JSON.stringify(file, null, 2)
     );
@@ -48,7 +47,7 @@ const listFiles = async (_: NextApiRequest, res: NextApiResponse) => {
 };
 
 const files: NextApiHandler = async (req, res) => {
-  if (req.method === "POST") {
+  if (req.method === 'POST') {
     await uploadFile(req, res);
   } else {
     await listFiles(req, res);

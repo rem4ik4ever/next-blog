@@ -1,4 +1,4 @@
-export interface Size{
+export default interface S3UploadResponse{
   ETag: string;
   Location: string;
   key: string;

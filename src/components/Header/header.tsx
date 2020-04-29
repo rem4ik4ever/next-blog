@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Text,
   Flex,
@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/core";
 import NextLink from "next/link";
 import urlMap from "./urlMap";
-import {FaBars} from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import NavigationDrawer from "./NavigationDrawer";
 
 const MenuItem = ({ children, to, isCompact = false }) => {
@@ -50,7 +50,7 @@ const CmsMenu = () => {
 };
 
 const PageHeader = () => {
-  const [showDrawer, toggleDrawer] = useState(false)
+  const [showDrawer, toggleDrawer] = useState(false);
   const isCompact = true; // router && router.route !== "/";
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = {
@@ -90,7 +90,14 @@ const PageHeader = () => {
         </NextLink>
         <Flex display={{ sm: "flex", xs: "none" }} align="center">
           {urlMap.map(nav => (
-            <MenuItem isCompact={isCompact} to={nav.url} key={`url-${nav.name.trim().split(' ').join('-')}`}>
+            <MenuItem
+              isCompact={isCompact}
+              to={nav.url}
+              key={`url-${nav.name
+                .trim()
+                .split(" ")
+                .join("-")}`}
+            >
               {nav.name}
             </MenuItem>
           ))}
@@ -105,9 +112,17 @@ const PageHeader = () => {
             backgroundColor="none"
           />
         </Flex>
-        <Flex display={{sm: 'none', xs:'flex' }}>
-          <IconButton icon={FaBars} backgroundColor="none" aria-label="toggle menu" onClick={() => toggleDrawer(true)}/>
-          <NavigationDrawer onClose={() => toggleDrawer(false)} isOpen={showDrawer} />
+        <Flex display={{ sm: "none", xs: "flex" }}>
+          <IconButton
+            icon={FaBars}
+            backgroundColor="none"
+            aria-label="toggle menu"
+            onClick={() => toggleDrawer(true)}
+          />
+          <NavigationDrawer
+            onClose={() => toggleDrawer(false)}
+            isOpen={showDrawer}
+          />
         </Flex>
       </Flex>
     </Flex>

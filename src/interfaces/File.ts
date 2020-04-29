@@ -3,6 +3,6 @@ export interface File {
   filetype: string;
   size: number;
   url: string;
-  id?: number;
+  id?: string;
   createdAt?: string;
 }

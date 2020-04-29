@@ -1,4 +1,4 @@
-import { getS3Instance } from "./getS3Instance";
+import { getS3Instance } from "pages/api/_utils/aws-s3.utils/getS3Instance";
 
 const deleteRequest = (s3, params) => {
   return new Promise((resolve, reject) => {
@@ -14,7 +14,7 @@ const deleteRequest = (s3, params) => {
   });
 };
 
-const s3Delete = async ( filename ) => {
+const s3DeleteFile = async filename => {
   try {
     const params = {
       Bucket: process.env.S3_BUCKET,
@@ -23,11 +23,11 @@ const s3Delete = async ( filename ) => {
 
     const s3 = getS3Instance();
     const result = await deleteRequest(s3, params);
+    console.log("S3 Delete result: ", result);
   } catch (err) {
     return false;
   }
   return true;
 };
 
-export default s3Delete;
-
+export default s3DeleteFile;

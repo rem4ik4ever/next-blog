@@ -1,10 +1,9 @@
 import { NextApiHandler } from "next";
-import fs from 'fs';
 import { allFiles } from "src/pages/api/files/utils";
-import { ImageFile } from "src/interfaces/ImageFile";
-import s3Delete from "src/utils/aws-helper/s3Delete";
 import devonlyMiddleware from "src/middlewares/devonly.middleware";
 import {FILES_DATA_PATH} from "src/pages/api/files/constants";
+import s3DeleteFile from "pages/api/_utils/aws-s3.utils/s3DeleteFile";
+import {writeJSONToFile} from "pages/api/_utils/files.utils";
 
 const NOT_FOUND = "Not found";
 const OK = "Ok";
@@ -28,17 +27,9 @@ const handler: NextApiHandler = async (req, res) => {
       return res.end(NOT_FOUND);
     }
     const sizeObject = file.sizes[String(size)];
-    await s3Delete(sizeObject.key);
+    await s3DeleteFile(sizeObject.key);
     delete file.sizes[String(size)];
-    const filename = `${file.id}-${file.name
-      .toLowerCase()
-      .split(" ")
-      .join("-")}.json`;
-    await fs.promises.writeFile(
-      `${FILES_DATA_PATH}/${filename}`,
-      JSON.stringify(file, null, 2)
-    );
-
+    await writeJSONToFile(FILES_DATA_PATH, file);
     res.statusCode = 200;
     res.end(OK);
   } catch (err) {

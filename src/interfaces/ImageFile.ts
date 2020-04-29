@@ -1,5 +1,5 @@
 import { File } from "./File";
-import { Size } from "./Size";
+import S3UploadResponse from "./S3UploadResponse";
 
 export interface ImageFile extends File {
   name: string;
@@ -8,5 +8,5 @@ export interface ImageFile extends File {
   url: string;
   id?: number;
   createdAt: string;
-  sizes?: Map<string, Size>;
+  // sizes?: Map<string, S3UploadResponse>;
 }
