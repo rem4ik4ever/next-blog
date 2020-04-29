@@ -1,9 +1,8 @@
 import { NextApiHandler } from "next";
 import { allFiles } from "src/pages/api/files/utils";
-import s3Delete from "src/utils/aws-helper/s3Delete";
-import { formatFilename } from "src/utils/files";
 import { removeOldFile } from "src/cms/blogs/utils";
 import devonlyMiddleware from "src/middlewares/devonly.middleware";
+import s3DeleteFile from "../_utils/aws-s3.utils/s3DeleteFile";
 
 const getFileKeyFromUrl = (url: string) => {
   try {
@@ -25,7 +24,7 @@ const handler: NextApiHandler = async (req, res) => {
         res.end();
       } else {
         const key = getFileKeyFromUrl(file.url);
-        const deleted = await s3Delete(key);
+        const deleted = await s3DeleteFile(key);
         if (!deleted) {
           res.statusCode = 400;
           res.end("Failed to delete file");
