@@ -1,0 +1,17 @@
+{
+  "name": "@rem-blog/utilities",
+  "version": "1.0.0",
+  "description": "utilities for my blog",
+  "author": "Rem Kim",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0"
+  }
+}

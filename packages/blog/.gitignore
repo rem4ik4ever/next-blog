@@ -1,0 +1,10 @@
+node_modules
+.next
+.vscode
+yar-error.log
+out
+.yarnclean
+.env*
+public/.DS_Store
+out/
+.DS_Store

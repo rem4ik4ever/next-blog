@@ -1,46 +1,6 @@
 {
-  "name": "next-project",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
-  },
-  "dependencies": {
-    "@chakra-ui/core": "^0.7.0",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@types/lodash": "^4.14.149",
-    "@types/node-fetch": "^2.5.5",
-    "@types/react-ga": "^2.3.0",
-    "aws-sdk": "^2.656.0",
-    "axios": "^0.19.2",
-    "chakra-ui-markdown-renderer": "^0.1.2",
-    "emotion-theming": "^10.0.27",
-    "formik": "^2.1.4",
-    "lodash": "^4.17.15",
-    "next": "^9.3.4",
-    "next-seo": "^4.4.0",
-    "node-fetch": "^2.6.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-ga": "^2.7.0",
-    "react-icons": "^3.9.0",
-    "react-markdown": "^4.3.1",
-    "sharp": "^0.25.2",
-    "spacetime": "^6.4.2",
-    "swr": "^0.2.0",
-    "uuid": "^7.0.3"
-  },
-  "devDependencies": {
-    "@types/next-seo": "^1.10.0",
-    "@types/node": "^13.11.0",
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
-    "@types/sharp": "^0.25.0",
-    "typescript": "^3.8.3"
-  }
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
 }
