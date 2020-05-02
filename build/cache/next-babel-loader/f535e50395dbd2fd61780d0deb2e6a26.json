@@ -1,1 +1,0 @@
-{"ast":null,"code":"export default [{\n  name: 'Home',\n  url: '/'\n}, {\n  name: 'About me',\n  url: '/about'\n}, {\n  name: 'Blog',\n  url: '/blog'\n}, {\n  name: 'Experience',\n  url: '/experience'\n}];","map":null,"metadata":{},"sourceType":"module"}

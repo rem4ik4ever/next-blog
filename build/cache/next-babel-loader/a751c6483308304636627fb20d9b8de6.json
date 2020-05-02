@@ -1,1 +1,0 @@
-{"ast":null,"code":"const breakpoints = [\"30em\", \"48em\", \"62em\", \"80em\"];\nbreakpoints[\"sm\"] = breakpoints[0];\nbreakpoints[\"md\"] = breakpoints[1];\nbreakpoints[\"lg\"] = breakpoints[2];\nbreakpoints[\"xl\"] = breakpoints[3];\nexport default breakpoints;","map":null,"metadata":{},"sourceType":"module"}

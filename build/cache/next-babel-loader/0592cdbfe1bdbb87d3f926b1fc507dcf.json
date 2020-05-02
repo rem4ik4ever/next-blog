@@ -1,1 +1,0 @@
-{"ast":null,"code":"const OK = \"Ok\";\nconst NOT_FOUND = \"Not Found\";\nconst BAD_RESPONSE = \"Bad Response\";\nexport const allGood = (res, payload = OK) => {\n  res.statusCode = 200;\n  res.end(payload);\n};\nexport const whoops = (res, payload = NOT_FOUND, code = 404) => {\n  res.statusCode = code;\n  res.end(payload);\n};","map":null,"metadata":{},"sourceType":"module"}

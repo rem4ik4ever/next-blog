@@ -1,1 +1,0 @@
-{"ast":null,"code":"async function devonlyMiddleware(req, res) {\n  return new Promise((resolve, reject) => {\n    if (true) {\n      res.statusCode = 404;\n      res.end();\n      reject(\"Dev Only Middleware\");\n    } else {\n      resolve(\"Success\");\n    }\n  });\n}\n\nexport default devonlyMiddleware;","map":null,"metadata":{},"sourceType":"module"}

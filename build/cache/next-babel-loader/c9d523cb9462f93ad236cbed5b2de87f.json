@@ -1,1 +1,0 @@
-{"ast":null,"code":"const defaultConfig = {\n  titleTemplate: \"Rem Kim | %s\",\n  title: \"Personal Website\",\n  description: \"Personal Blog\",\n  url: \"https://remkim.com\",\n  twitter: {\n    handle: '@TheRealRemKim',\n    cardType: 'summary_large_image'\n  }\n};\nexport default defaultConfig;","map":null,"metadata":{},"sourceType":"module"}

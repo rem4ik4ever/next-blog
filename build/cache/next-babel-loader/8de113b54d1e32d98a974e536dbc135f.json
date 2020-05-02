@@ -1,1 +1,0 @@
-{"ast":null,"code":"import axios from \"axios\";\nexport const uploadToS3 = async (file, signedRequest) => {\n  var options = {\n    headers: {\n      \"Content-Type\": file.type\n    }\n  };\n  return await axios.put(signedRequest, file, options);\n};","map":null,"metadata":{},"sourceType":"module"}
