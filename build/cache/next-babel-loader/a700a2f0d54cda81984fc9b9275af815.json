@@ -1,0 +1,1 @@
+{"ast":null,"code":"import AWS from 'aws-sdk';\n\nconst getS3Instance = () => {\n  return new AWS.S3({\n    signatureVersion: 'v4',\n    region: 'us-east-2',\n    accessKeyId: process.env.AWS_ACCESS_KEY_ID,\n    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY\n  });\n};\n\nexport default getS3Instance;","map":null,"metadata":{},"sourceType":"module"}

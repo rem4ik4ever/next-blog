@@ -1,0 +1,1 @@
+{"ast":null,"code":"const handler = async (req, res) => {\n  try {\n    res.statusCode = 200;\n    res.end(\"Ok\");\n  } catch (err) {\n    console.error(err);\n    res.statusCode = 404;\n    res.end();\n  }\n};\n\nexport default handler;","map":null,"metadata":{},"sourceType":"module"}

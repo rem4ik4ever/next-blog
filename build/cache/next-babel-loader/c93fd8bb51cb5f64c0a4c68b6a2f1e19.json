@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var getImageURL = function getImageURL(url, width) {\n  return url;\n};","map":null,"metadata":{},"sourceType":"module"}
