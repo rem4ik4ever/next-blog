@@ -1,9 +1,9 @@
 import { BLOGS_DATA_PATH } from "./constants";
 import fileSystem from "fs";
 import { BlogInterface } from "src/interfaces/Blog";
-import {FILES_DATA_PATH} from "src/pages/api/files/constants";
 
 const fs = fileSystem.promises;
+const FILES_DATA_PATH = './data/assets';
 export const allBlogs = () => {
   const files = fileSystem.readdirSync(BLOGS_DATA_PATH);
   return files.map((file) => {

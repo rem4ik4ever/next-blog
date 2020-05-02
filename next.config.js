@@ -6,4 +6,14 @@ module.exports = {
     S3_BUCKET: process.env.S3_BUCKET,
     GA_TAG: process.env.GA_TAG
   },
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.node = {
+        fs: 'empty'
+      };
+    }
+
+    return config;
+  }
 };

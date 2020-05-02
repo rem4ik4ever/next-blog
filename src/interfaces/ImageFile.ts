@@ -1,12 +1,12 @@
 import { File } from "./File";
-import { Size } from "./Size";
+import S3UploadResponse from "src/utilities/aws-s3.utils/interfaces/S3UploadResponse.interface";
 
 export interface ImageFile extends File {
   name: string;
   filetype: string;
   size: number;
   url: string;
-  id?: number;
+  id?: string;
   createdAt: string;
-  sizes?: Map<string, Size>;
+  sizes?: Map<string, S3UploadResponse>;
 }

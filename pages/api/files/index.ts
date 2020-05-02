@@ -1,11 +1,9 @@
 import { NextApiHandler, NextApiResponse, NextApiRequest } from "next";
 import { File } from "src/interfaces/File";
 import { v4 } from "uuid";
-import fileSystem from "fs";
-import { FILES_DATA_PATH } from "src/pages/api/files/constants";
-import { allFiles } from "src/pages/api/files/utils";
+import fs from "fs";
 import devonlyMiddleware from "src/middlewares/devonly.middleware";
-const fs = fileSystem.promises;
+import utilities from "src/utilities";
 
 const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -18,16 +16,9 @@ const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
       size,
       url,
       id,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
-    const filename = `${id}-${name
-      .toLowerCase()
-      .split(" ")
-      .join("-")}.json`;
-    await fs.writeFile(
-      `${FILES_DATA_PATH}/${filename}`,
-      JSON.stringify(file, null, 2)
-    );
+    utilities.Files.writeJSONToFile("./data/assets", file);
     res.statusCode = 200;
     res.end(JSON.stringify(file));
   } catch (error) {
@@ -38,7 +29,7 @@ const uploadFile = async (req: NextApiRequest, res: NextApiResponse) => {
 
 const listFiles = async (_: NextApiRequest, res: NextApiResponse) => {
   try {
-    const files = allFiles();
+    const files = utilities.Files.allFiles();
     res.statusCode = 200;
     res.end(JSON.stringify(files));
   } catch (error) {

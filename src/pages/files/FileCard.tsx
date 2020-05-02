@@ -38,9 +38,10 @@ const FileCard = ({ file }) => {
   };
   const formatImage = async ev => {
     ev.preventDefault();
-    await axios.get(
-      `/api/images?source=${encodeURIComponent(file.url)}&w=${size}`
-    );
+    await axios.post(`/api/images/${file.id}`, {
+      source: file.url,
+      w: size
+    });
     location.reload();
   };
   return (
