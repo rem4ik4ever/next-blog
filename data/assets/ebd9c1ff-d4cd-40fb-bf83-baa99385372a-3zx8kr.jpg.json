@@ -1,0 +1,17 @@
+{
+  "name": "3zx8kr.jpg",
+  "size": 41561,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/f9eb70aa-8e61-4d83-810c-ff8c7bfde381-3zx8kr-jpg",
+  "id": "ebd9c1ff-d4cd-40fb-bf83-baa99385372a",
+  "createdAt": "2020-05-03T19:18:24.210Z",
+  "filename": "ebd9c1ff-d4cd-40fb-bf83-baa99385372a-3zx8kr.jpg.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"61121a997ddf18c606cf6b904cc39312\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/fcf55b87-85fc-4f55-85d7-814a803a1d50-450.png",
+      "key": "assets/fcf55b87-85fc-4f55-85d7-814a803a1d50-450.png",
+      "Key": "assets/fcf55b87-85fc-4f55-85d7-814a803a1d50-450.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}

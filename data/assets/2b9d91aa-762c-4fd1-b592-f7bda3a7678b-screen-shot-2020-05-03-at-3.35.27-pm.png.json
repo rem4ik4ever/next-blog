@@ -1,0 +1,17 @@
+{
+  "name": "Screen Shot 2020-05-03 at 3.35.27 PM.png",
+  "size": 74891,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/367446e7-8e08-448a-8925-e898d1c5917c-screen-shot-2020",
+  "id": "2b9d91aa-762c-4fd1-b592-f7bda3a7678b",
+  "createdAt": "2020-05-03T19:36:06.308Z",
+  "filename": "2b9d91aa-762c-4fd1-b592-f7bda3a7678b-screen-shot-2020-05-03-at-3.35.27-pm.png.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"510d01c2f947549a60359994c6088d6e\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/86034f39-5348-410c-a5fa-04f06455c3b1-450.png",
+      "key": "assets/86034f39-5348-410c-a5fa-04f06455c3b1-450.png",
+      "Key": "assets/86034f39-5348-410c-a5fa-04f06455c3b1-450.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
