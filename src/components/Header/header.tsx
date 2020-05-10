@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Text,
   Flex,
@@ -9,11 +9,11 @@ import {
   Button,
   useColorMode,
   IconButton
-} from "@chakra-ui/core";
-import NextLink from "next/link";
-import urlMap from "./urlMap";
-import { FaBars } from "react-icons/fa";
-import NavigationDrawer from "./NavigationDrawer";
+} from '@chakra-ui/core';
+import NextLink from 'next/link';
+import urlMap from './urlMap';
+import { FaBars } from 'react-icons/fa';
+import NavigationDrawer from './NavigationDrawer';
 
 const MenuItem = ({ children, to, isCompact = false }) => {
   const theme = useTheme();
@@ -24,7 +24,7 @@ const MenuItem = ({ children, to, isCompact = false }) => {
           // color={theme.colors.white}
           ml={3}
           mr={3}
-          fontSize={isCompact ? "md" : "lg"}
+          fontSize={isCompact ? 'md' : 'lg'}
         >
           {children}
         </Text>
@@ -34,7 +34,7 @@ const MenuItem = ({ children, to, isCompact = false }) => {
 };
 
 const CmsMenu = () => {
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV === 'development') {
     return (
       <>
         <MenuItem to="/cms">CMS</MenuItem>
@@ -54,8 +54,8 @@ const PageHeader = () => {
   const isCompact = true; // router && router.route !== "/";
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = {
-    light: "cyan.700",
-    dark: "gray.700"
+    light: 'cyan.700',
+    dark: 'gray.700'
   };
   return (
     <Flex
@@ -73,46 +73,37 @@ const PageHeader = () => {
         justify="space-between"
         wrap="wrap"
         padding={5}
-        width={{ base: "full", md: "70%" }}
+        width={{ base: 'full', md: '70%' }}
       >
         <NextLink href="/">
           <Flex align="center">
             <Avatar
               name="Rem Kim"
               src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
-              size={isCompact ? "md" : "xl"}
-              border={isCompact ? "none" : "3px solid white"}
+              size={isCompact ? 'md' : 'xl'}
+              border={isCompact ? 'none' : '3px solid white'}
             />
             <Heading as="h1" size="lg" marginLeft="2">
               Rem Kim
             </Heading>
           </Flex>
         </NextLink>
-        <Flex display={{ sm: "flex", xs: "none" }} align="center">
+        <Flex display={{ sm: 'flex', xs: 'none' }} align="center">
           {urlMap.map(nav => (
             <MenuItem
               isCompact={isCompact}
               to={nav.url}
               key={`url-${nav.name
                 .trim()
-                .split(" ")
-                .join("-")}`}
+                .split(' ')
+                .join('-')}`}
             >
               {nav.name}
             </MenuItem>
           ))}
           <CmsMenu />
-          <IconButton
-            ml="2"
-            aria-label="Color Mode"
-            size="md"
-            icon={colorMode === "light" ? "moon" : "sun"}
-            onClick={e => toggleColorMode()}
-            color="gray.50"
-            backgroundColor="none"
-          />
         </Flex>
-        <Flex display={{ sm: "none", xs: "flex" }}>
+        <Flex display={{ sm: 'none', xs: 'flex' }}>
           <IconButton
             icon={FaBars}
             backgroundColor="none"
