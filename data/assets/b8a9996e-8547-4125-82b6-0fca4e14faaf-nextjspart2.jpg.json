@@ -1,0 +1,17 @@
+{
+  "name": "nextjspart2.jpg",
+  "size": 39093,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/00890df4-a4ed-4936-9ff7-f4f1d5adcfee-nextjspart2-jpg",
+  "id": "b8a9996e-8547-4125-82b6-0fca4e14faaf",
+  "createdAt": "2020-05-10T17:55:37.068Z",
+  "filename": "b8a9996e-8547-4125-82b6-0fca4e14faaf-nextjspart2.jpg.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"ee3ca1ca0e4951a5bf354c1586d7bc7b\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/2a76db77-37b1-426b-bc34-a01413963e63-450.png",
+      "key": "assets/2a76db77-37b1-426b-bc34-a01413963e63-450.png",
+      "Key": "assets/2a76db77-37b1-426b-bc34-a01413963e63-450.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}

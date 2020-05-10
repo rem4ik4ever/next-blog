@@ -1,0 +1,20 @@
+{
+  "title": "Saving blogs as JSON files. Next.js blog Part 2",
+  "tldr": "In previous blog I showed how to setup basic Next.js project. Here I will explain how to setup your own CMS and save blogs locally using Lambda functions.",
+  "tags": [
+    "next.js",
+    "cms",
+    "localstorage",
+    "lambda",
+    "serverless"
+  ],
+  "content": "## Welcome to part 2 of Setting up Next.js blog!\nIt is obvious that you need some sort of storage to save your blogs. It could be good old MySQL or Postgres. It could be document storage like  MongoDB, or something new and fancy like FaunaDB. In my case I didn't want to use any third party hosting/provider services to store my data and I also wanted to own data. So, I decided to save files locally and use Github as a data storage. \n\n#CMS\nThere are few things we will cover while building CMS. \n- Writing markdown and rendering markdown blog content\n- Saving/updating files locally using Lambda functions \n- Making sure you can only save/update/delete in development mode locally\n\n## Writing markdown \nI didn't want to write HTML for each blog to style it. So the easiest and right way to do it is to use markdown. \n\nI used package [react-markdown](https://github.com/rexxars/react-markdown) that allows you to render markdown input as HTML. Now since in my blog I use [Chakra UI](https://chakra-ui.com/) I had to pass renderer function in order for react-markdown package to know how to render each of markdown elements. \n\n\n ![markdown-preview](https://rem-blog-bucket.s3.amazonaws.com/assets/708b2982-d0f6-455c-a8e7-2bcd7cac0498-saving-markdown-)\nFull blog form code [here](https://github.com/rem4ik4ever/next-blog/blob/master/src/cms/blogs/BlogForm.tsx)\n\nThis form allows us to write our blog in textarea as a markdown and then preview it using React Markdown package. We will use the same package to render it in blog page.\n\n## Saving blog file\nWe will be using Lambda functions which is Next.js API routes to save blog. \n\nSending POST request to `/api/cms/blogs` will save file. \n\n![Saving/Listing blog files](https://rem-blog-bucket.s3.amazonaws.com/assets/11e1b90a-63c7-4c97-a203-6fc4f0d7913b-carbon-png)\n\nFirst of all we need to make sure that incoming request is `POST`, then we check if we are in development environment, by running `devonlyMiddleware` which I will describe later. After that we can proceed with saving file. \n\nHere is example structure of the blog file \n```JSON\n{\n  \"title\": \"Newer draft\",\n  \"tldr\": \"Some tldr\",\n  \"tags\": [],\n  \"content\": \"\",\n  \"thumbnail\": null,\n  \"status\": \"draft\",\n  \"author\": \"Rem Kim\",\n  \"createdAt\": \"2020-04-15T02:32:45.034Z\",\n  \"updatedAt\": \"2020-04-22T21:19:19.791Z\",\n  \"slug\": \"newer-draft\",\n  \"id\": 1586917965034\n}\n```\nThose are the fields I find useful and need to be saved. \n\ngenerateFilename \n![generateFilename](https://rem-blog-bucket.s3.amazonaws.com/assets/7df954b6-b97e-4c2d-a706-7c31f455daa1-generate-filenam)\n\ngetSlug \n![getSlug](https://rem-blog-bucket.s3.amazonaws.com/assets/56430dd5-ed3f-4771-b1e2-e457e307ceca-getslug-png)",
+  "thumbnail": null,
+  "status": "draft",
+  "author": "Rem Kim",
+  "createdAt": "2020-05-10T17:53:24.476Z",
+  "updatedAt": "2020-05-10T19:42:06.015Z",
+  "slug": "saving-blogs-as-json-files-nextjs-blog-part-2",
+  "id": 1589133204476,
+  "thumbnailUrl": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/2a76db77-37b1-426b-bc34-a01413963e63-450.png"
+}
