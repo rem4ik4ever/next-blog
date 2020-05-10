@@ -1,0 +1,17 @@
+{
+  "name": "devonly-middleware.png",
+  "size": 97549,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/812d0a00-39f3-465c-a69f-3d6267f4bda0-devonly-middlewa",
+  "id": "3f8cd87a-0e3b-49c8-b515-7fc8d4563cef",
+  "createdAt": "2020-05-10T21:17:52.651Z",
+  "filename": "3f8cd87a-0e3b-49c8-b515-7fc8d4563cef-devonly-middleware.png.json",
+  "sizes": {
+    "600": {
+      "ETag": "\"6529939878978c4bdbab4488c6210c3b\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/b99248db-4a01-4dcf-9bf2-081075a0bc47-600.png",
+      "key": "assets/b99248db-4a01-4dcf-9bf2-081075a0bc47-600.png",
+      "Key": "assets/b99248db-4a01-4dcf-9bf2-081075a0bc47-600.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
