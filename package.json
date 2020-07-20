@@ -21,7 +21,7 @@
     "chakra-ui-markdown-renderer": "^0.1.2",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next": "^9.3.4",
     "next-seo": "^4.4.0",
     "node-fetch": "^2.6.0",
