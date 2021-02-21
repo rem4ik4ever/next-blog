@@ -1,0 +1,21 @@
+{
+  "title": "How to fix Google - looks like you're in a different country from the family manager",
+  "tldr": "Recently wanted to add my wife to my YouTube Premium subscription, however Google does not allow to add family members if they have different address",
+  "tags": [
+    "Google",
+    "YouTube",
+    "Premium",
+    "Subscription",
+    "country",
+    "family"
+  ],
+  "content": "# Looks like you're in a different country from the family manager\n\nIt is very confusing on how does google determine if your family member if not in the same address as you. However it appears that your first payment method address is set to be your legal address.\n\nSo here are steps to fix this issue.\n\n1. Navigate to google.com or in Google Chrome click account and navigate to \"Manage your Google Account\"\n2. On the left hand navigation open \"Payments and subscriptions\"\n3. In \"Payment methods\" section find and click on link to \"Manage payment methods\"\n4. Navigate to \"Settings\" tab \n5. Find payment profiles and at this point you have 2 options. \n    - Close all profiles that you have and do the same for your family member and then recreate payment profile with the same address\n    - only delete payment profile for your family member, but entering your legal address. \n\nHope that helps!",
+  "thumbnail": null,
+  "status": "released",
+  "author": "Rem Kim",
+  "createdAt": "2021-02-21T16:46:01.143Z",
+  "updatedAt": "2021-02-21T16:58:19.088Z",
+  "slug": "how-to-fix-google--looks-like-youre-in-a-different-country-from-the-family-manager",
+  "id": 1613925961143,
+  "thumbnailUrl": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/b251f6cd-5bb5-47fa-8801-82b67f367c91-600.png"
+}

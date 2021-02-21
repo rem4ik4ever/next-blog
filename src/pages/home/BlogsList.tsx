@@ -1,8 +1,9 @@
 import React from "react";
-import { Flex, Heading, Image, Grid, Text, Box } from "@chakra-ui/core";
+import { Flex, Heading, Grid, Text, Box } from "@chakra-ui/core";
 import Card from "src/components/Card";
 import MyLink from "src/utils/MyLink";
 import {BlogInterface} from "src/interfaces/Blog";
+import Image from 'next/image'
 
 const RecentPosts = ({ blogs, label }) => {
   return (
@@ -15,7 +16,7 @@ const RecentPosts = ({ blogs, label }) => {
           <Box key={`blog-${blog.slug}`}>
             <Card p="0">
               <Flex direction="column">
-                <Image src={blog.thumbnailUrl} w="full" />
+                <Image src={blog.thumbnailUrl} alt={blog.title} width={600} height={600}/>
                 <Box p="3">
                   <Heading as="h3" size="xl" my="3">
                     {blog.title}

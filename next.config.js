@@ -15,5 +15,11 @@ module.exports = {
     }
 
     return config;
+  },
+  images: {
+    domains: [
+      'rem-blog-bucket.s3.us-east-2.amazonaws.com',
+      'rem-blog-bucket.s3.amazonaws.com'
+    ]
   }
 };

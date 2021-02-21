@@ -1,0 +1,17 @@
+{
+  "name": "family-subscription.jpg",
+  "size": 36178,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/636ec17e-dbcf-4fcb-bb7f-68ffb11c4ea2-family-subscript",
+  "id": "14241ea6-f2f1-46f9-b7a3-0a97d1734222",
+  "createdAt": "2021-02-21T16:56:12.002Z",
+  "filename": "14241ea6-f2f1-46f9-b7a3-0a97d1734222-family-subscription.jpg.json",
+  "sizes": {
+    "600": {
+      "ETag": "\"3d38a15674dc0dbecadc0ef6de7cf7ef\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/b251f6cd-5bb5-47fa-8801-82b67f367c91-600.png",
+      "key": "assets/b251f6cd-5bb5-47fa-8801-82b67f367c91-600.png",
+      "Key": "assets/b251f6cd-5bb5-47fa-8801-82b67f367c91-600.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
