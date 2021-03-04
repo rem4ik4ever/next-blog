@@ -9,14 +9,14 @@ import {
   Input,
   FormHelperText,
   Tag,
+  TagCloseButton,
   TagIcon,
-  Stack,
   TagLabel,
   Switch,
   Textarea,
   Select,
   Icon,
-  Text
+  Text,
 } from "@chakra-ui/core";
 import TagInput from "src/components/TagInput";
 import ReactMarkdown from "react-markdown";
@@ -54,9 +54,13 @@ const BlogForm = ({ formik }) => {
       }, 2000);
     }
   }, [formik.status]);
-  const addTag = tag => {
+  const addTag = (tag: String) => {
     formik.setFieldValue("tags", [...formik.values.tags, tag]);
   };
+  const removeTag = (tag: String) => {
+    formik.setFieldValue("tags", formik.values.tags.filter((t: String) => t !== tag));
+  };
+
   const statuses = Object.keys(BlogStatus);
   return (
     <form
@@ -135,14 +139,16 @@ const BlogForm = ({ formik }) => {
                 label="Blog tags"
                 description="Tags helps searching"
               />
-              <Stack spacing={4} isInline mt="4">
+              <Box mt="4" display="flex" flexWrap="wrap">
                 {formik.values.tags.map(tag => (
+                <Box mr="2">
                   <Tag size="md" key={`tag-${tag}`} variantColor="cyan">
-                    <TagIcon icon="add" size="12px" />
                     <TagLabel>{tag}</TagLabel>
+                    <TagCloseButton onClick={() => removeTag(tag)}/>
                   </Tag>
+                </Box>
                 ))}
-              </Stack>
+              </Box>
             </Box>
             <FormControl mt="2">
               <FormLabel htmlFor="markdown-preview">

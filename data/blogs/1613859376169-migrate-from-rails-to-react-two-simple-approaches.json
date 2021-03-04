@@ -1,0 +1,24 @@
+{
+  "title": "Migrate from Rails to React two simple approaches",
+  "tldr": "Migration from legacy Rails app to React can be a challenge, I have helped 2 companies to perform a migration and would like to share 2 different approaches those companies used.",
+  "tags": [
+    "Ruby",
+    "Rails",
+    "ReactJS",
+    "react",
+    "iframe",
+    "migration",
+    "monolith",
+    "frontend",
+    "backend"
+  ],
+  "content": "# Legacy Rails app\nThere are many legacy applications out there that want to migrate to new modern web apps using React or Angular, to bring much smoother and better user experience. However with existing client base and huge number of features to re-implement it becomes a huge challenge. \n\nIn my experience I had 2 cases of Rails to React migration and both took different strategies.\n\n- React app within Rails using webpacker (React in Rails)\n- Rails app with React app on a separate domain as an iframe (React iFrame)\n\nBoth approaches are viable and as practice shows work well in production.\n\n## React in Rails\nProbably will be first pick for many teams when deciding on how to migrate to React. Latest versions of Rails already come with Webpacker, however if you are running earlier version of Rails you will need to manually setup it up. \n\nIn general this approach is easier. You will still be working in existing Rails app. You can pass Rails props to component hence opening up room for server side rendering. On the other hand if you had a plan to completely detach Frontend from Backend, this does not really help since both Frontend and Backend codebases are in single monorepo, but if your team didn't have such plans and you just want to have React on Frontend then this will work well for you.\n\n### Pros:\n- Easy to start, lots of documentation on Webpacker and React \n- Add components to Rails pages \n- Potential to SSR (Server Side Rendering) if needed\n- No headache maintaining separate build/deploy pipeline \n\n### Cons:\n- Rails monolith is getting even bigger with 2 codebases in single repository \n- Issues with running Webpacker for earlier versions of Rails\n- Build time is longer\n\n## React iFrame\nNot as an obvious choice for some teams, however has its own pros and cons. \n\nThis approach helps to separate Frontend from Backend. You will have another repository for React app, which means it needs to have its own build and deploy pipeline. It can be a headache now that for full end to end feature you will need to coordinate backend and frontend deployments to make sure everything is delivered at the same time. But once migration is complete you will get a complete frontend backend delineation, now dedicated backend team can work on API and frontend team on React app.  \n\nIframe has its limitations and they can be a deciding factor when picking this approach. \n\nIf you want to use `react-router` then you will find that even though you can navigate within iframe it will not update parent URL. \n\nIf you have authenticated pages, assuming you pass a token to iframe, React app will have to refetch user on every page when navigating in Rails app between React pages. \n\n### Pros:\n- Offload Frontend pieces from Rails monolith\n- Separate build/deploy pipeline\n- After migration is complete Rails becomes API only server\n\n### Cons:\n- Build/Deploy/CORS headache \n- No control over URL in iFrame\n- Need to authenticate on every page\n\n\n## Conclusion\n\nLike I said before both of those approaches work and depending on what you try to achieve one might work better than another. It is a common thing for legacy apps try to migrate to modern web frameworks, so knowing those techniques and their pros and cons can come in handy!\n\n\n\n\n",
+  "thumbnail": null,
+  "status": "released",
+  "author": "Rem Kim",
+  "createdAt": "2021-02-20T22:16:16.169Z",
+  "updatedAt": "2021-02-21T22:40:57.546Z",
+  "slug": "migrate-from-rails-to-react-two-simple-approaches",
+  "id": 1613859376169,
+  "thumbnailUrl": "https://rem-blog-bucket.s3.amazonaws.com/assets/1a54a35b-4cb8-43d5-9f91-db1654bce405-screen-shot-2021"
+}
