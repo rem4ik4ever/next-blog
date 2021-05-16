@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Text,
   Flex,
@@ -8,12 +8,12 @@ import {
   Avatar,
   Button,
   useColorMode,
-  IconButton
-} from '@chakra-ui/core';
-import NextLink from 'next/link';
-import urlMap from './urlMap';
-import { FaBars } from 'react-icons/fa';
-import NavigationDrawer from './NavigationDrawer';
+  IconButton,
+} from "@chakra-ui/core";
+import NextLink from "next/link";
+import urlMap from "./urlMap";
+import { FaBars } from "react-icons/fa";
+import NavigationDrawer from "./NavigationDrawer";
 
 const MenuItem = ({ children, to, isCompact = false }) => {
   const theme = useTheme();
@@ -24,7 +24,7 @@ const MenuItem = ({ children, to, isCompact = false }) => {
           // color={theme.colors.white}
           ml={3}
           mr={3}
-          fontSize={isCompact ? 'md' : 'lg'}
+          fontSize={isCompact ? "md" : "lg"}
         >
           {children}
         </Text>
@@ -34,7 +34,7 @@ const MenuItem = ({ children, to, isCompact = false }) => {
 };
 
 const CmsMenu = () => {
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === "development") {
     return (
       <>
         <MenuItem to="/cms">CMS</MenuItem>
@@ -54,70 +54,102 @@ const PageHeader = () => {
   const isCompact = true; // router && router.route !== "/";
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = {
-    light: 'cyan.700',
-    dark: 'gray.700'
+    light: "cyan.700",
+    dark: "gray.700",
   };
   return (
     <Flex
-      as="nav"
-      width="full"
-      color="white"
-      justify="center"
-      backgroundColor={bgColor[colorMode]}
-      padding={isCompact ? 2 : 5}
-      shadow="lg"
+      top="0"
+      position="sticky"
+      display="flex"
+      justifyContent="space-between"
+      flexDir="row"
+      width="100%"
+      p="16px 36px"
+      paddingBottom="0px"
     >
-      <Flex
-        direction="row"
-        align="center"
-        justify="space-between"
-        wrap="wrap"
-        padding={5}
-        width={{ base: 'full', md: '70%' }}
-      >
-        <NextLink href="/">
-          <Flex align="center">
-            <Avatar
-              name="Rem Kim"
-              src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
-              size={isCompact ? 'md' : 'xl'}
-              border={isCompact ? 'none' : '3px solid white'}
-            />
-            <Heading as="h1" size="lg" marginLeft="2">
-              Rem Kim
-            </Heading>
-          </Flex>
-        </NextLink>
-        <Flex display={{ sm: 'flex', xs: 'none' }} align="center">
-          {urlMap.map(nav => (
-            <MenuItem
-              isCompact={isCompact}
-              to={nav.url}
-              key={`url-${nav.name
-                .trim()
-                .split(' ')
-                .join('-')}`}
-            >
-              {nav.name}
-            </MenuItem>
-          ))}
-          <CmsMenu />
-        </Flex>
-        <Flex display={{ sm: 'none', xs: 'flex' }}>
-          <IconButton
-            icon={FaBars}
-            backgroundColor="none"
-            aria-label="toggle menu"
-            onClick={() => toggleDrawer(true)}
-          />
-          <NavigationDrawer
-            onClose={() => toggleDrawer(false)}
-            isOpen={showDrawer}
-          />
-        </Flex>
+      <Flex align="center">
+        <Avatar
+          name="Rem Kim"
+          src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
+          size={isCompact ? "md" : "xl"}
+          border={isCompact ? "none" : "3px solid white"}
+        />
+        <Heading as="h1" size="md" fontWeight="400" marginLeft="2">
+          Rem Kim
+        </Heading>
       </Flex>
+      <IconButton
+        icon={FaBars}
+        backgroundColor="none"
+        aria-label="toggle menu"
+        onClick={() => toggleDrawer(true)}
+      />
+      <NavigationDrawer
+        onClose={() => toggleDrawer(false)}
+        isOpen={showDrawer}
+      />
     </Flex>
   );
 };
+
+{
+  /* <Flex
+as="nav"
+width="full"
+color="white"
+justify="center"
+backgroundColor={bgColor[colorMode]}
+padding={isCompact ? 2 : 5}
+shadow="lg"
+>
+<Flex
+  direction="row"
+  align="center"
+  justify="space-between"
+  wrap="wrap"
+  padding={5}
+  width={{ base: "full", md: "70%" }}
+>
+  <NextLink href="/">
+    <Flex align="center">
+      <Avatar
+        name="Rem Kim"
+        src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
+        size={isCompact ? "md" : "xl"}
+        border={isCompact ? "none" : "3px solid white"}
+      />
+      <Heading as="h1" size="lg" marginLeft="2">
+        Rem Kim
+      </Heading>
+    </Flex>
+  </NextLink>
+  <Flex display={{ sm: "flex", xs: "none" }} align="center">
+    {urlMap.map((nav) => (
+      <MenuItem
+        isCompact={isCompact}
+        to={nav.url}
+        key={`url-${nav.name.trim().split(" ").join("-")}`}
+      >
+        {nav.name}
+      </MenuItem>
+    ))}
+    <CmsMenu />
+  </Flex>
+  <Flex display={{ sm: "none", xs: "flex" }}>
+    <IconButton
+      icon={FaBars}
+      backgroundColor="none"
+      aria-label="toggle menu"
+      onClick={() => toggleDrawer(true)}
+    />
+    <NavigationDrawer
+      onClose={() => toggleDrawer(false)}
+      isOpen={showDrawer}
+    />
+  </Flex>
+</Flex>
+</Flex> */
+}
 
 export default PageHeader;

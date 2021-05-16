@@ -31,16 +31,16 @@ export const getStaticProps: GetStaticProps = async () => {
     });
     return {
       props: {
-        blogs: sortedBlogs
-          .filter(blog => blog.status === BlogStatus.released)
-          .slice(0, 3)
-      }
+        blogs: sortedBlogs.filter(
+          (blog) => blog.status === BlogStatus.released
+        ),
+      },
     };
   } catch (error) {
     return {
       props: {
-        blogs: []
-      }
+        blogs: [],
+      },
     };
   }
 };

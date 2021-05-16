@@ -8,7 +8,7 @@ import {
   Text,
   DrawerHeader,
   DrawerFooter,
-  Flex
+  Flex,
 } from "@chakra-ui/core";
 import urlMap from "./urlMap";
 import Link from "next/link";
@@ -23,14 +23,11 @@ const NavigationDrawer = ({ onClose, isOpen }) => {
           <Flex justify="center">Menu</Flex>
         </DrawerHeader>
         <DrawerBody>
-          {urlMap.map(nav => (
+          {urlMap.map((nav) => (
             <Link
               href={nav.url}
               passHref
-              key={`nav-${nav.name
-                .trim()
-                .split(" ")
-                .join("-")}`}
+              key={`nav-${nav.name.trim().split(" ").join("-")}`}
             >
               <Box padding="5">
                 <Text fontSize="lg" fontWeight="light">
@@ -41,7 +38,7 @@ const NavigationDrawer = ({ onClose, isOpen }) => {
           ))}
         </DrawerBody>
         <DrawerFooter textAlign="center">
-            <SocialLinks flexGrow="1" />
+          <SocialLinks flexGrow="1" />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
