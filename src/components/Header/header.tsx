@@ -1,66 +1,20 @@
 import React, { useState } from "react";
 import {
-  Text,
   Flex,
-  useTheme,
   Heading,
-  Link,
   Avatar,
-  Button,
   useColorMode,
   IconButton,
 } from "@chakra-ui/core";
-import NextLink from "next/link";
-import urlMap from "./urlMap";
 import { FaBars } from "react-icons/fa";
 import NavigationDrawer from "./NavigationDrawer";
-
-const MenuItem = ({ children, to, isCompact = false }) => {
-  const theme = useTheme();
-  return (
-    <NextLink href={to} passHref>
-      <Link>
-        <Text
-          // color={theme.colors.white}
-          ml={3}
-          mr={3}
-          fontSize={isCompact ? "md" : "lg"}
-        >
-          {children}
-        </Text>
-      </Link>
-    </NextLink>
-  );
-};
-
-const CmsMenu = () => {
-  if (process.env.NODE_ENV === "development") {
-    return (
-      <>
-        <MenuItem to="/cms">CMS</MenuItem>
-        <NextLink href="/cms/write" passHref>
-          <Button variant="solid" backgroundColor="red.500">
-            POST
-          </Button>
-        </NextLink>
-      </>
-    );
-  }
-  return null;
-};
-
 const PageHeader = () => {
   const [showDrawer, toggleDrawer] = useState(false);
   const isCompact = true; // router && router.route !== "/";
-  const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = {
-    light: "cyan.700",
-    dark: "gray.700",
-  };
   return (
     <Flex
-      top="0"
-      position="sticky"
+      top={{ xs: "none", md: "0" }}
+      position={{ base: "relative", md: "sticky" }}
       display="flex"
       justifyContent="space-between"
       flexDir="row"

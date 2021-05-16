@@ -10,9 +10,7 @@ const MyLink = (props) => {
   };
   return (
     <NextLink {...props}>
-      <Link color={color[colorMode]} textDecor="underline">
-        {props.children}
-      </Link>
+      <Link color={color[colorMode]}>{props.children}</Link>
     </NextLink>
   );
 };
