@@ -18,9 +18,11 @@ const RecentPosts = ({ blogs, label }) => {
             <Card p="0">
               <Flex direction="row">
                 <Box p="3">
-                  <Heading as="h3" size="sm" my="3">
-                    {blog.title}
-                  </Heading>
+                  <MyLink href={`/blog/${blog.slug}`}>
+                    <Heading as="h3" size="sm" my="3">
+                      {blog.title}
+                    </Heading>
+                  </MyLink>
                   <Flex>
                     <Text fontSize="sm">{blog.tldr}</Text>
                   </Flex>
