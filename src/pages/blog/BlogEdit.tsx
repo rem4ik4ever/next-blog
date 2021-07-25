@@ -4,6 +4,7 @@ import BlogForm from "src/cms/blogs/BlogForm";
 import { useBlogUpdate } from "src/cms/blogs/hooks";
 import useSWR from "swr";
 import { useRouter } from "next/router";
+import { BlogStatus } from "src/enums/BlogStatus";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -35,12 +36,21 @@ const BlogFormik = ({ blog }) => {
     onSubmit: async (values, { setStatus, setSubmitting }) => {
       try {
         setSubmitting(true);
-        await handleUpdate(blog.id, values);
+        const updatedBlog = { ...values };
+        if (
+          blog.status !== BlogStatus.released &&
+          values.status === BlogStatus.released
+        ) {
+          updatedBlog.releasedAt = new Date().toISOString();
+        } else {
+          updatedBlog.releasedAt = null;
+        }
+        await handleUpdate(blog.id, updatedBlog);
         setStatus({ success: true });
       } catch (error) {
         setStatus({ error: true });
       }
-    }
+    },
   });
 
   return <BlogForm formik={formik} />;

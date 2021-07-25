@@ -8,6 +8,7 @@ export interface BlogInterface {
   author: string;
   createdAt: string;
   updatedAt: string;
+  releasedAt?: string;
   status: BlogStatus;
   slug: string;
   content: string;

@@ -9,13 +9,13 @@ import defaultConfig from "src/utils/SEO/next-seo.config";
 
 const BlogIndexPage: NextPage<{
   blogs: BlogInterface[];
-}> = props => {
+}> = (props) => {
   const { blogs } = props;
   const config = {
     ...defaultConfig,
     title: "Blog",
-    description: "Browse my blogs"
-  }
+    description: "Browse my blogs",
+  };
   return (
     <Box>
       <PageSEO pageInfo={config} />
@@ -30,19 +30,19 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const payload = allBlogs();
     const blogs = payload
-      .filter(blog => blog.status === BlogStatus.released)
+      .filter((blog) => blog.status === BlogStatus.released)
       .sort((a, b) => {
-        if (a.createdAt > b.createdAt) return -1;
-        if (a.createdAt < b.createdAt) return 1;
+        if (a.releasedAt > b.releasedAt) return -1;
+        if (a.releasedAt < b.releasedAt) return 1;
         return 0;
       });
     return {
-      props: { blogs }
+      props: { blogs },
     };
   } catch (error) {
     console.error(error.message);
     return {
-      props: { blogs: [] }
+      props: { blogs: [] },
     };
   }
 };

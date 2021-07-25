@@ -14,8 +14,9 @@
   "status": "released",
   "author": "Rem Kim",
   "createdAt": "2021-07-25T14:06:26.013Z",
-  "updatedAt": "2021-07-25T19:40:43.984Z",
+  "updatedAt": "2021-07-25T20:28:08.753Z",
   "slug": "tips-on-passing-technical-interview",
   "id": 1627221986013,
-  "thumbnailUrl": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/bf67c8e8-5cbf-4d31-bbaf-90990e1e3c28-600.png"
+  "thumbnailUrl": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/bf67c8e8-5cbf-4d31-bbaf-90990e1e3c28-600.png",
+  "releasedAt": null
 }
