@@ -31,9 +31,10 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
           source={blog.content}
           escapeHtml={false}
         />
-        <Stack spacing={1} isInline>
+
+        <Stack spacing={1} isInline flexWrap="wrap">
           {blog.tags.map((tag) => (
-            <Tag key={tag} variantColor="cyan" size="sm">
+            <Tag key={tag} variantColor="cyan" size="sm" mt={1}>
               {tag}
             </Tag>
           ))}
