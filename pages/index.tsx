@@ -25,8 +25,8 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const blogs = allBlogs();
     const sortedBlogs = blogs.sort((a, b) => {
-      if (a.createdAt > b.createdAt) return -1;
-      if (a.createdAt < b.createdAt) return 1;
+      if (a.releasedAt > b.releasedAt) return -1;
+      if (a.releasedAt < b.releasedAt) return 1;
       return 0;
     });
     return {
