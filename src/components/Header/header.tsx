@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/core";
 import { FaBars } from "react-icons/fa";
 import NavigationDrawer from "./NavigationDrawer";
+import MyLink from "src/utils/MyLink";
 const PageHeader = () => {
   const [showDrawer, toggleDrawer] = useState(false);
   const isCompact = true; // router && router.route !== "/";
@@ -22,17 +23,19 @@ const PageHeader = () => {
       p="16px 36px"
       paddingBottom="0px"
     >
-      <Flex align="center">
-        <Avatar
-          name="Rem Kim"
-          src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
-          size={isCompact ? "md" : "xl"}
-          border={isCompact ? "none" : "3px solid white"}
-        />
-        <Heading as="h1" size="md" fontWeight="400" marginLeft="2">
-          Rem Kim
-        </Heading>
-      </Flex>
+      <MyLink href="/">
+        <Flex align="center">
+          <Avatar
+            name="Rem Kim"
+            src="https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/26417e22-9504-4747-9c27-79dfad9ac62f-50.png"
+            size={isCompact ? "md" : "xl"}
+            border={isCompact ? "none" : "3px solid white"}
+          />
+          <Heading as="h1" size="md" fontWeight="400" marginLeft="2">
+            Rem Kim
+          </Heading>
+        </Flex>
+      </MyLink>
       <IconButton
         icon={FaBars}
         backgroundColor="none"

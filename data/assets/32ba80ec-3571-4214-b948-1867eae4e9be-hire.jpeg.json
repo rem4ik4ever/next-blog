@@ -1,0 +1,17 @@
+{
+  "name": "hire.jpeg",
+  "size": 758894,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/83e4a4a4-2d11-4bcf-a8b0-acb560615264-hire-jpeg",
+  "id": "32ba80ec-3571-4214-b948-1867eae4e9be",
+  "createdAt": "2021-07-25T17:59:48.660Z",
+  "filename": "32ba80ec-3571-4214-b948-1867eae4e9be-hire.jpeg.json",
+  "sizes": {
+    "600": {
+      "ETag": "\"0f361567619e147e55b5bd8244cec7d1\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/bf67c8e8-5cbf-4d31-bbaf-90990e1e3c28-600.png",
+      "key": "assets/bf67c8e8-5cbf-4d31-bbaf-90990e1e3c28-600.png",
+      "Key": "assets/bf67c8e8-5cbf-4d31-bbaf-90990e1e3c28-600.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
