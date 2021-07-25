@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://remkim.com
+
+# Sitemaps
+Sitemap: https://remkim.com/sitemap.xml

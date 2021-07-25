@@ -112,6 +112,11 @@
     toasted-notes "3.2.0"
     use-dark-mode "2.3.1"
 
+"@corex/deepmerge@^2.6.20":
+  version "2.6.20"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.20.tgz#a72d1cb5a101fd11160815b96f499a588362ba5b"
+  integrity sha512-oZZxwDtV0bf8VPcSIhZPvdBFUkVIC8zRblUjrrVAsbGRiqUuZJfoXw2M6NDiIXWcUCfOqbkFND6Yf3b9ej9AjA==
+
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -1415,6 +1420,11 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+escape-string-regexp@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
+  integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
 esutils@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
@@ -2052,6 +2062,13 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.4.tgz#c95415ef451499d7602b91095f3c8e8975f78535"
   integrity sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
 
+matcher@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/matcher/-/matcher-4.0.0.tgz#a42a05a09aaed92e2d241eb91fddac689461ea51"
+  integrity sha512-S6x5wmcDmsDRRU/c2dkccDwQPXoFczc5+HpQ2lON8pnvHlnvHAHj5WlLVvw6n6vNyHuVugYrFohYxbS+pvFpKQ==
+  dependencies:
+    escape-string-regexp "^4.0.0"
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -2113,7 +2130,7 @@ minimalistic-crypto-utils@^1.0.1:
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
 
-minimist@^1.2.0, minimist@^1.2.3:
+minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
@@ -2169,6 +2186,15 @@ next-seo@^4.4.0:
   version "4.24.0"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.24.0.tgz#7c0447da00b8574dcda5c6979771a7f6efd24f55"
   integrity sha512-9VQXfXAelhE+hAWzJ4azigQaW3FPX0kU0eYKFQXKsQjgY7AWtukjRGXls0oSIk8khhDJwmCt46EwsO9n5DDW6Q==
+
+next-sitemap@^1.6.140:
+  version "1.6.140"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.140.tgz#b391633596f4845ec9ceb54a51da8c1f6f97ae43"
+  integrity sha512-VTOQMae/nDLBRGBHnkmGoIsArymlOpJWkZUDvPapktF4QX2U7yvwHIHe7V7amqV2gE2xiDYgd0ayXOBBGuFHog==
+  dependencies:
+    "@corex/deepmerge" "^2.6.20"
+    matcher "^4.0.0"
+    minimist "^1.2.5"
 
 next@^10.0.7:
   version "10.2.0"
