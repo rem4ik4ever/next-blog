@@ -4,6 +4,7 @@ import Card from "src/components/Card";
 import MyLink from "src/utils/MyLink";
 import { BlogInterface } from "src/interfaces/Blog";
 import Image from "next/image";
+import Link from "next/link";
 
 const RecentPosts = ({ blogs, label }) => {
   return (
@@ -12,20 +13,22 @@ const RecentPosts = ({ blogs, label }) => {
         {label}
       </Heading>
       {blogs.map((blog: BlogInterface) => (
-        <Box key={`blog-${blog.slug}`}>
-          <Card p="0">
-            <Flex direction="row">
-              <Box p="3">
-                <Heading as="h3" size="sm" my="3">
-                  {blog.title}
-                </Heading>
-                <Flex>
-                  <Text fontSize="sm">{blog.tldr}</Text>
-                </Flex>
-              </Box>
-            </Flex>
-          </Card>
-        </Box>
+        <Link href={`/blog/${blog.slug}`}>
+          <Box key={`blog-${blog.slug}`} cursor="pointer">
+            <Card p="0">
+              <Flex direction="row">
+                <Box p="3">
+                  <Heading as="h3" size="sm" my="3">
+                    {blog.title}
+                  </Heading>
+                  <Flex>
+                    <Text fontSize="sm">{blog.tldr}</Text>
+                  </Flex>
+                </Box>
+              </Flex>
+            </Card>
+          </Box>
+        </Link>
       ))}
     </Flex>
   );
