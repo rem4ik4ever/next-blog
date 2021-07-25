@@ -42,7 +42,7 @@ const BlogFormik = ({ blog }) => {
           values.status === BlogStatus.released
         ) {
           updatedBlog.releasedAt = new Date().toISOString();
-        } else {
+        } else if (values.status !== BlogStatus.released) {
           updatedBlog.releasedAt = null;
         }
         await handleUpdate(blog.id, updatedBlog);
