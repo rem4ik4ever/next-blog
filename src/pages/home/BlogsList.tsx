@@ -13,7 +13,7 @@ const RecentPosts = ({ blogs, label }) => {
         {label}
       </Heading>
       {blogs.map((blog: BlogInterface) => (
-        <Link href={`/blog/${blog.slug}`}>
+        <Link href={`/blog/${blog.slug}`} key={blog.id}>
           <Box key={`blog-${blog.slug}`} cursor="pointer">
             <Card p="0">
               <Flex direction="row">
