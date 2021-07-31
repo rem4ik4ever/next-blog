@@ -15,6 +15,7 @@ import urlMap from "./urlMap";
 import Link from "next/link";
 import SocialLinks from "../SocialLinks";
 import styled from "@emotion/styled";
+import MyLink from "src/utils/MyLink";
 
 const NavItem = styled(Box)`
   &:hover {
@@ -26,20 +27,20 @@ const CmsMenu = () => {
   if (process.env.NODE_ENV === "development") {
     return (
       <>
-        <Link href="/cms" passHref>
+        <MyLink href="/cms">
           <NavItem padding="5" cursor="pointer">
             <Text fontSize="lg" fontWeight="light" color="cyan.600">
               CMS
             </Text>
           </NavItem>
-        </Link>
-        <Link href="/cms/write" passHref>
+        </MyLink>
+        <MyLink href="/cms/write">
           <NavItem padding="5" cursor="pointer">
             <Text fontSize="lg" color="blue.600">
               POST
             </Text>
           </NavItem>
-        </Link>
+        </MyLink>
       </>
     );
   }
@@ -56,7 +57,7 @@ const NavigationDrawer = ({ onClose, isOpen }) => {
         </DrawerHeader>
         <DrawerBody>
           {urlMap.map((nav) => (
-            <Link
+            <MyLink
               href={nav.url}
               passHref
               key={`nav-${nav.name.trim().split(" ").join("-")}`}
@@ -66,7 +67,7 @@ const NavigationDrawer = ({ onClose, isOpen }) => {
                   {nav.name}
                 </Text>
               </NavItem>
-            </Link>
+            </MyLink>
           ))}
         </DrawerBody>
         <Flex flexDir="column" flex="1" justifyContent="flex-end" p="5">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading, Box, SimpleGrid } from "@chakra-ui/core";
-import Link from "next/link";
 import styled from "@emotion/styled";
+import MyLink from "src/utils/MyLink";
 
 const LinkBox = styled(Box)`
   cursor: pointer;
@@ -15,20 +15,20 @@ const LinkBox = styled(Box)`
 const LinksSection = (props) => {
   return (
     <SimpleGrid columns={[1, 2]} spacing="2" w="full" {...props}>
-      <Link href="/about">
+      <MyLink href="/about">
         <LinkBox backgroundColor="red.300" p="3">
           <Heading as="h1" size="md" color="white">
             🤗 About me
           </Heading>
         </LinkBox>
-      </Link>
-      <Link href="/experience">
+      </MyLink>
+      <MyLink href="/experience">
         <LinkBox backgroundColor="orange.300" p="3">
           <Heading as="h1" size="md" color="white">
             🚀 My experience
           </Heading>
         </LinkBox>
-      </Link>
+      </MyLink>
     </SimpleGrid>
   );
 };
