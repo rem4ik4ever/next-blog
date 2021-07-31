@@ -4,13 +4,13 @@ module.exports = {
     AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
     S3_BUCKET: process.env.S3_BUCKET,
-    GA_TAG: process.env.GA_TAG
+    GA_TAG: process.env.GA_TAG,
   },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
       config.node = {
-        fs: 'empty'
+        fs: "empty",
       };
     }
 
@@ -18,8 +18,8 @@ module.exports = {
   },
   images: {
     domains: [
-      'rem-blog-bucket.s3.us-east-2.amazonaws.com',
-      'rem-blog-bucket.s3.amazonaws.com'
-    ]
-  }
+      "rem-blog-bucket.s3.us-east-2.amazonaws.com",
+      "rem-blog-bucket.s3.amazonaws.com",
+    ],
+  },
 };

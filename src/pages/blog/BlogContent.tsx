@@ -30,6 +30,7 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
             layout="fixed"
             width={448}
             height={298}
+            unoptimized={process.env.NODE_ENV === "development"}
           />
         </Box>
         <Text>{blog.tldr}</Text>
