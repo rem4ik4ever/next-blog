@@ -23,6 +23,7 @@ import ReactMarkdown from "react-markdown";
 import Card from "src/components/Card";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { BlogStatus } from "src/enums/BlogStatus";
+import { markdownTheme } from "src/markdownConfig";
 
 const StatusIcon = ({ status }) => {
   if (status?.success) {
@@ -36,9 +37,9 @@ const StatusIcon = ({ status }) => {
 const StatusText = ({ status }) => {
   let text = null
   if (status?.success) {
-    text =  <Text color="green.400">Blog saved</Text>;
+    text = <Text color="green.400">Blog saved</Text>;
   } else if (status?.error) {
-    text=  <Text color="red.400">Failed to save</Text>;
+    text = <Text color="red.400">Failed to save</Text>;
   }
   return <Flex align="center" mr={5}>{text}</Flex>;
 };
@@ -62,6 +63,11 @@ const BlogForm = ({ formik }) => {
   };
 
   const statuses = Object.keys(BlogStatus);
+  const renderer = {
+    ...ChakraUIRenderer(),
+    ...markdownTheme
+  }
+  console.log({ renderer })
   return (
     <form
       onSubmit={ev => {
@@ -141,12 +147,12 @@ const BlogForm = ({ formik }) => {
               />
               <Box mt="4" display="flex" flexWrap="wrap">
                 {formik.values.tags.map(tag => (
-                <Box mr="2">
-                  <Tag size="md" key={`tag-${tag}`} variantColor="cyan">
-                    <TagLabel>{tag}</TagLabel>
-                    <TagCloseButton onClick={() => removeTag(tag)}/>
-                  </Tag>
-                </Box>
+                  <Box mr="2">
+                    <Tag size="md" key={`tag-${tag}`} variantColor="cyan">
+                      <TagLabel>{tag}</TagLabel>
+                      <TagCloseButton onClick={() => removeTag(tag)} />
+                    </Tag>
+                  </Box>
                 ))}
               </Box>
             </Box>
@@ -163,7 +169,7 @@ const BlogForm = ({ formik }) => {
             {showPreview ? (
               <Box borderTop="1px solid black" minH="420px" px="4" py="2">
                 <ReactMarkdown
-                  renderers={ChakraUIRenderer()}
+                  renderers={renderer}
                   source={formik.values.content}
                   escapeHtml={false}
                 />
