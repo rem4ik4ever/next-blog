@@ -1,0 +1,17 @@
+{
+  "name": "olav-ahrens-rotne-MAEbdaFe4ps-unsplash Cropped.jpeg",
+  "size": 1164535,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/30ee3935-cbfa-4bed-87d7-5922257b8624-olav-ahrens-rotn",
+  "id": "058c0280-60cb-44a9-8711-63a7bc42b19e",
+  "createdAt": "2021-08-03T22:38:34.921Z",
+  "filename": "058c0280-60cb-44a9-8711-63a7bc42b19e-olav-ahrens-rotne-maebdafe4ps-unsplash-cropped.jpeg.json",
+  "sizes": {
+    "600": {
+      "ETag": "\"f9fb002d81e054b501fc0b30e3073acd\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/09e97b32-47a6-4f0f-b181-99ee841ae524-600.png",
+      "key": "assets/09e97b32-47a6-4f0f-b181-99ee841ae524-600.png",
+      "Key": "assets/09e97b32-47a6-4f0f-b181-99ee841ae524-600.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
