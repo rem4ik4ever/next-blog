@@ -21,9 +21,8 @@ import {
 import TagInput from "src/components/TagInput";
 import ReactMarkdown from "react-markdown";
 import Card from "src/components/Card";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { BlogStatus } from "src/enums/BlogStatus";
-import { markdownTheme } from "src/markdownConfig";
+import { markdownRenderer } from "src/markdownConfig";
 
 const StatusIcon = ({ status }) => {
   if (status?.success) {
@@ -63,11 +62,7 @@ const BlogForm = ({ formik }) => {
   };
 
   const statuses = Object.keys(BlogStatus);
-  const renderer = {
-    ...ChakraUIRenderer(),
-    ...markdownTheme
-  }
-  console.log({ renderer })
+  console.log({markdownRenderer})
   return (
     <form
       onSubmit={ev => {
@@ -169,7 +164,7 @@ const BlogForm = ({ formik }) => {
             {showPreview ? (
               <Box borderTop="1px solid black" minH="420px" px="4" py="2">
                 <ReactMarkdown
-                  renderers={renderer}
+                  renderers={markdownRenderer}
                   source={formik.values.content}
                   escapeHtml={false}
                 />

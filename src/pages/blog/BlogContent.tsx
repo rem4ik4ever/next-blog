@@ -2,9 +2,8 @@ import React from "react";
 import { Box, Flex, Heading, Text, Stack, Tag } from "@chakra-ui/core";
 import { BlogInterface } from "src/interfaces/Blog";
 import ReactMarkdown from "react-markdown";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import spacetime from "spacetime";
-import Image from "next/image";
+import { markdownRenderer } from "src/markdownConfig";
 
 const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
   return (
@@ -31,7 +30,7 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
         </Box>
         <Text>{blog.tldr}</Text>
         <ReactMarkdown
-          renderers={ChakraUIRenderer()}
+          renderers={markdownRenderer}
           source={blog.content}
           escapeHtml={false}
         />
