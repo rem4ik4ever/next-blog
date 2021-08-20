@@ -19,7 +19,7 @@ export const markdownTheme = {
 		const {children, href} = props;
 		console.log({props})
 		return (
-			<Link href={href} color="teal.400" textDecoration="underline">{children}</Link>
+			<Link href={href} color="teal.400">{children}</Link>
 		)
 	}
 }
