@@ -24,13 +24,9 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
         </Heading>
         <Text mb="2" color="gray.500"></Text>
         <Box marginX="auto">
-          <Image
+          <img
             src={blog.thumbnailUrl}
             alt={blog.title}
-            layout="fixed"
-            width={448}
-            height={298}
-            unoptimized={true}
           />
         </Box>
         <Text>{blog.tldr}</Text>
