@@ -29,6 +29,14 @@ const PageFooter = () => {
       color="white"
       backgroundColor={bgColor[colorMode]}
     >
+      <Link href="https://simple-pages.com">
+        <Flex mb="3">
+          <Text fontSize="16px">
+            Build Website for free with
+          </Text>
+          <Text color="yellow.400" ml="1" fontWeight="bold">SimplePages</Text>
+        </Flex>
+      </Link>
       <Flex direction="column" w="100%">
         <SocialLinks />
       </Flex>
