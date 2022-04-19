@@ -1,0 +1,18 @@
+{
+  "title": "Vendure + Turborepo. Turbocharge your developer experience",
+  "tldr": "Improving plugin developer experience for Vendure headless ecommerce CMS with Turborepo",
+  "tags": [
+    "vendure",
+    "turborepo",
+    "plugins"
+  ],
+  "content": "What this blog is aiming for is to describe a monorepo solution to make developer experience when working with multiple repos seamless. \n\n## The problem\n\nLet me describe my problem. \n\nI've recently discovered Vendure for my ecommerce project. It had exactly what I wanted. Open source, headless ecommerce CMS with GraphQL API and Admin panel + all extra features you want can be added/extended using plugins. \n\nDocumentation is very good and it also has examples for how to both extend API and Admin UI using plugins. It becomes quite a cumbersome when working with multiple repositories or spinning up developer environment in a separate repos just for a plugin. There is a [template repo](https://github.com/vendure-ecommerce/plugin-template) for just that. ",
+  "thumbnail": null,
+  "status": "draft",
+  "author": "Rem Kim",
+  "createdAt": "2022-02-07T16:16:25.948Z",
+  "updatedAt": "2022-02-07T16:26:25.147Z",
+  "slug": "vendure--turborepo-turbocharge-your-developer-experience",
+  "id": 1644250585947,
+  "releasedAt": null
+}
