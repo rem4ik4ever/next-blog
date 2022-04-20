@@ -1,21 +1,15 @@
-import ReactGA from 'react-ga'
+declare global {
+  interface Window { gtag: any; }
+}
 
-export const initGA = () => {
-  console.log('GA init')
-  ReactGA.initialize(process.env.GA_TAG)
+// log the pageview with their URL
+export const pageview = (url: string) => {
+  window.gtag('config', process.env.GA_TAG, {
+    page_path: url,
+  })
 }
-export const logPageView = () => {
-  console.log(`Logging pageview for ${window.location.pathname}`)
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
-}
-export const logEvent = (category = '', action = '') => {
-  if (category && action) {
-    ReactGA.event({ category, action })
-  }
-}
-export const logException = (description = '', fatal = false) => {
-  if (description) {
-    ReactGA.exception({ description, fatal })
-  }
+
+// log specific events happening.
+export const event = ({ action, params }) => {
+  window.gtag('event', action, params)
 }

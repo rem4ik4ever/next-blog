@@ -1,6 +1,7 @@
 import { Link, Text } from '@chakra-ui/core'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 export const markdownTheme = {
 	code(props) {
@@ -16,7 +17,6 @@ export const markdownTheme = {
 	},
 	link(props) {
 		const {children, href} = props;
-		console.log({props})
 		return (
 			<Link href={href} color="teal.400">{children}</Link>
 		)

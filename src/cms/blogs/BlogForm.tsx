@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from "react";
 import {
   Box,
-  Heading,
-  Flex,
   Button,
+  Flex,
   FormControl,
-  FormLabel,
-  Input,
   FormHelperText,
+  FormLabel,
+  Heading,
+  Icon,
+  Input,
+  Select,
+  Switch,
   Tag,
   TagCloseButton,
   TagIcon,
   TagLabel,
-  Switch,
-  Textarea,
-  Select,
-  Icon,
   Text,
+  Textarea,
 } from "@chakra-ui/core";
-import TagInput from "src/components/TagInput";
-import ReactMarkdown from "react-markdown";
-import Card from "src/components/Card";
+import React, { useEffect, useState } from "react";
+
 import { BlogStatus } from "src/enums/BlogStatus";
+import Card from "src/components/Card";
+import ReactMarkdown from "react-markdown";
+import TagInput from "src/components/TagInput";
 import { markdownRenderer } from "src/markdownConfig";
 
 const StatusIcon = ({ status }) => {
@@ -62,7 +63,6 @@ const BlogForm = ({ formik }) => {
   };
 
   const statuses = Object.keys(BlogStatus);
-  console.log({markdownRenderer})
   return (
     <form
       onSubmit={ev => {
