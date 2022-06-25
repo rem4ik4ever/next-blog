@@ -1,9 +1,20 @@
 export default [
   {
+    name: "Wealthsimple",
+    position: "Senior Seftware Engineer",
+    from: "Oct. 2020",
+    to: "Present",
+    logo: "/imgs/wealthsimple.webp",
+    relevant: true,
+    achievements: [
+      "Device Intelligence and client awareness of device activity"
+    ],
+  },
+  {
     name: "Wonolo: In-Demand Staffing Solutions for Businesses",
     position: "Full Stack Software Engineer",
     from: "Jan. 2020",
-    to: "Present",
+    to: "Sep. 2021",
     logo: "/imgs/wonolo.webp",
     relevant: true,
     achievements: [
@@ -32,7 +43,7 @@ export default [
     from: "Oct. 2014",
     to: "Sep. 2018",
     logo: "/imgs/eventiq.png",
-    relevant: true,
+    relevant: false,
     achievements: [
       "Designed application Architecture and UI design",
       "Payment gateways integration",

@@ -12,7 +12,7 @@ const ExperiencePage: NextPage = () => {
   return (
     <>
       <PageSEO pageInfo={config} />
-      <ExperienceContent />;
+      <ExperienceContent />
     </>
   );
 };
