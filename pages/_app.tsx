@@ -24,8 +24,6 @@ const App = ({ Component, pageProps }: AppProps) => (
     `,
       }}
     />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8862002577533883"
-     crossOrigin="anonymous"></script>
     </Head>
     <CSSReset />
       <BasicLayout>
