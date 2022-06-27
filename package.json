@@ -22,6 +22,7 @@
     "chakra-ui-markdown-renderer": "^0.1.2",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.4",
+    "google-spreadsheet": "^3.3.0",
     "lodash": "^4.17.19",
     "next": "^10.0.7",
     "next-seo": "^4.4.0",
@@ -45,6 +46,9 @@
     "@types/react-dom": "^16.9.6",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@types/sharp": "^0.25.0",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4",
     "typescript": "^3.8.3"
   }
 }

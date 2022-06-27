@@ -7,7 +7,7 @@ import { markdownRenderer } from "src/markdownConfig";
 
 const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
   return (
-    <Box>
+    <Box className="max-w-xl mx-auto">
       <Flex flexDirection="column">
         <Text color="gray.400" fontSize="md" textAlign="center">
           {blog.author} - {spacetime(blog.createdAt).format("LL")}
@@ -22,7 +22,7 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
           {blog.title}
         </Heading>
         <Text mb="2" color="gray.500"></Text>
-        <Box marginX="auto">
+        <Box marginX="auto" className="mb-2">
           <img
             src={blog.thumbnailUrl}
             alt={blog.title}
@@ -35,7 +35,7 @@ const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
           escapeHtml={false}
         />
 
-        <Stack spacing={1} isInline flexWrap="wrap">
+        <Stack spacing={1} isInline flexWrap="wrap" className="mb-2">
           {blog.tags.map((tag) => (
             <Tag key={tag} variantColor="cyan" size="sm" mt={1}>
               {tag}
