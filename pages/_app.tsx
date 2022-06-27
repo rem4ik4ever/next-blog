@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import BasicLayout from '../src/components/layout';
 import Head from 'next/head'
 import theme from '../theme';
+import '../styles/global.css'
 
 const App = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider theme={theme}>

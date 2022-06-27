@@ -32,14 +32,9 @@ const BasicLayout: NextPage = ({ children }) => {
       <Main backgroundColor={bgColor[colorMode]} color={textColor[colorMode]}>
         <HeadMeta />
         <PageHeader />
-        <Container
-          width={{ base: "100%", md: "2xl" }}
-          p="4"
-          fontSize={"xl"}
-          lineHeight="tall"
-        >
+        <div className="container mx-auto max-w-xl">
           {children}
-        </Container>
+        </div>
         <PageFooter />
       </Main>
   );

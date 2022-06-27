@@ -3,7 +3,7 @@ import { Text, Box, Avatar, Flex } from "@chakra-ui/core";
 
 const Intro = () => {
   return (
-    <Flex direction="column" borderRadius="8px">
+    <Flex direction="column" borderRadius="8px" maxW="xl">
       <Box
         backgroundColor="blue.400"
         w="full"

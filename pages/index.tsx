@@ -9,14 +9,18 @@ import { BlogInterface } from "src/interfaces/Blog";
 import { PageInfo } from "src/interfaces/PageInfo";
 import defaultConfig from "src/utils/SEO/next-seo.config";
 import PageSEO from "src/components/PageSEO";
+import { SubscriptionForm } from "src/components/SubscriptionForm";
 
 const IndexPage: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
   return (
     <Flex flexDirection="column" alignItems="center" m={4}>
       <PageSEO pageInfo={defaultConfig} />
-      <Intro />
-      <LinksSection mt="3" w="full" />
-      <BlogsList blogs={blogs} label="Recent Blogs" />
+      <div className="max-w-xl">
+        <Intro />
+        <LinksSection mt="3" w="full" />
+        <SubscriptionForm />
+        <BlogsList blogs={blogs} label="Recent Blogs" />
+      </div>
     </Flex>
   );
 };
