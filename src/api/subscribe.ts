@@ -1,5 +1,4 @@
 import {GoogleSpreadsheet} from 'google-spreadsheet'
-import keys from './rem-blog-b5d4ff079041.json'
 
 const doc = new GoogleSpreadsheet('1HlfXGv4Xi79ADkRdzKRSTVqknARuUuqCFKHGaSN8JAo');
 
