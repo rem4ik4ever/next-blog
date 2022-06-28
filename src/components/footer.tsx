@@ -13,6 +13,7 @@ import {
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Box } from "@chakra-ui/core";
 import SocialLinks from "./SocialLinks";
+import { SubscriptionForm } from "./SubscriptionForm";
 
 const PageFooter = () => {
   const { colorMode } = useColorMode();
@@ -37,7 +38,8 @@ const PageFooter = () => {
           <Text color="yellow.400" ml="1" fontWeight="bold">SimplePages</Text>
         </Flex>
       </Link>
-      <Flex direction="column" w="100%">
+      <Flex direction="column" w="100%" alignItems="center" textAlign="center">
+        <SubscriptionForm />
         <SocialLinks />
       </Flex>
       <Flex p="5">

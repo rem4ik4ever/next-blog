@@ -18,7 +18,9 @@ const IndexPage: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
       <div className="max-w-xl">
         <Intro />
         <LinksSection mt="3" w="full" />
-        <SubscriptionForm />
+        <div className="shadow-md rounded-md">
+          <SubscriptionForm />
+        </div>
         <BlogsList blogs={blogs} label="Recent Blogs" />
       </div>
     </Flex>
