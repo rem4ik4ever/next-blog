@@ -34,7 +34,7 @@ export function FlowsoBanner() {
                 Looking for email automation?
               </h2>
               <p className="font-bold text-4xl">
-                Checkout <MyLink href="https://flows.so">
+                Checkout <MyLink href="https://www.flows.so?utm_source=remkim.com&utm_medium=banner&utm_campaign=banner_link&utm_id=rblg">
                   <span className="text-orange-400">Flows</span>
                 </MyLink>
               </p>
@@ -52,7 +52,7 @@ export function FlowsoBanner() {
                   Interested!?
                 </p>
                 <div className="flex justify-center pt-4">
-                  <MyLink href="https://flows.so">
+                  <MyLink href="https://www.flows.so?utm_source=remkim.com&utm_medium=banner&utm_campaign=banner_link&utm_id=rblg">
                     <div
                       className="text-xl border rounded-md bg-orange-400 text-white px-3 py-2 mx-auto hover:bg-orange-300 transition-all">
 

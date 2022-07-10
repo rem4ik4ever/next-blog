@@ -30,7 +30,7 @@ const PageFooter = () => {
       color="white"
       backgroundColor={bgColor[colorMode]}
     >
-       <Link href="https://flows.so">
+       <Link href="https://www.flows.so?utm_source=remkim.com&utm_medium=banner&utm_campaign=banner_link&utm_id=rblg">
         <Flex mb="3">
           <Text fontSize="16px">
             Email automation for your business
