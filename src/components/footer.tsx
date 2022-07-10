@@ -30,6 +30,14 @@ const PageFooter = () => {
       color="white"
       backgroundColor={bgColor[colorMode]}
     >
+       <Link href="https://flows.so">
+        <Flex mb="3">
+          <Text fontSize="16px">
+            Email automation for your business
+          </Text>
+          <Text color="yellow.400" ml="1" fontWeight="bold">Flows</Text>
+        </Flex>
+      </Link>
       <Link href="https://simple-pages.com">
         <Flex mb="3">
           <Text fontSize="16px">

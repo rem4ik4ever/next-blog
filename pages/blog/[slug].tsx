@@ -5,6 +5,7 @@ import { allBlogs } from "src/cms/blogs/utils";
 import PageSEO from "src/components/PageSEO";
 import defaultConfig from "src/utils/SEO/next-seo.config";
 import { PageInfo } from "src/interfaces/PageInfo";
+import { FlowsoBanner } from "src/components/FlowsoBanner";
 
 const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
   const siteUrl = `https://remkim.com/blog/${blog.slug}`;
@@ -30,6 +31,7 @@ const BlogPage: NextPage<{ blog: BlogInterface }> = ({ blog }) => {
     <>
       <PageSEO pageInfo={config} />
       <BlogContent blog={blog} />
+      <FlowsoBanner />
     </>
   );
 };
