@@ -43,7 +43,7 @@ export function FlowsoBanner() {
                 <MyLink href="https://l.linklyhq.com/l/1ZMed" target="_blank">
                   <div
                     className="text-xl border rounded-md bg-orange-400 text-white px-3 py-2 mx-auto hover:bg-orange-300 transition-all">
-                    Checkout
+                    Learn more
                   </div>
                 </MyLink>
               </div>
