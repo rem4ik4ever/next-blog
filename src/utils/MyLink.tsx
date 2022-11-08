@@ -10,7 +10,7 @@ const MyLink = (props) => {
   };
   return (
     <NextLink {...props} passHref>
-      <a color={color[colorMode]}>{props.children}</a>
+      <a color={color[colorMode]} {...props}>{props.children}</a>
     </NextLink>
   );
 };
