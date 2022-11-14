@@ -1,0 +1,24 @@
+{
+  "name": "Blog thumb.png",
+  "size": 248888,
+  "url": "https://rem-blog-bucket.s3.amazonaws.com/assets/352772b6-84b4-4c94-b448-3c10781433fd-blog-thumb-png",
+  "id": "90153cf0-6364-4fa4-92e5-a9ee71194dd6",
+  "createdAt": "2022-11-14T16:08:19.353Z",
+  "filename": "90153cf0-6364-4fa4-92e5-a9ee71194dd6-blog-thumb.png.json",
+  "sizes": {
+    "450": {
+      "ETag": "\"4d22682eb992feab1a1f495f169264c7\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/5310f93f-816f-47c6-9261-e5978937e1ec-450.png",
+      "key": "assets/5310f93f-816f-47c6-9261-e5978937e1ec-450.png",
+      "Key": "assets/5310f93f-816f-47c6-9261-e5978937e1ec-450.png",
+      "Bucket": "rem-blog-bucket"
+    },
+    "800": {
+      "ETag": "\"4aff0aea5673ea712f63fad38158282a\"",
+      "Location": "https://rem-blog-bucket.s3.us-east-2.amazonaws.com/assets/6b07ebe5-43fe-409e-b657-96d2aa0cc138-800.png",
+      "key": "assets/6b07ebe5-43fe-409e-b657-96d2aa0cc138-800.png",
+      "Key": "assets/6b07ebe5-43fe-409e-b657-96d2aa0cc138-800.png",
+      "Bucket": "rem-blog-bucket"
+    }
+  }
+}
