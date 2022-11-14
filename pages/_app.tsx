@@ -9,13 +9,13 @@ import '../styles/global.css'
 const App = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider theme={theme}>
     <Head>
-    <script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TAG}`}
-    />
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TAG}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -23,13 +23,14 @@ const App = ({ Component, pageProps }: AppProps) => (
         page_path: window.location.pathname,
       });
     `,
-      }}
-    />
+        }}
+      />
+      <script src="https://protected-heavenly.remkim.com/script.js" data-site={process.env.FATHOM_SITE_ID} defer></script>
     </Head>
     <CSSReset />
-      <BasicLayout>
-        <Component {...pageProps} />
-      </BasicLayout>
+    <BasicLayout>
+      <Component {...pageProps} />
+    </BasicLayout>
   </ThemeProvider>
 );
 export default App;
