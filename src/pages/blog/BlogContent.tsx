@@ -7,7 +7,7 @@ import { markdownRenderer } from "src/markdownConfig";
 
 const BlogContent: React.FC<{ blog: BlogInterface }> = ({ blog }) => {
   return (
-    <Box className="max-w-xl mx-auto">
+    <Box className="max-w-xl mx-auto px-8 sm:px-0">
       <Flex flexDirection="column">
         <Text color="gray.400" fontSize="md" textAlign="center">
           {blog.author} - {spacetime(blog.createdAt).format("LL")}

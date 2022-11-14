@@ -10,11 +10,11 @@ export function FlowsoBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const cancelRef = React.useRef()
   useEffect(() => {
-    //const lastShown = localStorage.getItem('_flows_banner_ls')
-    //if (!lastShown || Date.now() > parseInt(lastShown)) {
-    onOpen()
-    //  localStorage.setItem('_flows_banner_ls', (Date.now() + SEVEN_DAYS).toString())
-    //}
+    const lastShown = localStorage.getItem('_flows_banner_ls')
+    if (!lastShown || Date.now() > parseInt(lastShown)) {
+      onOpen()
+      localStorage.setItem('_flows_banner_ls', (Date.now() + SEVEN_DAYS).toString())
+    }
   }, [])
 
   return (
