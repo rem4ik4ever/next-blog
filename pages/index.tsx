@@ -21,6 +21,16 @@ const IndexPage: NextPage<{ blogs: BlogInterface[] }> = ({ blogs }) => {
         <div className="shadow-md rounded-md">
           <SubscriptionForm />
         </div>
+
+
+
+        <script type="text/javascript" src="https://nolli.app/js/iframeResizer.min.js"></script>
+        <iframe id="nolli-iframe" src="https://nolli.app/w/clalhkktg0000l3081ql45qqm" frameBorder="0" scrolling="no" width="100%" />
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `iFrameResize({log: false, checkOrigin: false}, "#nolli-iframe");`
+        }}></script>
+
+
         <BlogsList blogs={blogs} label="Recent Blogs" />
       </div>
     </Flex>
