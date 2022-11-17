@@ -24,7 +24,7 @@
     "formik": "^2.1.4",
     "google-spreadsheet": "^3.3.0",
     "lodash": "^4.17.19",
-    "next": "^10.0.7",
+    "next": "^13.0.3",
     "next-seo": "^4.4.0",
     "next-sitemap": "^1.6.140",
     "node-fetch": "^2.6.0",
