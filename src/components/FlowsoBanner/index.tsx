@@ -31,16 +31,16 @@ export function FlowsoBanner() {
           <AlertDialogCloseButton />
           <AlertDialogBody>
             <div className="text-center">
-              <MyLink href="https://l.linklyhq.com/l/1ZMed">
-                <h1 className="font-bold">clientstrust.me</h1>
+              <MyLink href="https://resolveai.co">
+                <h1 className="font-bold">ResolveAI</h1>
               </MyLink>
               <div>
-                <MyLink href="https://l.linklyhq.com/l/1ZMed">
-                  <Image src="/og_image_800_600.png" layout='fixed' height={300} width={400} />
+                <MyLink href="https://resolveai.co">
+                  <Image src="/banner.png" layout='fixed' height={300} width={400} />
                 </MyLink>
               </div>
               <div className="flex justify-center pt-4">
-                <MyLink href="https://l.linklyhq.com/l/1ZMed" target="_blank">
+                <MyLink href="https://resolveai.co" target="_blank">
                   <div
                     className="text-xl border rounded-md bg-orange-400 text-white px-3 py-2 mx-auto hover:bg-orange-300 transition-all">
                     Learn more
